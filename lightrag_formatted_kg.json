@@ -1,0 +1,410 @@
+{
+  "chunks": [
+    {
+      "content": "",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    }
+  ],
+  "entities": [
+    {
+      "entity_name": "计算机科学",
+      "entity_type": "computer_science",
+      "description": "{\"description\":\"计算机科学是研究计算机系统、算法、计算理论、程序设计以及信息处理的学科。它涵盖了从理论到实践的广泛领域，包括但不限于数据结构、算法、人工智能、计算机网络、数据库系统、操作系统、软件工程和计算机体系结构。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "人工智能",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"人工智能（Artificial Intelligence, AI）是计算机科学的一个子领域，致力于研究和开发能够模拟、延伸和扩展人类智能的理论、方法、技术及应用系统。其核心研究内容包括机器学习、自然语言处理、计算机视觉、知识表示与推理、智能决策等。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "计算机体系结构",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"计算机体系结构（Computer Architecture）是计算机科学的一个子领域，研究计算机系统的功能组织、结构设计及其实现方法。主要涵盖指令集架构、微架构、处理器设计、存储系统、输入输出系统等，旨在优化计算机系统的性能、功耗和成本。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "计算机网络",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"计算机网络（Computer Networks）是计算机科学的一个子领域，研究计算机之间通过通信设备和传输介质进行数据交换的理论、协议和技术。其核心内容包括网络拓扑、传输协议（如TCP/IP）、路由算法、网络安全及分布式系统等。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "数据库系统",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"数据库系统（Database Systems）是计算机科学的一个子领域，专注于数据的存储、管理、检索和维护。其研究内容包括数据模型（如关系模型、NoSQL）、查询语言（如SQL）、事务处理、数据仓库、分布式数据库及数据安全等。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "软件工程",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"软件工程（Software Engineering）是计算机科学的一个子领域，系统化地应用工程原则和方法进行软件开发、运行和维护。其研究领域包括需求分析、软件设计、开发方法（如敏捷开发）、软件测试、质量保证及项目管理等。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "算法与数据结构",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"算法与数据结构是计算机科学的核心子领域，研究如何高效地组织和处理数据。算法指解决特定问题的步骤或指令序列，数据结构则是存储和组织数据的方式。该领域关注时间复杂度和空间复杂度分析，以及不同数据结构和算法在各类问题中的应用。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "编程语言理论",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"编程语言理论研究编程语言的设计、实现、分析和应用。该领域涵盖形式语法和语义、类型系统、编译器构造、程序验证等方向，旨在提高编程语言的表达能力、安全性和执行效率。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "计算机图形学",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"计算机图形学研究利用计算机生成、处理和显示视觉内容的技术。包括2D/3D图形渲染、几何建模、动画、虚拟现实等方向，涉及光线追踪、着色器编程、GPU加速等核心技术，广泛应用于游戏、影视、CAD等领域。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "人机交互",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"人机交互（HCI）研究人与计算机系统之间的交互设计和技术实现。该领域结合计算机科学、心理学和设计学，关注用户界面、交互范式、可用性评估等，旨在提高系统的易用性和用户体验。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "信息安全",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"信息安全研究保护信息系统免受未经授权的访问、使用、披露、破坏、修改或销毁的技术和方法。涵盖密码学、网络安全、软件安全、隐私保护等方向，确保数据的机密性、完整性和可用性。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "分布式计算",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"分布式计算是计算机科学的一个子领域，研究如何将计算任务分布在多个计算节点上执行，以提高系统的性能、可靠性和可扩展性。分布式计算涉及网络通信、一致性协议、容错机制等关键技术。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "并行计算",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"并行计算是计算机科学的一个子领域，研究如何同时使用多个计算资源（如多核处理器、GPU或集群）来解决计算问题。并行计算旨在提高计算速度和效率，涉及并行算法、任务调度、同步机制等技术。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "计算理论",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"计算理论是计算机科学的一个子领域，研究计算的本质、能力和限制。它包括自动机理论、可计算性理论、复杂性理论等分支，为计算机科学提供理论基础。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "形式化方法",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"形式化方法是计算机科学的一个子领域，研究如何使用数学方法对软件和硬件系统进行建模、规范和验证。形式化方法包括形式化规约、模型检测、定理证明等技术，用于提高系统的正确性和可靠性。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "计算机视觉",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"计算机视觉是计算机科学的一个子领域，研究如何让计算机从图像或视频中获取、分析和理解信息。计算机视觉涉及图像处理、模式识别、机器学习等技术，广泛应用于机器人、医疗影像、自动驾驶等领域。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "自然语言处理",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"自然语言处理（NLP）是计算机科学的一个子领域，专注于计算机与人类语言之间的交互。它涉及文本分析、语音识别、机器翻译等技术，旨在使计算机能够理解、解释和生成人类语言。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "机器学习",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"机器学习是计算机科学的一个子领域，专注于开发算法和统计模型，使计算机系统能够从数据中学习和改进，而无需显式编程。它包括监督学习、无监督学习和强化学习等方法。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "操作系统",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"操作系统是计算机科学的一个子领域，研究管理和控制计算机硬件与软件资源的系统软件。它负责进程管理、内存管理、文件系统和用户界面等核心功能，是计算机系统的基础。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "编译器设计",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"编译器设计是计算机科学的一个子领域，专注于将高级编程语言转换为机器代码或低级语言的技术。它包括词法分析、语法分析、语义分析、代码优化和代码生成等阶段。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "嵌入式系统",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"嵌入式系统是计算机科学的一个子领域，专注于为特定功能设计的专用计算机系统。它通常集成在更大的设备中，具有实时性、低功耗和高可靠性等特点，广泛应用于汽车、家电和工业控制等领域。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "量子计算",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"量子计算是计算机科学的一个子领域，利用量子力学原理（如叠加和纠缠）进行信息处理。与传统计算机使用比特（0或1）不同，量子计算机使用量子比特（qubit），可以同时表示多种状态，从而在某些问题上实现指数级加速。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "生物信息学",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"生物信息学是计算机科学的一个子领域，专注于开发和应用计算方法（如算法和统计模型）来分析生物数据。其研究范围包括基因组学、蛋白质组学、系统生物学等，旨在解决生物学和医学中的复杂问题。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "高性能计算",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"高性能计算（HPC）是计算机科学的一个子领域，涉及使用超级计算机或计算集群解决需要极高计算能力的复杂问题。其应用包括气候建模、分子模拟、大规模数据分析等，依赖于并行计算和优化算法。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "云计算",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"云计算是计算机科学的一个子领域，提供通过互联网按需访问共享计算资源（如服务器、存储、网络和应用程序）的服务。其核心特征包括弹性扩展、按使用付费和虚拟化技术，支持公有云、私有云和混合云部署模式。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "大数据技术",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"大数据技术是计算机科学的一个子领域，专注于处理和分析规模庞大、结构复杂的数据集。其关键技术包括分布式存储（如HDFS）、并行计算框架（如MapReduce、Spark）、机器学习算法以及实时流处理（如Flink）。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "区块链技术",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"区块链技术是一种分布式账本技术，通过去中心化和加密算法确保数据的安全性和不可篡改性。它由一系列按时间顺序链接的数据块组成，每个块包含交易信息、时间戳和前一个块的哈希值。主要应用于加密货币、智能合约和供应链管理等领域。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "计算机教育",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"计算机教育是计算机科学的一个子领域，专注于计算机科学知识的教学与传播。它包括计算机编程、算法设计、数据结构、计算机体系结构等核心课程，以及计算机应用技能的培养。计算机教育涵盖从基础教育到高等教育的各个层次，旨在培养具备计算思维和解决问题能力的专业人才。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "entity_name": "计算机历史",
+      "entity_type": "sub_domain",
+      "description": "{\"description\":\"计算机历史是研究计算机技术发展历程的子领域，涵盖从早期计算设备到现代计算机系统的演进过程。它包括重要人物、关键发明、技术突破和里程碑事件的研究，如ENIAC的诞生、图灵机的提出、个人计算机的普及等。计算机历史对于理解当前技术发展和预测未来趋势具有重要意义。\"}",
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    }
+  ],
+  "relationships": [
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "人工智能",
+      "description": "计算机科学和人工智能的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "计算机体系结构",
+      "description": "计算机科学和计算机体系结构的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "计算机网络",
+      "description": "计算机科学和计算机网络的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "数据库系统",
+      "description": "计算机科学和数据库系统的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "软件工程",
+      "description": "计算机科学和软件工程的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "算法与数据结构",
+      "description": "计算机科学和算法与数据结构的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "编程语言理论",
+      "description": "计算机科学和编程语言理论的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "计算机图形学",
+      "description": "计算机科学和计算机图形学的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "人机交互",
+      "description": "计算机科学和人机交互的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "信息安全",
+      "description": "计算机科学和信息安全的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "分布式计算",
+      "description": "计算机科学和分布式计算的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "并行计算",
+      "description": "计算机科学和并行计算的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "计算理论",
+      "description": "计算机科学和计算理论的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "形式化方法",
+      "description": "计算机科学和形式化方法的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "计算机视觉",
+      "description": "计算机科学和计算机视觉的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "自然语言处理",
+      "description": "计算机科学和自然语言处理的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "机器学习",
+      "description": "计算机科学和机器学习的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "操作系统",
+      "description": "计算机科学和操作系统的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "编译器设计",
+      "description": "计算机科学和编译器设计的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "嵌入式系统",
+      "description": "计算机科学和嵌入式系统的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "量子计算",
+      "description": "计算机科学和量子计算的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "生物信息学",
+      "description": "计算机科学和生物信息学的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "高性能计算",
+      "description": "计算机科学和高性能计算的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "云计算",
+      "description": "计算机科学和云计算的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "大数据技术",
+      "description": "计算机科学和大数据技术的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "区块链技术",
+      "description": "计算机科学和区块链技术的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "计算机教育",
+      "description": "计算机科学和计算机教育的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    },
+    {
+      "src_id": "计算机科学",
+      "tgt_id": "计算机历史",
+      "description": "计算机科学和计算机历史的关系是has_subdomain",
+      "keywords": "",
+      "weight": 1,
+      "source_id": "chunk-71d9a893805f4769aad9161782974196"
+    }
+  ]
+}

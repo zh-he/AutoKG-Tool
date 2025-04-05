@@ -1,0 +1,24 @@
+{
+  "entity_types": [
+    {
+      "type": "computer_science",
+      "description": "计算机科学"
+    },
+    {
+      "type": "sub_domain",
+      "description": "计算机科学的子领域"
+    }
+  ],
+  "relationships": [
+    {
+      "src_type": "computer_science",
+      "tgt_type": "sub_domain",
+      "relation": "has_subdomain",
+      "description": "计算机科学包含不同的子领域"
+    }
+  ],
+  "properties": {
+    "computer_science": ["description"],
+    "sub_domain": ["description"]
+  }
+}
