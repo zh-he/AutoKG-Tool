@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基于领域本体和大语言模型的知识图谱自动化构建工具</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+          rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #7F8C8D;
+            --accent-color: #F39C12;
+            --light-bg: #F7F9FC;
+            --dark-text: #34495E;
+            --light-text: #7F8C8D;
+            --border-color: #E0E6ED;
+            --card-bg: #FFFFFF;
+            --border-radius: .5rem;
+            --graph-bg: #FFFFFF;
+            --node-stroke: #FFFFFF;
+            --link-color: #BCC8D8;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: var(--light-bg);
+            font-size: 14px;
+            color: var(--dark-text);
+        }
+
+        .app-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-bar {
+            background-color: var(--card-bg);
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            flex-shrink: 0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.03);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* 确保垂直居中对齐 */
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            box-sizing: border-box;
+            min-height: 60px; /* 设置最小高度 */
+        }
+
+        .header-bar h4 .fas {
+            color: var(--primary-color);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            height: 32px; /* 统一控件组高度 */
+        }
+
+        .header-controls .input-group {
+            align-items: center;
+            height: 32px;
+            min-height: 32px;
+            margin-right: 0 !important;
+            width: auto;
+        }
+
+        .header-controls .input-group-sm {
+            height: 32px;
+            min-height: 32px;
+        }
+
+        /* 搜索输入框 */
+        .header-controls input[type="text"] {
+            height: 32px !important;
+            min-height: 32px !important;
+            font-size: 14px !important;
+            border-radius: 0.25rem !important;
+            padding: 0.375rem 0.75rem !important;
+            line-height: 1.2 !important;
+            box-sizing: border-box !important;
+            border: 1px solid var(--border-color) !important;
+        }
+
+        /* 文件输入框 */
+        .header-controls input[type="file"] {
+            height: 32px !important;
+            min-height: 32px !important;
+            font-size: 14px !important;
+            border-radius: 0.25rem !important;
+            box-sizing: border-box;
+            padding: 0.375rem 0.75rem !important;
+            line-height: 1.2 !important;
+            margin-bottom: 0 !important;
+            background: #fff !important;
+            border: 1px solid var(--border-color) !important;
+            display: block;
+            vertical-align: middle;
+        }
+
+        /* 下拉选择框 */
+        .header-controls .form-select {
+            height: 32px !important;
+            min-height: 32px !important;
+            font-size: 14px !important;
+            padding: 0.375rem 0.75rem !important;
+            line-height: 1.2 !important;
+            border-radius: 0.25rem !important;
+            box-sizing: border-box !important;
+        }
+
+        /* 所有按钮 */
+        .header-controls .btn {
+            height: 32px !important;
+            min-height: 32px !important;
+            display: flex !important;
+            align-items: center !important;
+            font-size: 14px !important;
+            padding: 0.375rem 0.75rem !important;
+            line-height: 1.2 !important;
+            border-radius: 0.25rem !important;
+            box-sizing: border-box !important;
+            white-space: nowrap;
+        }
+
+        /* 特殊处理生成按钮 */
+        .header-controls #generate-kg-button {
+            height: 32px !important;
+            min-height: 32px !important;
+            font-size: 14px !important;
+            border-radius: 0.25rem !important;
+            display: flex !important;
+            align-items: center !important;
+            padding: 0.375rem 0.75rem !important;
+            line-height: 1.2 !important;
+            box-sizing: border-box !important;
+        }
+
+        /* input-group 内的按钮 */
+        .header-controls .input-group .btn {
+            height: 32px !important;
+            min-height: 32px !important;
+            border-radius: 0 0.25rem 0.25rem 0 !important;
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+        }
+
+        /* input-group 内第一个按钮 */
+        .header-controls .input-group .btn:not(:last-child) {
+            border-radius: 0 !important;
+            border-right: none !important;
+        }
+
+        /* input-group 内最后一个按钮 */
+        .header-controls .input-group .btn:last-child {
+            border-radius: 0 0.25rem 0.25rem 0 !important;
+        }
+
+        /* input-group-text 标签 */
+        .header-controls .input-group-text {
+            height: 32px !important;
+            min-height: 32px !important;
+            display: flex !important;
+            align-items: center !important;
+            padding: 0.375rem 0.75rem !important;
+            font-size: 14px !important;
+            line-height: 1.2 !important;
+            border-radius: 0.25rem 0 0 0.25rem !important;
+            box-sizing: border-box !important;
+        }
+
+        /* 确保图标垂直居中 */
+        .header-controls .btn i {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 修复按钮内文本和图标的对齐 */
+        .header-controls .btn .button-icon,
+        .header-controls .btn .button-text {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* 确保所有控件在同一基线上 */
+        .header-controls > * {
+            vertical-align: middle;
+            margin-bottom: 0 !important;
+        }
+
+
+        .content-area {
+            flex-grow: 1;
+            display: flex;
+            overflow: hidden;
+            padding: 0 1.25rem 1.25rem 1.25rem; /* 上 0，右下左 1.25rem */
+            gap: 1.25rem;
+        }
+
+        .control-panel, .graph-panel-wrapper {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .control-panel {
+            width: 340px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .graph-panel-wrapper {
+            flex-grow: 1;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header-custom {
+            font-weight: 600;
+            padding: 1.2rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);
+        }
+
+        .card-body-custom {
+            overflow-y: auto;
+            padding: 1.25rem;
+            font-size: 0.95rem; /* 增大基础字体大小 */
+        }
+
+        .card-body-custom h6 {
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem; /* 增大标题字体大小 */
+        }
+
+        .card-body-custom hr {
+            margin: 1.25rem 0;
+            border-color: var(--border-color);
+            opacity: 0.5;
+        }
+
+        /* 调整列表项样式 */
+        .card-body-custom .list-group-item {
+            font-size: 0.95rem; /* 增大列表项字体大小 */
+            padding: 0.5rem 0; /* 增加内边距 */
+        }
+
+        /* 调整图例容器样式 */
+        #legend-container {
+            font-size: 0.95rem; /* 增大图例字体大小 */
+        }
+
+        .legend-item {
+            margin-bottom: 0.5rem; /* 增加图例项间距 */
+            display: flex;
+            align-items: center;
+        }
+
+        .legend-color {
+            width: 16px; /* 增大图例颜色块大小 */
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 0.75rem; /* 增加颜色块和文字的间距 */
+            border: 2px solid var(--node-stroke);
+        }
+
+        /* 调整过滤器容器样式 */
+        #filter-container {
+            font-size: 0.95rem; /* 增大过滤器字体大小 */
+        }
+
+        .filter-item {
+            margin-bottom: 0.5rem; /* 增加过滤器项间距 */
+        }
+
+        .form-check-label {
+            font-size: 0.95rem; /* 增大复选框标签字体大小 */
+        }
+
+        /* 调整统计数字样式 */
+        .badge {
+            font-size: 0.75rem; /* 减小徽章字体大小 */
+            padding: 0.35em 0.65em; /* 减小徽章内边距 */
+            font-weight: 500; /* 调整字体粗细 */
+        }
+
+        /* 特别调整统计数字徽章样式 */
+        .list-group-item .badge {
+            font-size: 0.75rem; /* 确保统计数字徽章大小一致 */
+            padding: 0.35em 0.65em;
+            min-width: 2.5em; /* 设置最小宽度，使数字对齐 */
+            text-align: center;
+        }
+
+        /* 调整按钮样式 */
+        .card-body-custom .btn {
+            font-size: 0.95rem; /* 增大按钮字体大小 */
+            padding: 0.5rem 1rem; /* 增加按钮内边距 */
+        }
+
+        /* 调整当前图谱信息样式 */
+        #current-kg-info {
+            font-size: 0.95rem; /* 增大信息文字大小 */
+            margin-bottom: 1rem; /* 增加底部间距 */
+        }
+
+        #graph-controls {
+            padding: 0.7rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        #graph-container {
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: var(--graph-bg);
+        }
+
+        svg#graph-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* D3 Styles Refined */
+        .links line {
+            stroke-opacity: .4;
+            stroke-width: 1.5px;
+            transition: stroke-opacity .2s, stroke-width .2s;
+        }
+
+
+        .nodes circle {
+            stroke-width: 2px;
+            stroke: var(--node-stroke);
+            transition: r .2s, filter .2s, stroke .2s, opacity .2s;
+        }
+
+        .nodes .node-element:hover circle, .nodes .node-element.highlighted circle {
+            filter: url(#glow-strong);
+            cursor: pointer;
+        }
+
+        .nodes .node-element.selected circle {
+            filter: url(#glow-strong);
+            stroke: var(--accent-color);
+            stroke-width: 3px;
+        }
+
+        .nodes .node-element.dimmed circle {
+            opacity: 0.15;
+            filter: grayscale(80%);
+        }
+
+        .labels text {
+            pointer-events: none;
+            text-shadow: 0 1px 1px #fff, 1px 0 1px #fff, 0 -1px 1px #fff, -1px 0 1px #fff;
+            opacity: 0;
+            font-size: 10px;
+            fill: var(--dark-text);
+            transition: opacity .2s, font-size .2s;
+            text-anchor: middle;
+            font-weight: 500;
+        }
+
+        .nodes .node-element:hover text, .nodes .node-element.highlighted text,
+        .nodes .node-element.selected text {
+            opacity: 1;
+            font-size: 11px;
+        }
+
+        .labels text.highlighted {
+            font-weight: 700;
+            font-size: 12.5px !important;
+            fill: var(--primary-color);
+        }
+
+        .labels text.dimmed {
+            opacity: 0.1 !important;
+        }
+
+
+        /* Modal - Enhanced */
+        .modal-header {
+            background: var(--primary-color);
+            color: white;
+            border-bottom: none;
+        }
+
+        .modal-content {
+            border: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal-title .fas {
+            font-size: 1.1em;
+            margin-right: 0.3em;
+        }
+
+        .property-key {
+            font-weight: 500;
+            color: var(--light-text);
+            min-width: 80px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        #modal-node-properties pre {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            white-space: pre-wrap;
+            word-break: break-all;
+            font-size: 0.85em;
+        }
+
+        #modal-node-relations .list-group-item {
+            font-size: 0.85rem;
+            padding: 0.4rem 0;
+            border-color: var(--border-color);
+        }
+
+        #modal-node-relations .badge {
+            font-weight: 500;
+        }
+
+
+        /* Loader */
+        #loading-indicator {
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .action-btn {
+            font-size: 0.875rem;
+            padding: 0.375rem 0.75rem;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            color: var(--dark-text);
+            transition: all .2s ease-in-out;
+        }
+
+        .action-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-menu-config {
+            min-width: 280px;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--border-color);
+        }
+
+        .dropdown-menu-config label small {
+            color: var(--light-text);
+        }
+
+        .form-range::-webkit-slider-thumb {
+            background: var(--primary-color);
+            border: 2px solid var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-range::-moz-range-thumb {
+            background: var(--primary-color);
+            border: 2px solid var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+<div class="app-container">
+    <header class="header-bar d-flex justify-content-between align-items-center">
+        <h4 class="mb-0 d-flex align-items-center">
+            <i class="fas fa-project-diagram me-2"></i>基于领域本体与大语言模型的知识图谱自动化构建工具
+        </h4>
+        <div class="header-controls">
+            <!-- Search -->
+            <div class="input-group input-group-sm" style="width: auto;">
+                <input type="text" id="search-input" class="form-control" placeholder="搜索节点...">
+                <button class="btn btn-outline-primary" type="button" id="search-button" title="搜索"><i
+                        class="fas fa-search"></i></button>
+                <button class="btn btn-outline-secondary" type="button" id="clear-search-button"
+                        style="display: none !important;"
+                        title="清除搜索"><i class="fas fa-times"></i></button>
+            </div>
+            <!-- Ontology Upload -->
+            <div class="input-group input-group-sm" style="width: auto;">
+                <input type="text" class="form-control form-control-sm" id="ontology-file-name"
+                       placeholder="未选择任何文件" readonly style="background:#fff;cursor:default;">
+                <button class="btn btn-outline-primary btn-sm" type="button" id="custom-file-btn">选择文件</button>
+                <input type="file" id="ontology-file-input" accept=".json" style="display:none;">
+                <button class="btn btn-outline-primary btn-sm" id="generate-kg-button"
+                        title="上传选定本体并生成知识图谱" disabled>
+                    <span class="button-icon"><i class="fas fa-cogs me-1"></i></span>
+                    <span class="button-text">生成图谱</span>
+                </button>
+            </div>
+            <!-- KG Selector -->
+            <div class="input-group input-group-sm" style="width: auto;">
+                <input type="text" class="form-control form-control-sm" id="kg-display" placeholder="未选择图谱"
+                       readonly style="background:#fff;cursor:default;">
+                <button class="btn btn-outline-primary btn-sm" id="select-kg-button" title="选择知识图谱">
+                    <i class="fas fa-folder-open me-1"></i>选择图谱
+                </button>
+            </div>
+            <!-- Neo4j Import -->
+            <div class="input-group input-group-sm" style="width: auto;">
+                <button class="btn btn-outline-primary btn-sm" id="import-neo4j-button" title="导入当前图谱数据到Neo4j">
+                    <span class="button-icon"><i class="fas fa-database me-1"></i></span>
+                    <span class="button-text">导入至Neo4j</span>
+                </button>
+            </div>
+            <!-- Help -->
+            <div class="input-group input-group-sm" style="width: auto;">
+                <button class="btn btn-outline-primary btn-sm" id="help-button" title="帮助">
+                    帮助
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-area">
+        <aside class="control-panel">
+            <div class="card-header-custom">
+                <h6 class="m-0"><i class="fas fa-sliders-h me-2"></i>控制与图例</h6>
+            </div>
+            <div class="card-body-custom">
+                <h6><i class="fas fa-info-circle me-1"></i>当前图谱信息</h6>
+                <p id="current-kg-info" class="small text-muted">未加载图谱</p>
+                <hr>
+                <h6><i class="fas fa-chart-pie me-1"></i>图谱统计</h6>
+                <ul class="list-group list-group-flush small">
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-1">节点总数
+                        <span class="badge bg-primary rounded-pill" id="stat-nodes">0</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-1">关系总数
+                        <span class="badge bg-secondary rounded-pill" id="stat-links">0</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-1">节点类别
+                        <span class="badge bg-info rounded-pill" id="stat-categories">0</span></li>
+                </ul>
+                <hr>
+                <h6><i class="fas fa-tags me-1"></i>节点类型图例</h6>
+                <div id="legend-container" class="mb-3 small" style="max-height: 150px; overflow-y: auto;"></div>
+                <hr>
+                <h6><i class="fas fa-filter me-1"></i>类别过滤器</h6>
+                <div id="filter-container" class="mb-3 small" style="max-height: 150px; overflow-y: auto;"></div>
+                <button id="reset-filters-button" class="btn btn-sm btn-outline-secondary w-100"><i
+                        class="fas fa-undo me-1"></i>重置所有过滤器
+                </button>
+            </div>
+        </aside>
+
+        <section class="graph-panel-wrapper">
+            <div id="graph-controls">
+                <div class="btn-toolbar" role="toolbar">
+                    <div class="btn-group btn-group-sm me-2">
+                        <button class="btn btn-light action-btn" id="zoom-in-button" title="放大"><i
+                                class="fas fa-search-plus"></i></button>
+                        <button class="btn btn-light action-btn" id="zoom-out-button" title="缩小"><i
+                                class="fas fa-search-minus"></i></button>
+                        <button class="btn btn-light action-btn" id="reset-view-button" title="重置视图"><i
+                                class="fas fa-compress-arrows-alt"></i></button>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-light btn-sm action-btn dropdown-toggle" type="button"
+                                id="config-dropdown-button" data-bs-toggle="dropdown" aria-expanded="false"
+                                title="配置">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-config p-3 shadow-sm"
+                             aria-labelledby="config-dropdown-button">
+                            <h6 class="dropdown-header px-0">布局设置</h6>
+                            <div class="mb-2">
+                                <label for="link-distance-slider" class="form-label d-flex justify-content-between">连接长度
+                                    <small id="link-distance-value">150</small></label>
+                                <input type="range" class="form-range" min="30" max="400" value="150" step="10"
+                                       id="link-distance-slider">
+                            </div>
+                            <div class="mb-2">
+                                <label for="charge-strength-slider" class="form-label d-flex justify-content-between">节点排斥力
+                                    <small id="charge-strength-value">-400</small></label>
+                                <input type="range" class="form-range" min="-2000" max="-50" value="-400" step="50"
+                                       id="charge-strength-slider">
+                            </div>
+                            <div class="mb-2">
+                                <label for="node-size-slider" class="form-label d-flex justify-content-between">节点大小
+                                    <small id="node-size-value">8</small></label>
+                                <input type="range" class="form-range" min="3" max="25" value="8" step="1"
+                                       id="node-size-slider">
+                            </div>
+                            <div class="form-check form-switch mb-1">
+                                <input class="form-check-input" type="checkbox" id="show-labels-switch" checked>
+                                <label class="form-check-label" for="show-labels-switch">显示标签</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="charge-enabled-switch" checked>
+                                <label class="form-check-label" for="charge-enabled-switch">动态布局</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-light btn-sm action-btn ms-2" id="fullscreen-button" title="全屏"><i
+                            class="fas fa-expand"></i></button>
+                </div>
+            </div>
+            <div id="graph-container">
+                <div id="loading-indicator" class="position-absolute top-50 start-50 translate-middle"
+                     style="z-index: 10;">
+                    <div class="spinner-border" role="status" style="width: 3.5rem; height: 3.5rem;"><span
+                            class="visually-hidden">加载中...</span></div>
+                    <div class="mt-2 fw-medium">正在加载图谱数据...</div>
+                </div>
+                <svg id="graph-svg">
+                    <defs>
+                        <marker id="arrow" viewBox="0 -5 10 10" refX="10" refY="0" markerWidth="5" markerHeight="5"
+                                orient="auto-start-reverse" class="arrow-marker">
+                            <path d="M0,-5L10,0L0,5" fill="var(--link-color)"></path>
+                        </marker>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="2" result="blur"></feGaussianBlur>
+                            <feMerge>
+                                <feMergeNode in="blur"></feMergeNode>
+                                <feMergeNode in="SourceGraphic"></feMergeNode>
+                            </feMerge>
+                        </filter>
+                        <filter id="glow-strong" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="3.5" result="blurStrong"></feGaussianBlur>
+                            <feComponentTransfer in="blurStrong" result="boostAlpha">
+                                <feFuncA type="linear" slope="1.5" intercept="0"/>
+                            </feComponentTransfer>
+                            <feMerge>
+                                <feMergeNode in="boostAlpha"></feMergeNode>
+                                <feMergeNode in="SourceGraphic"></feMergeNode>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <g class="zoom-layer"></g>
+                </svg>
+            </div>
+        </section>
+    </main>
+</div>
+
+<!-- Node Detail Modal -->
+<div class="modal fade" id="nodeDetailModal" tabindex="-1" aria-labelledby="nodeDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title d-flex align-items-center" id="nodeDetailModalLabel">
+                    <span id="modal-node-icon"
+                          class="me-2 rounded-circle d-inline-flex align-items-center justify-content-center"
+                          style="width:24px; height:24px; font-size:0.8em;"><i class="fas fa-circle"></i></span>
+                    <span id="modal-node-title">节点详情</span>
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="font-size: 0.9rem;">
+                <div class="row">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <h6><i class="fas fa-info-circle me-1"></i>基本信息</h6>
+                        <p class="mb-1"><span class="property-key">ID:</span> <span id="modal-node-id"></span></p>
+                        <p class="mb-1"><span class="property-key">标签:</span> <span id="modal-node-label"></span></p>
+                        <p class="mb-1"><span class="property-key">类型:</span> <span id="modal-node-type"></span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-link me-1"></i>关联关系 (<span id="modal-relations-count">0</span>)</h6>
+                        <div id="modal-node-relations" class="small" style="max-height: 150px; overflow-y: auto;"></div>
+                    </div>
+                </div>
+                <hr class="my-3">
+                <h6><i class="fas fa-list-ul me-1"></i>详细属性</h6>
+                <pre id="modal-node-properties" class="p-2 small" style="max-height: 200px; overflow-y: auto;"></pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-sm btn-primary" id="modal-center-node-button"><i
+                        class="fas fa-crosshairs me-1"></i>聚焦此节点
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Help Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="helpModalLabel"><i class="fas fa-info-circle me-2"></i>本体层 (Ontology) 示例
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>以下是用于定义知识图谱结构的本体层 (Ontology) JSON
+                    文件格式示例。您可以通过上方的"选择文件"按钮上传您的本体定义文件，然后点击"生成图谱"来创建新的知识图谱。</p>
+                <pre id="ontology-example-json" class="p-3"
+                     style="background-color: var(--light-bg); border: 1px solid var(--border-color); white-space: pre-wrap; word-break: break-all; max-height: 60vh; overflow-y: auto;"></pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="settingsModalLabel">
+                    <i class="fas fa-cogs me-2"></i>生成知识图谱设置
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="settings-form">
+                    <div class="mb-3">
+                        <label for="domain-input" class="form-label">领域名称</label>
+                        <input type="text" class="form-control" id="domain-input" required
+                               placeholder="请输入领域名称">
+                        <div class="form-text">例如：计算机科学、数学、自然语言处理等</div>
+                        <div class="invalid-feedback" id="domain-error">
+                            请输入领域名称
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="root-type-input" class="form-label">根节点类型</label>
+                        <input type="text" class="form-control" id="root-type-input" required
+                               placeholder="请输入根节点类型">
+                        <div class="form-text">必须与本体定义中的类型匹配</div>
+                        <div class="invalid-feedback" id="root-type-error">
+                            请输入根节点类型
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-sm btn-primary" id="confirm-settings-button">
+                    确认生成
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Select KG Modal -->
+<div class="modal fade" id="selectKgModal" tabindex="-1" aria-labelledby="selectKgModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="selectKgModalLabel">
+                    <i class="fas fa-folder-open me-2"></i>选择知识图谱
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="list-group" id="kg-list">
+                    <!-- 图谱列表将通过 JavaScript 动态填充 -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-danger" id="clear-kg-button">
+                    <i class="fas fa-trash-alt me-1"></i>清空选择
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="success-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-success text-white">
+            <i class="fas fa-check-circle me-2"></i>
+            <strong class="me-auto">成功</strong>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="toast-message">
+            知识图谱生成成功！
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // --- Global Variables & Configuration ---
+    let allNodesData = [], allLinksData = [];
+    let currentGraphRawData = null;
+    let currentNodes = [], currentLinks = [];
+    let simulation, svg, zoomLayer, linkElements, nodeElements, labelElements;
+    let width, height;
+    let activeNode = null;
+    let nodeColorScale = d3.scaleOrdinal(d3.schemeTableau10);
+    let currentTransform = d3.zoomIdentity;
+    let selectedOntologyFile = null;
+    let isSearchActive = false;
+    let nodeDetailModalInstance, helpModalInstance, selectKgModalInstance, settingsModalInstance;
+    const config = {
+        linkDistance: 150,
+        chargeStrength: -400,
+        nodeSize: 8,
+        showLabels: true,
+        chargeEnabled: true,
+        defaultNodeType: "Unknown",
+        generatedKgBasePath: './KG/' // Base path for generated KGs on the server
+    };
+
+    const ontologyExample = {
+        "entity_types": [
+            {"type": "computer_science", "description": "计算机科学"},
+            {"type": "sub_domain", "description": "计算机科学的子领域"}
+        ],
+        "relationships": [
+            {
+                "src_type": "computer_science",
+                "tgt_type": "sub_domain",
+                "relation": "has_subdomain",
+                "description": "计算机科学包含不同的子领域"
+            }
+        ],
+        "properties": {
+            "computer_science": ["description"],
+            "sub_domain": ["description"]
+        }
+    };
+
+    // --- DOM Elements ---
+    let ontologyFileInput, generateKgButton, currentKgInfoElement;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initDOMReferences();
+        initEventListeners();
+
+        // 初始化所有模态框
+        nodeDetailModalInstance = new bootstrap.Modal(document.getElementById('nodeDetailModal'));
+        helpModalInstance = new bootstrap.Modal(document.getElementById('helpModal'));
+        selectKgModalInstance = new bootstrap.Modal(document.getElementById('selectKgModal'));
+        settingsModalInstance = new bootstrap.Modal(document.getElementById('settingsModal'));
+
+        setGraphDimensions();
+        populateKgSelector();
+
+        clearGraphDisplay();
+        currentKgInfoElement.textContent = "请点击选择图谱按钮选择一个图谱进行展示。";
+
+        // 确保初始状态下清除按钮是隐藏的
+        const clearButton = document.getElementById('clear-search-button');
+        const searchInput = document.getElementById('search-input');
+
+        if (clearButton) {
+            clearButton.style.display = 'none';
+        }
+
+        if (searchInput) {
+            searchInput.value = ""; // 确保搜索框初始为空
+        }
+        isSearchActive = false;
+    });
+
+    function initDOMReferences() {
+        ontologyFileInput = document.getElementById('ontology-file-input');
+        generateKgButton = document.getElementById('generate-kg-button');
+        currentKgInfoElement = document.getElementById('current-kg-info');
+    }
+
+    function initEventListeners() {
+        // 搜索相关事件监听器
+        document.getElementById('search-button').addEventListener('click', handleSearch);
+
+        // 搜索输入框事件监听器
+        // 搜索输入框事件监听器
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.trim();
+            const clearButton = document.getElementById('clear-search-button');
+
+            // 如果输入框为空
+            if (searchTerm.length === 0) {
+                // 如果之前搜索是激活的，需要清除搜索状态
+                if (isSearchActive) {
+                    clearSearch();  // 调用clearSearch来完整重置状态
+                }
+                // 确保清除按钮隐藏
+                clearButton.style.display = 'none';
+            }
+            // 如果有内容但搜索未激活，不显示清除按钮
+            // 只有执行搜索后（isSearchActive = true）才会显示清除按钮
+        });
+        document.getElementById('search-input').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                handleSearch();
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                clearSearch();
+            }
+        });
+        document.getElementById('clear-search-button').addEventListener('click', clearSearch);
+
+        // 图谱控制按钮
+        document.getElementById('zoom-in-button').addEventListener('click', () => svg && svg.transition().call(zoomBehavior.scaleBy, 1.2));
+        document.getElementById('zoom-out-button').addEventListener('click', () => svg && svg.transition().call(zoomBehavior.scaleBy, 0.8));
+        document.getElementById('reset-view-button').addEventListener('click', resetView);
+
+        // 配置控制滑块和开关
+        const linkDistSlider = document.getElementById('link-distance-slider');
+        const chargeStrSlider = document.getElementById('charge-strength-slider');
+        const nodeSizeSlider = document.getElementById('node-size-slider');
+        const showLabelsSwitch = document.getElementById('show-labels-switch');
+        const chargeEnabledSwitch = document.getElementById('charge-enabled-switch');
+
+        linkDistSlider.addEventListener('input', (e) => updateConfig('linkDistance', +e.target.value, 'link-distance-value'));
+        chargeStrSlider.addEventListener('input', (e) => updateConfig('chargeStrength', +e.target.value, 'charge-strength-value'));
+        nodeSizeSlider.addEventListener('input', (e) => updateConfig('nodeSize', +e.target.value, 'node-size-value'));
+        showLabelsSwitch.addEventListener('change', (e) => updateConfig('showLabels', e.target.checked));
+        chargeEnabledSwitch.addEventListener('change', (e) => updateConfig('chargeEnabled', e.target.checked));
+
+        // 全屏和模态框控制
+        document.getElementById('fullscreen-button').addEventListener('click', toggleFullscreen);
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.getElementById('modal-center-node-button').addEventListener('click', () => {
+            if (activeNode) centerOnNode(activeNode);
+            nodeDetailModalInstance.hide();
+        });
+
+        // 过滤器重置
+        document.getElementById('reset-filters-button').addEventListener('click', resetAllFilters);
+
+        // 窗口大小变化
+        window.addEventListener('resize', debounce(setGraphDimensions, 250));
+
+        // Neo4j导入和帮助
+        document.getElementById('import-neo4j-button').addEventListener('click', handleDirectNeo4jImport);
+        document.getElementById('help-button').addEventListener('click', showHelpModal);
+
+        // 本体文件上传和知识图谱生成
+        ontologyFileInput.addEventListener('change', (event) => {
+            selectedOntologyFile = event.target.files[0];
+            generateKgButton.disabled = !selectedOntologyFile;
+        });
+
+        document.getElementById('domain-input').addEventListener('input', validateGenerateButton);
+        document.getElementById('root-type-input').addEventListener('input', validateGenerateButton);
+
+        function validateGenerateButton() {
+            const domainInput = document.getElementById('domain-input');
+            const rootTypeInput = document.getElementById('root-type-input');
+            generateKgButton.disabled = !(selectedOntologyFile && domainInput.value.trim() && rootTypeInput.value.trim());
+        }
+
+        generateKgButton.addEventListener('click', () => {
+            if (!selectedOntologyFile) {
+                alert("请先选择一个本体JSON文件。");
+                return;
+            }
+            // 显示设置模态框
+            settingsModalInstance.show();
+        });
+
+
+        // 选择图谱按钮点击事件
+        document.getElementById('select-kg-button').addEventListener('click', async () => {
+            try {
+                // 显示加载状态
+                const kgList = document.getElementById('kg-list');
+                kgList.innerHTML = '<div class="list-group-item text-center"><div class="spinner-border spinner-border-sm me-2" role="status"></div>加载中...</div>';
+
+                // 显示模态框
+                selectKgModalInstance.show();
+
+                // 获取图谱列表
+                const response = await fetch('/list-knowledge-graphs');
+                if (!response.ok) {
+                    throw new Error(`HTTP error ${response.status} when fetching KG list.`);
+                }
+                const kgFiles = await response.json();
+
+                // 更新图谱列表
+                kgList.innerHTML = ''; // 清空现有列表
+
+                if (kgFiles && kgFiles.length > 0) {
+                    kgFiles.forEach(kgFile => {
+                        const kgPath = config.generatedKgBasePath + kgFile;
+                        const displayName = kgFile.replace(/_kg\.json$/i, '').replace(/\.json$/i, '');
+
+                        const item = document.createElement('button');
+                        item.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center';
+                        item.innerHTML = `
+                            <span>${displayName}</span>
+                            <i class="fas fa-chevron-right text-muted"></i>
+                        `;
+                        item.onclick = () => {
+                            selectKgModalInstance.hide();
+                            loadGraphData(kgPath);
+                            document.getElementById('kg-display').value = displayName;
+                            localStorage.setItem('selectedKgPath', kgPath);
+                        };
+                        kgList.appendChild(item);
+                    });
+                } else {
+                    kgList.innerHTML = '<div class="list-group-item text-muted">无可用知识图谱</div>';
+                }
+            } catch (error) {
+                console.error("Failed to load KG list:", error);
+                const kgList = document.getElementById('kg-list');
+                kgList.innerHTML = `<div class="list-group-item text-danger">
+                    <i class="fas fa-exclamation-circle me-2"></i>加载失败: ${error.message}
+                </div>`;
+            }
+        });
+
+        // 清空图谱按钮点击事件
+        document.getElementById('clear-kg-button').addEventListener('click', () => {
+            clearCurrentKgSelection();
+            selectKgModalInstance.hide();
+        });
+    }
+
+    function updateConfig(key, value, valueLabelId) {
+        config[key] = value;
+        if (valueLabelId) document.getElementById(valueLabelId).textContent = value;
+        if (!simulation) return; // Guard if simulation not initialized
+
+        if (key === 'linkDistance') simulation.force("link").distance(config.linkDistance);
+        if (key === 'chargeStrength') simulation.force("charge").strength(config.chargeEnabled ? config.chargeStrength : 0);
+        if (key === 'chargeEnabled') simulation.force("charge").strength(config.chargeEnabled ? config.chargeStrength : 0);
+        if (key === 'nodeSize' && nodeElements) nodeElements.selectAll('circle').attr('r', getNodeRadius);
+        if (key === 'showLabels' && labelElements) labelElements.style('opacity', getLabelOpacity);
+
+        if (key === 'linkDistance' || key === 'chargeStrength' || key === 'chargeEnabled') {
+            if (config.chargeEnabled) simulation.alpha(0.3).restart(); else simulation.stop();
+        }
+        if (key === 'nodeSize') updateArrowMarkerPosition();
+    }
+
+    async function populateKgSelector() {
+        try {
+            const response = await fetch('/list-knowledge-graphs');
+            if (!response.ok) {
+                throw new Error(`HTTP error ${response.status} when fetching KG list.`);
+            }
+            const kgFiles = await response.json();
+
+            // 更新图谱列表
+            const kgList = document.getElementById('kg-list');
+            kgList.innerHTML = ''; // 清空现有列表
+
+            if (kgFiles && kgFiles.length > 0) {
+                kgFiles.forEach(kgFile => {
+                    const kgPath = config.generatedKgBasePath + kgFile;
+                    const displayName = kgFile.replace(/_kg\.json$/i, '').replace(/\.json$/i, '');
+
+                    const item = document.createElement('button');
+                    item.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center';
+                    item.innerHTML = `
+                        <span>${displayName}</span>
+                        <i class="fas fa-chevron-right text-muted"></i>
+                    `;
+                    item.onclick = () => {
+                        selectKgModalInstance.hide();
+                        loadGraphData(kgPath);
+                        document.getElementById('kg-display').value = displayName;
+                        localStorage.setItem('selectedKgPath', kgPath);
+                    };
+                    kgList.appendChild(item);
+                });
+            } else {
+                kgList.innerHTML = '<div class="list-group-item text-muted">无可用知识图谱</div>';
+            }
+
+            // 如果有上次选择的图谱，显示它并加载
+            const lastSelectedKg = localStorage.getItem('selectedKgPath');
+            if (lastSelectedKg && kgFiles.map(f => config.generatedKgBasePath + f).includes(lastSelectedKg)) {
+                const lastKgFile = lastSelectedKg.split('/').pop();
+                const displayName = lastKgFile.replace(/_kg\.json$/i, '').replace(/\.json$/i, '');
+                document.getElementById('kg-display').value = displayName;
+                loadGraphData(lastSelectedKg);
+            } else {
+                document.getElementById('kg-display').value = "";
+                clearGraphDisplay();
+                currentKgInfoElement.textContent = "请点击选择图谱按钮选择一个图谱进行展示。";
+            }
+        } catch (error) {
+            console.error("Failed to populate KG list:", error);
+            document.getElementById('kg-display').value = "加载失败";
+            clearGraphDisplay();
+            currentKgInfoElement.textContent = `加载图谱列表失败: ${error.message}`;
+        }
+    }
+
+    function clearCurrentKgSelection() {
+        // 清空显示框
+        document.getElementById('kg-display').value = "";
+
+        // 清空localStorage
+        localStorage.removeItem('selectedKgPath');
+
+        // 完全清空当前图谱显示
+        clearGraphDisplay();
+
+        // 重置搜索状态
+        const searchInput = document.getElementById('search-input');
+        const clearButton = document.getElementById('clear-search-button');
+        if (searchInput) searchInput.value = "";
+        if (clearButton) clearButton.style.display = 'none';
+        isSearchActive = false;
+
+        // 重置过滤器
+        document.querySelectorAll('#filter-container input[type="checkbox"]').forEach(cb => cb.checked = true);
+
+        // 更新信息显示
+        currentKgInfoElement.textContent = "已清空图谱选择。请点击选择图谱按钮选择一个图谱进行展示。";
+
+        console.log("已清空图谱选择");
+    }
+
+
+    function showHelpModal() {
+        // 详细帮助内容
+        const helpDetail = `【本体文件格式说明】\n\n必需字段：\n- entity_types：实体类型列表，每个元素为对象，必须包含 type（类型标识），可选 description（类型描述）。\n- relationships：关系类型列表，每个元素为对象，必须包含 src_type（源类型）、tgt_type（目标类型）、relation（关系名），可选 description（关系描述）。\n- properties：实体类型属性定义，key 为实体类型，value 为属性名数组。\n\n字段解释：\n- entity_types：定义知识图谱中所有节点的类型。\n  - type：实体类型的唯一标识（如 computer_science）。\n  - description：实体类型的中文或详细描述。\n- relationships：定义节点之间的所有关系类型。\n  - src_type：关系的起始节点类型。\n  - tgt_type：关系的目标节点类型。\n  - relation：关系名称（如 has_subdomain）。\n  - description：关系的中文或详细描述。\n- properties：为每种实体类型定义可用的属性字段。\n  - 如 computer_science: [\"description\"] 表示该类型有 description 属性。\n\n【本体 JSON 示例】\n`;
+        document.getElementById('ontology-example-json').textContent = helpDetail + JSON.stringify(ontologyExample, null, 2);
+        helpModalInstance.show();
+    }
+
+    async function handleDirectNeo4jImport() {
+        // 检查是否选择了知识图谱
+        const selectedKgPath = localStorage.getItem('selectedKgPath');
+        if (!selectedKgPath) {
+            alert("请先选择一个知识图谱进行导入。");
+            return;
+        }
+
+        if (!currentGraphRawData) {
+            alert("当前没有加载知识图谱数据，无法导入。请先选择一个图谱。");
+            return;
+        }
+
+        const importButton = document.getElementById('import-neo4j-button');
+        const buttonIcon = importButton.querySelector('.button-icon');
+        const buttonText = importButton.querySelector('.button-text');
+
+        const originalButtonIconHTML = buttonIcon.innerHTML;
+        const originalButtonTextContent = buttonText.textContent;
+
+        buttonIcon.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>';
+        buttonText.textContent = '导入中...';
+        importButton.disabled = true;
+
+        try {
+            // 从选择的KG路径中提取文件名
+            const kgFilename = selectedKgPath.split('/').pop(); // 获取文件名部分
+
+            const response = await fetch('/import-to-neo4j', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({kg_filename: kgFilename}),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert(`导入成功: ${result.message}`);
+            } else {
+                alert(`导入失败: ${result.error || '未知服务器错误'}`);
+            }
+        } catch (error) {
+            alert(`请求后端进行导入时发生网络或通讯错误: ${error.message}`);
+            console.error("Error sending data to backend for import:", error);
+        } finally {
+            buttonIcon.innerHTML = originalButtonIconHTML;
+            buttonText.textContent = originalButtonTextContent;
+            importButton.disabled = false;
+        }
+    }
+
+    function clearGraphDisplay() {
+        console.log("正在清除图谱显示..."); // 调试日志
+
+        // 重置数据状态
+        currentGraphRawData = null;
+        allNodesData = [];
+        allLinksData = [];
+        currentNodes = [];
+        currentLinks = [];
+        activeNode = null;
+
+        // 停止并清除 D3 simulation
+        if (simulation) {
+            simulation.stop();
+            simulation.nodes([]);
+            if (simulation.force("link")) {
+                simulation.force("link").links([]);
+            }
+        }
+
+        // 完全清除 SVG 内容
+        if (svg) {
+            // 清除所有zoom层的内容
+            svg.select(".zoom-layer").selectAll("*").remove();
+
+            // 重置zoom变换
+            svg.call(zoomBehavior.transform, d3.zoomIdentity);
+            currentTransform = d3.zoomIdentity;
+
+            // 清除所有D3选择器引用
+            linkElements = null;
+            nodeElements = null;
+            labelElements = null;
+        }
+
+        // 清除统计信息
+        updateStats(); // 显示0统计
+
+        // 清除图例和过滤器
+        populateLegendAndFilters(); // 清空显示
+
+        // 隐藏加载指示器
+        showLoadingIndicator(false);
+
+        // 清除任何错误消息
+        d3.select("#graph-container").selectAll(".alert").remove();
+
+        // 重置信息显示
+        currentKgInfoElement.textContent = "未加载图谱";
+
+        // 重置模态框
+        document.getElementById('modal-node-title').textContent = "节点详情";
+        if (nodeDetailModalInstance && nodeDetailModalInstance._element.classList.contains('show')) {
+            nodeDetailModalInstance.hide();
+        }
+
+        // 清除搜索状态
+        const searchInput = document.getElementById('search-input');
+        const clearButton = document.getElementById('clear-search-button');
+        if (searchInput) searchInput.value = "";
+        if (clearButton) clearButton.style.display = 'none';
+        isSearchActive = false;
+        console.log("图谱显示已完全清除"); // 调试日志
+    }
+
+
+    async function loadGraphData(kgJsonPath) {
+        if (!kgJsonPath) {
+            clearGraphDisplay();
+            currentKgInfoElement.textContent = "未选择知识图谱。";
+            return;
+        }
+
+        console.log("开始加载新图谱:", kgJsonPath); // 调试日志
+
+        // 在加载新数据前，确保完全清除旧数据
+        clearGraphDisplay();
+
+        showLoadingIndicator(true, `正在加载图谱: ${kgJsonPath.split('/').pop()}...`);
+        currentKgInfoElement.textContent = `当前图谱: ${kgJsonPath.split('/').pop().replace(/_kg\.json$/i, '').replace(/\.json$/i, '')}`;
+
+        try {
+            const response = await fetch(`${kgJsonPath}?t=${new Date().getTime()}`);
+            if (!response.ok) throw new Error(`HTTP error ${response.status} while fetching ${kgJsonPath}`);
+            const rawData = await response.json();
+            currentGraphRawData = rawData;
+
+            if (!rawData.nodes || typeof rawData.nodes !== 'object') {
+                throw new Error("JSON数据格式错误: 'nodes' 字段缺失或无效。");
+            }
+
+            // 重置所有数据数组
+            allNodesData = [];
+            allLinksData = [];
+            currentNodes = [];
+            currentLinks = [];
+
+            // 处理节点数据
+            allNodesData = Object.values(rawData.nodes).map(n => ({
+                id: n.id,
+                label: n.label || n.id,
+                type: n.type || config.defaultNodeType,
+                color: n.color,
+                properties: n.properties || {},
+                x: width ? (width / 2 + (Math.random() - 0.5) * (width / 4)) : Math.random() * 500,
+                y: height ? (height / 2 + (Math.random() - 0.5) * (height / 4)) : Math.random() * 500
+            }));
+
+            // 处理关系数据
+            allLinksData = (rawData.relationships || []).map(l => ({
+                source: l.src_id,
+                target: l.tgt_id,
+                type: l.type || "related",
+                properties: l.properties || {}
+            }));
+
+            // 复制到当前数据
+            currentNodes = [...allNodesData];
+            currentLinks = [...allLinksData];
+
+            console.log(`加载完成: ${currentNodes.length} 个节点, ${currentLinks.length} 个关系`); // 调试日志
+
+            // 更新UI
+            updateStats();
+            populateLegendAndFilters();
+
+            // 确保SVG已初始化
+            if (!svg) {
+                setGraphDimensions();
+            }
+
+            // 初始化图谱
+            initGraph();
+
+        } catch (error) {
+            console.error("加载图谱数据失败:", error);
+            showLoadingIndicator(false);
+            clearGraphDisplay();
+
+            // 显示错误信息
+            d3.select("#graph-container").append("div")
+                .attr("class", "alert alert-danger m-3 p-4 text-center")
+                .html(`<h4><i class="fas fa-exclamation-triangle me-2"></i>加载图谱数据失败</h4><p class="mb-0">${error.message}</p><small>文件: ${kgJsonPath}. 请检查文件或浏览器控制台。</small>`);
+
+            currentGraphRawData = null;
+            currentKgInfoElement.textContent = `加载图谱 ${kgJsonPath.split('/').pop()} 失败。`;
+            document.getElementById('kg-display').value = "加载失败";
+        }
+    }
+
+    function updateStats() {
+        document.getElementById('stat-nodes').textContent = currentNodes.length;
+        document.getElementById('stat-links').textContent = currentLinks.length;
+        const categories = new Set(currentNodes.map(n => n.type));
+        document.getElementById('stat-categories').textContent = categories.size;
+    }
+
+    function populateLegendAndFilters() {
+        const categories = Array.from(new Set(allNodesData.map(n => n.type))).sort();
+        if (categories.length === 0 && allNodesData.length > 0 && config.defaultNodeType === "Unknown") {
+            categories.push(config.defaultNodeType);
+        }
+        nodeColorScale.domain(categories); // Reset domain
+
+        const legendContainer = d3.select("#legend-container").html("");
+        const filterContainer = d3.select("#filter-container").html("");
+
+        if (categories.length === 0) {
+            legendContainer.append("p").attr("class", "text-muted small").text("无可用节点类型。");
+            filterContainer.append("p").attr("class", "text-muted small").text("无可用过滤器。");
+            return;
+        }
+
+        categories.forEach(category => {
+            // 优先取该类型节点的 color 字段
+            const nodeOfType = allNodesData.find(n => n.type === category && n.color);
+            const color = nodeOfType ? nodeOfType.color : nodeColorScale(category);
+
+            const legendItem = legendContainer.append("div").attr("class", "legend-item").datum(category)
+                .on("click", (event, d) => toggleCategoryFilter(d));
+            legendItem.append("span").attr("class", "legend-color")
+                .style("background-color", color)
+                .style("border-color", "var(--node-stroke)");
+            legendItem.append("span").attr("class", "legend-label").text(category);
+
+            const filterItem = filterContainer.append("div").attr("class", "form-check filter-item");
+            filterItem.append("input").attr("class", "form-check-input").attr("type", "checkbox")
+                .attr("id", `filter-${category.replace(/\s+/g, '-')}`).attr("value", category).property("checked", true)
+                .on("change", (event) => applyFilters());
+            filterItem.append("label").attr("class", "form-check-label").attr("for", `filter-${category.replace(/\s+/g, '-')}`).text(category);
+        });
+    }
+
+    const zoomBehavior = d3.zoom().scaleExtent([0.05, 10]).on("zoom", handleZoom);
+
+    function initGraph() {
+        console.log("初始化图谱..."); // 调试日志
+
+        // 移除任何错误消息
+        d3.select("#graph-container").selectAll(".alert").remove();
+        showLoadingIndicator(true, "正在计算布局...");
+
+        // 确保SVG和zoomLayer存在
+        if (!svg) {
+            svg = d3.select("#graph-svg");
+        }
+
+        zoomLayer = svg.select(".zoom-layer");
+        if (zoomLayer.empty()) {
+            zoomLayer = svg.append("g").attr("class", "zoom-layer");
+        }
+
+        // 完全清除zoomLayer的所有内容
+        zoomLayer.selectAll("*").remove();
+
+        // 重新设置zoom行为
+        svg.call(zoomBehavior).on("dblclick.zoom", null);
+        svg.call(zoomBehavior.transform, d3.zoomIdentity);
+        currentTransform = d3.zoomIdentity;
+
+        // 停止任何现有的simulation
+        if (simulation) {
+            simulation.stop();
+        }
+
+        // 创建新的simulation
+        simulation = d3.forceSimulation(currentNodes)
+            .force("link", d3.forceLink(currentLinks).id(d => d.id).distance(config.linkDistance).strength(0.6))
+            .force("charge", d3.forceManyBody().strength(config.chargeEnabled ? config.chargeStrength : 0).distanceMin(20).distanceMax(500))
+            .force("center", d3.forceCenter(width / 2, height / 2).strength(0.1))
+            .force("collide", d3.forceCollide().radius(d => getNodeRadius(d) + 8).strength(0.8))
+            .force("x", d3.forceX(width / 2).strength(0.02))
+            .force("y", d3.forceY(height / 2).strength(0.02))
+            .on("tick", ticked)
+            .on("end", () => {
+                showLoadingIndicator(false);
+                if (currentNodes.length > 0 && currentNodes.length <= 50 && currentTransform.k === 1) {
+                    zoomToFit(750);
+                }
+            });
+
+        // 渲染新图谱
+        renderGraph();
+        updateArrowMarkerPosition();
+
+        if (config.chargeEnabled) {
+            simulation.alpha(1).restart();
+        }
+
+        console.log("图谱初始化完成"); // 调试日志
+    }
+
+
+    function renderGraph() {
+        if (!zoomLayer || zoomLayer.empty()) {
+            console.error("Zoom layer not initialized for rendering.");
+            return;
+        }
+
+        console.log("渲染图谱:", currentNodes.length, "个节点,", currentLinks.length, "个关系"); // 调试日志
+
+        // 完全清除之前的元素
+        zoomLayer.selectAll("*").remove();
+
+        // 重新创建links
+        linkElements = zoomLayer.append("g").attr("class", "links")
+            .selectAll(".link")
+            .data(currentLinks, d => `${d.source.id || d.source}-${d.target.id || d.target}`);
+
+        linkElements = linkElements.enter().append("line")
+            .attr("class", "link")
+            .attr("stroke", "var(--link-color)")
+            .attr("marker-end", "url(#arrow)");
+
+        // 重新创建nodes
+        nodeElements = zoomLayer.append("g").attr("class", "nodes")
+            .selectAll(".node-element")
+            .data(currentNodes, d => d.id);
+
+        const nodeEnter = nodeElements.enter().append("g")
+            .attr("class", "node-element")
+            .call(d3.drag().on("start", dragStarted).on("drag", dragged).on("end", dragEnded))
+            .on("click", nodeClicked)
+            .on("mouseover", nodeMouseOver)
+            .on("mouseout", nodeMouseOut);
+
+        nodeEnter.append("circle")
+            .attr("r", getNodeRadius)
+            .attr("fill", getNodeColor);
+
+        nodeElements = nodeEnter;
+
+        // 重新创建labels
+        labelElements = zoomLayer.append("g").attr("class", "labels")
+            .selectAll(".label-text")
+            .data(currentNodes, d => d.id);
+
+        labelElements = labelElements.enter().append("text")
+            .attr("class", "label-text")
+            .text(d => d.label)
+            .attr("dy", d => -getNodeRadius(d) - 5)
+            .style("opacity", getLabelOpacity);
+
+        // 更新simulation
+        if (simulation) {
+            simulation.nodes(currentNodes);
+            simulation.force("link").links(currentLinks);
+            if (config.chargeEnabled) {
+                simulation.alpha(0.8).restart();
+            }
+        }
+
+        console.log("图谱渲染完成"); // 调试日志
+    }
+
+    // --- (Ticked, Node Interaction, Highlighting, Search, Filters, Modals, Fullscreen, Debounce functions remain largely the same) ---
+    // --- Ensure they use `currentNodes` and `currentLinks` which are updated by `loadGraphData` ---
+    function ticked() {
+        if (!linkElements || !nodeElements || !labelElements) return;
+        linkElements
+            .attr("x1", d => d.source.x)
+            .attr("y1", d => d.source.y)
+            .attr("x2", d => d.target.x)
+            .attr("y2", d => d.target.y);
+        nodeElements.attr("transform", d => `translate(${d.x},${d.y})`);
+        labelElements
+            .attr("x", d => d.x)
+            .attr("y", d => d.y);
+    }
+
+    function getNodeRadius(d) {
+        return d === activeNode ? config.nodeSize * 1.3 : config.nodeSize;
+    }
+
+    function getNodeColor(d) {
+        return d.color || nodeColorScale(d.type);
+    }
+
+    function getLabelOpacity(d) {
+        if (!config.showLabels) { // Always check this first
+            return (d === activeNode || d.isHovered || d.isNeighbor) ? 1 : 0;
+        }
+        if (d.isDimmed && d !== activeNode && !d.isHovered && !d.isNeighbor) return 0.1;
+        // Default visible opacity for labels when showLabels is true
+        return (currentNodes.length > 100 && currentTransform.k < 0.5 && !(d === activeNode || d.isHovered || d.isNeighbor)) ? 0 : 0.85; // Hide if too many nodes and zoomed out
+    }
+
+
+    function updateArrowMarkerPosition() {
+        if (svg) svg.select("#arrow").attr("refX", config.nodeSize + 6);
+    }
+
+    function dragStarted(event, d) {
+        if (!event.active && config.chargeEnabled && simulation) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+        d.isDragged = true;
+    }
+
+    function dragged(event, d) {
+        d.fx = event.x;
+        d.fy = event.y;
+    }
+
+    function dragEnded(event, d) {
+        if (!event.active && config.chargeEnabled && simulation) simulation.alphaTarget(0);
+        if (!config.chargeEnabled || !event.subject.isDragged) {
+            d.fx = null;
+            d.fy = null;
+        }
+        d.isDragged = false;
+    }
+
+    function handleZoom(event) {
+        if (!zoomLayer) return;
+        currentTransform = event.transform;
+        zoomLayer.attr("transform", currentTransform);
+        if (config.showLabels && labelElements) labelElements.style("opacity", getLabelOpacity);
+    }
+
+    function resetView() {
+        if (svg) svg.transition().duration(750).call(zoomBehavior.transform, d3.zoomIdentity);
+    }
+
+    function nodeClicked(event, d) {
+        event.stopPropagation();
+        const previouslyActiveNode = activeNode;
+        activeNode = (activeNode === d) ? null : d;
+
+        if (previouslyActiveNode) previouslyActiveNode.isSelected = false;
+        if (activeNode) activeNode.isSelected = true;
+
+        updateNodeSelectionStyles();
+        showNodeDetailModal(activeNode);
+
+        if (activeNode) {
+            highlightConnected(activeNode, true);
+        } else {
+            clearHighlights();
+        }
+    }
+
+    function nodeMouseOver(event, d) {
+        if (!nodeElements) return;
+        d.isHovered = true;
+        if (!activeNode) highlightConnected(d, true, true);
+        d3.select(event.currentTarget).select('circle').transition().duration(100).attr('r', getNodeRadius(d) * 1.25);
+        if (config.showLabels && labelElements) labelElements.filter(ld => ld.id === d.id).style('opacity', 1).classed('highlighted', true);
+    }
+
+    function nodeMouseOut(event, d) {
+        if (!nodeElements) return;
+        d.isHovered = false;
+        if (!activeNode) clearHighlights();
+        d3.select(event.currentTarget).select('circle').transition().duration(100).attr('r', getNodeRadius(d));
+        if (config.showLabels && !activeNode && !(d.isNeighbor) && labelElements) {
+            labelElements.filter(ld => ld.id === d.id).style('opacity', getLabelOpacity(d)).classed('highlighted', false);
+        }
+    }
+
+    function updateNodeSelectionStyles() {
+        if (!nodeElements || !labelElements) return;
+        nodeElements.classed("selected", d => d === activeNode)
+            .select("circle").transition().duration(150).attr("r", getNodeRadius);
+        labelElements.style("opacity", getLabelOpacity).classed('highlighted', d => d === activeNode);
+    }
+
+    function highlightConnected(centerNode, doHighlight, hoverEffect = false) {
+        if (!centerNode || !nodeElements || !labelElements || !linkElements) {
+            clearHighlights();
+            return;
+        }
+
+        allNodesData.forEach(n => { // Use allNodesData to correctly reset states
+            n.isNeighbor = false;
+            n.isHovered = (n === centerNode && hoverEffect);
+            n.isDimmed = false; // Reset dimmed state
+        });
+
+        const neighborNodeIds = new Set([centerNode.id]);
+        const highlightedLinkSet = new Set(); // Changed to Set for easier .has()
+
+        currentLinks.forEach(link => {
+            const sourceId = link.source.id || link.source;
+            const targetId = link.target.id || link.target;
+            if (sourceId === centerNode.id || targetId === centerNode.id) {
+                neighborNodeIds.add(sourceId);
+                neighborNodeIds.add(targetId);
+                highlightedLinkSet.add(link);
+                const sourceNode = allNodesData.find(n => n.id === sourceId);
+                const targetNode = allNodesData.find(n => n.id === targetId);
+                if (sourceNode) sourceNode.isNeighbor = true;
+                if (targetNode) targetNode.isNeighbor = true;
+            }
+        });
+        const centerNodeInData = allNodesData.find(n => n.id === centerNode.id);
+        if (centerNodeInData) centerNodeInData.isNeighbor = true;
+
+
+        allNodesData.forEach(n => { // Set dimmed state based on neighborhood
+            n.isDimmed = doHighlight && !neighborNodeIds.has(n.id);
+        });
+
+
+        nodeElements
+            .classed("dimmed", d => d.isDimmed)
+            .classed("highlighted", d => doHighlight && neighborNodeIds.has(d.id))
+            .select("circle") // Ensure circle opacity is also affected if needed or handled by CSS
+            .style("opacity", d => d.isDimmed ? 0.15 : 1);
+
+
+        labelElements
+            .classed("dimmed", d => d.isDimmed)
+            .style("opacity", getLabelOpacity); // Recalculate opacity based on new states
+
+        linkElements
+            .classed("highlighted-link", l => doHighlight && highlightedLinkSet.has(l))
+            .style("stroke-opacity", l => (doHighlight && !highlightedLinkSet.has(l)) ? 0.05 : 0.4);
+    }
+
+
+    function clearHighlights() {
+        if (!nodeElements || !labelElements || !linkElements) return;
+        allNodesData.forEach(n => {
+            n.isNeighbor = false;
+            n.isHovered = false;
+            n.isDimmed = false;
+        });
+        nodeElements.classed("dimmed", false).classed("highlighted", false)
+            .select("circle").style("opacity", 1);
+        labelElements.classed("dimmed", false).style("opacity", getLabelOpacity);
+        linkElements.classed("highlighted-link", false).style("stroke-opacity", 0.4);
+    }
+
+
+    function handleSearch() {
+        const searchInput = document.getElementById('search-input');
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const clearButton = document.getElementById('clear-search-button');
+
+        // 只有在有搜索词并且执行搜索时才显示清除按钮
+        if (searchTerm.length > 0) {
+            isSearchActive = true;
+            clearButton.style.display = 'inline-block';  // 显示清除按钮
+        } else {
+            // 如果搜索词为空，重置状态
+            isSearchActive = false;
+            clearButton.style.display = 'none';
+            clearSearch();  // 清除搜索状态
+            return;
+        }
+
+        applyFilters();
+
+        if (searchTerm) {
+            const firstMatch = currentNodes.find(n =>
+                n.label.toLowerCase().includes(searchTerm) ||
+                n.type.toLowerCase().includes(searchTerm) ||
+                n.id.toLowerCase().includes(searchTerm) ||
+                (n.properties && Object.values(n.properties).some(val =>
+                    String(val).toLowerCase().includes(searchTerm)
+                ))
+            );
+
+            if (firstMatch) {
+                activeNode = firstMatch;
+                centerOnNode(firstMatch, true);
+                updateNodeSelectionStyles();
+                showNodeDetailModal(firstMatch);
+            } else {
+                clearHighlights();
+                activeNode = null;
+                updateNodeSelectionStyles();
+                showNodeDetailModal(null);
+                console.log(`未找到包含 "${searchTerm}" 的节点`);
+            }
+        }
+    }
+
+
+    function clearSearch() {
+        const searchInput = document.getElementById('search-input');
+        const clearButton = document.getElementById('clear-search-button');
+
+        if (searchInput) searchInput.value = "";
+        if (clearButton) clearButton.style.display = 'none';
+        isSearchActive = false; // 重置搜索状态
+
+        // 重新应用过滤器（不带搜索条件）
+        applyFilters();
+        clearHighlights();
+        activeNode = null;
+        updateNodeSelectionStyles();
+        showNodeDetailModal(null);
+
+        // 确保搜索框失去焦点
+        if (searchInput) searchInput.blur();
+    }
+
+    function toggleCategoryFilter(category) {
+        const checkbox = document.getElementById(`filter-${category.replace(/\s+/g, '-')}`);
+        if (checkbox) checkbox.checked = !checkbox.checked;
+        applyFilters();
+        d3.selectAll(".legend-item").classed("disabled", function () {
+            const cat = d3.select(this).datum();
+            const filterCheckbox = document.getElementById(`filter-${cat.replace(/\s+/g, '-')}`);
+            return filterCheckbox ? !filterCheckbox.checked : true;
+        });
+    }
+
+    function applyFilters() { // This function is critical for search and category filters
+        const activeCategoryFilters = new Set();
+        document.querySelectorAll('#filter-container input[type="checkbox"]:checked').forEach(cb => {
+            activeCategoryFilters.add(cb.value);
+        });
+        const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
+
+        // Filter from allNodesData
+        currentNodes = allNodesData.filter(n => {
+            const typeMatch = activeCategoryFilters.size === 0 || activeCategoryFilters.has(n.type);
+            const searchMatch = searchTerm === "" ||
+                n.label.toLowerCase().includes(searchTerm) ||
+                n.type.toLowerCase().includes(searchTerm) ||
+                n.id.toLowerCase().includes(searchTerm) ||
+                (n.properties && Object.values(n.properties).some(val => String(val).toLowerCase().includes(searchTerm)));
+            return typeMatch && searchMatch;
+        });
+
+        const currentNodeIds = new Set(currentNodes.map(n => n.id));
+        currentLinks = allLinksData.filter(l =>
+            currentNodeIds.has(l.source.id || l.source) && currentNodeIds.has(l.target.id || l.target)
+        );
+
+        // If a node was active, check if it's still in currentNodes. If not, deactivate it.
+        if (activeNode && !currentNodes.find(n => n.id === activeNode.id)) {
+            activeNode.isSelected = false; // Deselect if filtered out
+            activeNode = null;
+            showNodeDetailModal(null);
+            // Do not clear all highlights here, as search might want to highlight something new.
+            // Instead, rely on search to re-highlight or clear.
+        }
+
+
+        renderGraph(); // Re-render with filtered data
+        updateStats(); // Update stats based on filtered data
+
+        if (simulation && config.chargeEnabled) {
+            simulation.alpha(0.3).restart();
+        }
+
+        // If search term is active, it might override general highlighting
+        // But applyFilters is called by search itself, so the search highlight logic will take precedence
+        if (!searchTerm && activeNode) {
+            highlightConnected(activeNode, true); // Re-apply highlight if an active node exists and no search term
+        } else if (!searchTerm && !activeNode) {
+            clearHighlights(); // Clear if no active node and no search term
+        }
+        updateNodeSelectionStyles(); // ensure styles are consistent
+    }
+
+
+    function resetAllFilters() {
+        document.querySelectorAll('#filter-container input[type="checkbox"]').forEach(cb => cb.checked = true);
+        d3.selectAll(".legend-item").classed("disabled", false);
+        clearSearch(); // This will also call applyFilters and clearHighlights
+    }
+
+
+    function showLoadingIndicator(show, message = "加载中...") {
+        const indicator = document.getElementById('loading-indicator');
+        if (!indicator) return;
+
+        if (show) {
+            indicator.style.display = 'flex';
+            indicator.querySelector('.mt-2.fw-medium').textContent = message;
+        } else {
+            indicator.style.display = 'none';
+        }
+    }
+
+    function setGraphDimensions() {
+        const container = document.getElementById('graph-container');
+        if (!container) return;
+        // const controlsHeight = document.getElementById('graph-controls').offsetHeight;
+        width = container.clientWidth;
+        height = container.clientHeight;
+        if (svg) svg.attr("viewBox", `0 0 ${width} ${height}`);
+
+        if (simulation) {
+            simulation.force("center", d3.forceCenter(width / 2, height / 2));
+            if (config.chargeEnabled && currentNodes.length > 0) simulation.alpha(0.1).restart();
+        }
+    }
+
+    function centerOnNode(d, doHighlight = false) {
+        if (!d || typeof d.x === 'undefined' || typeof d.y === 'undefined' || !svg) return;
+        const scale = currentTransform.k > 1.5 ? currentTransform.k : 1.5; // Ensure a minimum zoom level
+        svg.transition().duration(750)
+            .call(zoomBehavior.transform, d3.zoomIdentity.translate(width / 2 - d.x * scale, height / 2 - d.y * scale).scale(scale));
+
+        // Update activeNode and styles regardless of doHighlight, but only highlight if requested
+        const previouslyActiveNode = activeNode;
+        activeNode = d; // d is the node to be centered and potentially highlighted
+
+        if (previouslyActiveNode && previouslyActiveNode !== activeNode) {
+            previouslyActiveNode.isSelected = false;
+        }
+        if (activeNode) {
+            activeNode.isSelected = true;
+        }
+        updateNodeSelectionStyles(); // Update styles for selection (e.g., border)
+
+        if (doHighlight) {
+            highlightConnected(activeNode, true); // Highlight connections
+        }
+    }
+
+
+    function zoomToFit(duration = 750) {
+        if (!currentNodes.length || !zoomLayer || zoomLayer.empty() || !svg) return;
+        const bounds = zoomLayer.node().getBBox();
+        const fullWidth = width;
+        const fullHeight = height;
+
+        if (bounds.width === 0 || bounds.height === 0) { // No visible elements
+            svg.transition().duration(duration).call(zoomBehavior.transform, d3.zoomIdentity); // Reset to default
+            return;
+        }
+        const midX = bounds.x + bounds.width / 2;
+        const midY = bounds.y + bounds.height / 2;
+
+
+        const scale = Math.min(fullWidth / bounds.width, fullHeight / bounds.height) * 0.9;
+        const newTransform = d3.zoomIdentity
+            .translate(fullWidth / 2 - midX * scale, fullHeight / 2 - midY * scale)
+            .scale(scale);
+
+        svg.transition().duration(duration).call(zoomBehavior.transform, newTransform);
+    }
+
+
+    function showNodeDetailModal(d) {
+        if (!d) {
+            nodeDetailModalInstance.hide();
+            return;
+        }
+        document.getElementById('modal-node-title').textContent = d.label;
+        document.getElementById('modal-node-id').textContent = d.id;
+        document.getElementById('modal-node-label').textContent = d.label;
+        document.getElementById('modal-node-type').textContent = d.type;
+        const iconEl = document.getElementById('modal-node-icon');
+        iconEl.style.backgroundColor = getNodeColor(d);
+
+        const relationsContainer = document.getElementById('modal-node-relations');
+        relationsContainer.innerHTML = "";
+        let relationsCount = 0;
+        // Use allLinksData to find all potential relations, then filter if the other node is in currentNodes
+        const relatedLinks = allLinksData.filter(l => {
+            const sourceId = l.source.id || l.source;
+            const targetId = l.target.id || l.target;
+            return sourceId === d.id || targetId === d.id;
+        });
+
+        relationsCount = relatedLinks.length;
+        if (relatedLinks.length > 0) {
+            const ul = document.createElement('ul');
+            ul.className = 'list-group list-group-flush';
+            relatedLinks.slice(0, 10).forEach(l => { // Show max 10 relations
+                const isOutgoing = (l.source.id || l.source) === d.id;
+                const otherNodeId = isOutgoing ? (l.target.id || l.target) : (l.source.id || l.source);
+                const otherNode = allNodesData.find(n => n.id === otherNodeId); // Find in all data
+                if (otherNode) {
+                    const li = document.createElement('li');
+                    li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                    li.innerHTML = `
+                        <div>
+                            <span class="badge bg-light text-dark border me-1">${l.type}</span>
+                            <small>${isOutgoing ? '<i class="fas fa-arrow-right text-muted fa-xs"></i>' : '<i class="fas fa-arrow-left text-muted fa-xs"></i>'} ${otherNode.label}</small>
+                        </div>
+                        <span style="display:inline-block; width:10px; height:10px; background-color:${getNodeColor(otherNode)}; border-radius:50%;"></span>`;
+                    ul.appendChild(li);
+                }
+            });
+            relationsContainer.appendChild(ul);
+            if (relatedLinks.length > 10) relationsContainer.innerHTML += `<small class="d-block text-muted mt-1">...以及其他 ${relatedLinks.length - 10} 个关系。</small>`;
+        } else {
+            relationsContainer.innerHTML = "<small class='text-muted'>无直接关联关系。</small>";
+        }
+        document.getElementById('modal-relations-count').textContent = relationsCount;
+
+        document.getElementById('modal-node-properties').textContent = JSON.stringify(d.properties, null, 2);
+        if (!nodeDetailModalInstance._element.classList.contains('show')) {
+            nodeDetailModalInstance.show();
+        }
+    }
+
+    function toggleFullscreen() {
+        const elem = document.documentElement;
+        if (!document.fullscreenElement) {
+            elem.requestFullscreen().catch(err => console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`));
+        } else {
+            document.exitFullscreen();
+        }
+    }
+
+    function handleFullscreenChange() {
+        const btn = document.getElementById('fullscreen-button');
+        const icon = btn.querySelector('i');
+        if (document.fullscreenElement) {
+            icon.classList.remove('fa-expand');
+            icon.classList.add('fa-compress');
+            btn.title = "退出全屏";
+        } else {
+            icon.classList.remove('fa-compress');
+            icon.classList.add('fa-expand');
+            btn.title = "全屏";
+        }
+        setTimeout(setGraphDimensions, 100); // Re-calculate dimensions after fullscreen change
+    }
+
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // 确认设置按钮点击事件
+    document.getElementById('confirm-settings-button').addEventListener('click', async () => {
+        const domainInput = document.getElementById('domain-input');
+        const rootTypeInput = document.getElementById('root-type-input');
+        const domain = domainInput.value.trim();
+        const rootType = rootTypeInput.value.trim();
+        let hasError = false;
+
+        // 重置错误状态
+        domainInput.classList.remove('is-invalid');
+        rootTypeInput.classList.remove('is-invalid');
+
+        // 验证领域名称
+        if (!domain) {
+            domainInput.classList.add('is-invalid');
+            hasError = true;
+        }
+
+        // 验证根节点类型
+        if (!rootType) {
+            rootTypeInput.classList.add('is-invalid');
+            hasError = true;
+        }
+
+        if (hasError) {
+            return;
+        }
+
+        // 关闭模态框
+        settingsModalInstance.hide();
+
+        // 保存原始按钮状态
+        const originalButtonIconHTML = generateKgButton.querySelector('.button-icon').innerHTML;
+        const originalButtonTextContent = generateKgButton.querySelector('.button-text').textContent;
+
+        // 更新按钮状态
+        generateKgButton.querySelector('.button-icon').innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>';
+        generateKgButton.querySelector('.button-text').textContent = '生成中...';
+        generateKgButton.disabled = true;
+        ontologyFileInput.disabled = true;
+
+        const formData = new FormData();
+        formData.append('ontology_file', selectedOntologyFile);
+        formData.append('domain_name', domain);
+        formData.append('root_type', rootType);
+
+        try {
+            const response = await fetch('/upload-ontology-and-generate-kg', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.kg_path) {
+                // 使用 Bootstrap toast 显示成功消息
+                const toast = new bootstrap.Toast(document.getElementById('success-toast'));
+                document.getElementById('toast-message').textContent = result.message || '知识图谱生成成功！';
+                toast.show();
+
+                await populateKgSelector();
+                const kgFileName = result.kg_path.split('/').pop();
+                const displayName = kgFileName.replace(/_kg\.json$/i, '').replace(/\.json$/i, '');
+                document.getElementById('kg-display').value = displayName;
+                localStorage.setItem('selectedKgPath', result.kg_path);
+                loadGraphData(result.kg_path);
+            } else {
+                // 显示错误消息在模态框中
+                const errorMessage = result.error || '未知服务器错误';
+                if (errorMessage.includes('根节点类型')) {
+                    rootTypeInput.classList.add('is-invalid');
+                    document.getElementById('root-type-error').textContent = errorMessage;
+                } else {
+                    domainInput.classList.add('is-invalid');
+                    document.getElementById('domain-error').textContent = errorMessage;
+                }
+                settingsModalInstance.show();
+            }
+        } catch (error) {
+            // 显示错误消息在模态框中
+            domainInput.classList.add('is-invalid');
+            document.getElementById('domain-error').textContent = `请求失败: ${error.message}`;
+            settingsModalInstance.show();
+            console.error("Error triggering KG generation:", error);
+        } finally {
+            // 恢复按钮状态
+            generateKgButton.querySelector('.button-icon').innerHTML = originalButtonIconHTML;
+            generateKgButton.querySelector('.button-text').textContent = originalButtonTextContent;
+            generateKgButton.disabled = false;
+            ontologyFileInput.disabled = false;
+            ontologyFileInput.value = "";
+            selectedOntologyFile = null;
+            generateKgButton.disabled = true;
+
+            // 清空文件名显示框
+            document.getElementById('ontology-file-name').value = "";
+            // 清空设置表单
+            document.getElementById('settings-form').reset();
+        }
+    });
+
+
+    // 选择文件按钮美化逻辑
+    document.getElementById('custom-file-btn').onclick = function () {
+        document.getElementById('ontology-file-input').click();
+    };
+    document.getElementById('ontology-file-input').onchange = function (e) {
+        const file = e.target.files[0];
+        document.getElementById('ontology-file-name').value = file ? file.name : '';
+        selectedOntologyFile = file;
+        generateKgButton.disabled = !selectedOntologyFile;
+    };
+
+</script>
+</body>
+</html>

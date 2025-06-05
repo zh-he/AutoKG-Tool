@@ -1,0 +1,138 @@
+{
+  "entity_types": [
+    {
+      "type": "natural_language_processing",
+      "description": "自然语言处理"
+    },
+    {
+      "type": "technique",
+      "description": "技术方法"
+    },
+    {
+      "type": "task",
+      "description": "NLP任务"
+    },
+    {
+      "type": "model",
+      "description": "模型"
+    },
+    {
+      "type": "dataset",
+      "description": "数据集"
+    },
+    {
+      "type": "evaluation_metric",
+      "description": "评估指标"
+    },
+    {
+      "type": "subfield",
+      "description": "子领域"
+    }
+  ],
+  "relationships": [
+    {
+      "src_type": "natural_language_processing",
+      "tgt_type": "subfield",
+      "relation": "includes",
+      "description": "自然语言处理包含多个子领域"
+    },
+    {
+      "src_type": "natural_language_processing",
+      "tgt_type": "task",
+      "relation": "involves",
+      "description": "自然语言处理涉及多种任务"
+    },
+    {
+      "src_type": "subfield",
+      "tgt_type": "task",
+      "relation": "focuses_on",
+      "description": "子领域专注于特定任务"
+    },
+    {
+      "src_type": "subfield",
+      "tgt_type": "technique",
+      "relation": "employs",
+      "description": "子领域采用特定技术"
+    },
+    {
+      "src_type": "model",
+      "tgt_type": "task",
+      "relation": "performs",
+      "description": "模型执行特定任务"
+    },
+    {
+      "src_type": "model",
+      "tgt_type": "technique",
+      "relation": "uses",
+      "description": "模型使用特定技术"
+    },
+    {
+      "src_type": "model",
+      "tgt_type": "dataset",
+      "relation": "trained_on",
+      "description": "模型在特定数据集上训练"
+    },
+    {
+      "src_type": "model",
+      "tgt_type": "evaluation_metric",
+      "relation": "evaluated_by",
+      "description": "模型由特定指标评估"
+    },
+    {
+      "src_type": "task",
+      "tgt_type": "evaluation_metric",
+      "relation": "measured_by",
+      "description": "任务由特定指标衡量"
+    },
+    {
+      "src_type": "task",
+      "tgt_type": "dataset",
+      "relation": "uses",
+      "description": "任务使用特定数据集"
+    },
+    {
+      "src_type": "technique",
+      "tgt_type": "task",
+      "relation": "addresses",
+      "description": "技术方法解决特定任务"
+    }
+  ],
+  "properties": {
+    "natural_language_processing": [
+      "description"
+    ],
+    "technique": [
+      "name",
+      "description",
+      "year_introduced"
+    ],
+    "task": [
+      "name",
+      "description",
+      "difficulty",
+      "applications"
+    ],
+    "model": [
+      "name",
+      "description",
+      "release_date",
+      "architecture_type"
+    ],
+    "dataset": [
+      "name",
+      "description",
+      "language"
+    ],
+    "evaluation_metric": [
+      "name",
+      "description",
+      "range"
+    ],
+    "subfield": [
+      "name",
+      "description",
+      "emergence_year",
+      "main_tasks"
+    ]
+  }
+}

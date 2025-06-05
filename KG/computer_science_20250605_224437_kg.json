@@ -1,0 +1,155 @@
+{
+  "nodes": {
+    "N_ee69e4e08d004ecdbc592d81cad89ad7": {
+      "id": "N_ee69e4e08d004ecdbc592d81cad89ad7",
+      "label": "计算机科学",
+      "type": "computer_science",
+      "color": "#e54444",
+      "properties": {
+        "description": "计算机科学是研究计算机及其各种方面的科学领域，包括理论、算法、硬件、软件、人工智能、数据结构和系统设计等。"
+      }
+    },
+    "N_a02e090916ab42c692bc3098134f588b": {
+      "id": "N_a02e090916ab42c692bc3098134f588b",
+      "label": "人工智能",
+      "type": "sub_domain",
+      "properties": {
+        "description": "人工智能是计算机科学的一个子领域，致力于研究和开发能够模拟、延伸和扩展人类智能的理论、方法、技术及应用系统。"
+      },
+      "color": "#4473e5"
+    },
+    "N_df4fc62c28bd4c8daefd4cd3845e1b67": {
+      "id": "N_df4fc62c28bd4c8daefd4cd3845e1b67",
+      "label": "计算机网络",
+      "type": "sub_domain",
+      "properties": {
+        "description": "计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统、网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统。"
+      },
+      "color": "#4473e5"
+    },
+    "N_994ce9970b3449c58efca4ec40ae19a6": {
+      "id": "N_994ce9970b3449c58efca4ec40ae19a6",
+      "label": "数据库系统",
+      "type": "sub_domain",
+      "properties": {
+        "description": "数据库系统是计算机科学的一个子领域，专注于研究数据的存储、组织、检索和管理技术，包括关系型数据库、NoSQL数据库、分布式数据库等系统及其理论、设计和实现。"
+      },
+      "color": "#4473e5"
+    },
+    "N_6481e36423ab4b089e0e3f4d8c390c07": {
+      "id": "N_6481e36423ab4b089e0e3f4d8c390c07",
+      "label": "软件工程",
+      "type": "sub_domain",
+      "properties": {
+        "description": "软件工程是计算机科学的一个子领域，专注于系统地开发、运行和维护软件系统。它涉及应用工程原理、方法和技术来解决软件问题，并确保软件的质量、可靠性和可维护性。"
+      },
+      "color": "#4473e5"
+    },
+    "N_e3d8deec2e604324b95766536c114129": {
+      "id": "N_e3d8deec2e604324b95766536c114129",
+      "label": "计算机图形学",
+      "type": "sub_domain",
+      "properties": {
+        "description": "计算机图形学是研究计算机生成和操作视觉内容的科学和技术领域，涉及图像合成、处理、显示以及人机交互等方面。"
+      },
+      "color": "#4473e5"
+    },
+    "N_e7344718ab344e2884ce64dbc76fbcd7": {
+      "id": "N_e7344718ab344e2884ce64dbc76fbcd7",
+      "label": "信息安全",
+      "type": "sub_domain",
+      "properties": {
+        "description": "信息安全是计算机科学的一个子领域，主要研究保护信息系统免受未经授权的访问、使用、披露、破坏、修改或破坏的技术、实践和管理措施。"
+      },
+      "color": "#4473e5"
+    },
+    "N_bcaad42d6a3c4950851f4f6531bed074": {
+      "id": "N_bcaad42d6a3c4950851f4f6531bed074",
+      "label": "算法与数据结构",
+      "type": "sub_domain",
+      "properties": {
+        "description": "算法与数据结构是计算机科学的核心子领域，研究数据的组织、存储和操作方式，以及解决问题的有效步骤和计算方法。"
+      },
+      "color": "#4473e5"
+    },
+    "N_1371bd35974345ab98abed2a55650c60": {
+      "id": "N_1371bd35974345ab98abed2a55650c60",
+      "label": "编程语言理论",
+      "type": "sub_domain",
+      "properties": {
+        "description": "编程语言理论是计算机科学的一个子领域，研究编程语言的设计、实现、分析、特性和分类。它涉及形式语法、语义、类型系统、编译器构造和编程范型等核心概念，旨在提高编程语言的表达力、安全性和效率。"
+      },
+      "color": "#4473e5"
+    },
+    "N_289c96a17ae7438d960e0ef2c5d63a14": {
+      "id": "N_289c96a17ae7438d960e0ef2c5d63a14",
+      "label": "计算机体系结构",
+      "type": "sub_domain",
+      "properties": {
+        "description": "计算机体系结构是计算机科学的一个子领域，主要研究计算机系统的设计和组织结构，包括指令集架构、微架构、系统架构等方面，旨在优化性能、功耗、成本等关键指标。"
+      },
+      "color": "#4473e5"
+    },
+    "N_a208a9f9eb6c448f83040a1c3fa4b026": {
+      "id": "N_a208a9f9eb6c448f83040a1c3fa4b026",
+      "label": "分布式计算",
+      "type": "sub_domain",
+      "properties": {
+        "description": "分布式计算是计算机科学的一个子领域，研究如何将计算任务分布在多个计算节点上协同完成，以提高性能、可靠性和可扩展性。"
+      },
+      "color": "#4473e5"
+    }
+  },
+  "relationships": [
+    {
+      "src_id": "N_ee69e4e08d004ecdbc592d81cad89ad7",
+      "tgt_id": "N_a02e090916ab42c692bc3098134f588b",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_ee69e4e08d004ecdbc592d81cad89ad7",
+      "tgt_id": "N_df4fc62c28bd4c8daefd4cd3845e1b67",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_ee69e4e08d004ecdbc592d81cad89ad7",
+      "tgt_id": "N_994ce9970b3449c58efca4ec40ae19a6",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_ee69e4e08d004ecdbc592d81cad89ad7",
+      "tgt_id": "N_6481e36423ab4b089e0e3f4d8c390c07",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_ee69e4e08d004ecdbc592d81cad89ad7",
+      "tgt_id": "N_e3d8deec2e604324b95766536c114129",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_ee69e4e08d004ecdbc592d81cad89ad7",
+      "tgt_id": "N_e7344718ab344e2884ce64dbc76fbcd7",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_ee69e4e08d004ecdbc592d81cad89ad7",
+      "tgt_id": "N_bcaad42d6a3c4950851f4f6531bed074",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_ee69e4e08d004ecdbc592d81cad89ad7",
+      "tgt_id": "N_1371bd35974345ab98abed2a55650c60",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_ee69e4e08d004ecdbc592d81cad89ad7",
+      "tgt_id": "N_289c96a17ae7438d960e0ef2c5d63a14",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_ee69e4e08d004ecdbc592d81cad89ad7",
+      "tgt_id": "N_a208a9f9eb6c448f83040a1c3fa4b026",
+      "type": "has_subdomain"
+    }
+  ]
+}

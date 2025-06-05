@@ -1,0 +1,3954 @@
+{
+  "nodes": {
+    "N_1bde9b24436f474888d688f27aed0d8c": {
+      "id": "N_1bde9b24436f474888d688f27aed0d8c",
+      "label": "数学",
+      "type": "math",
+      "color": "#e54444",
+      "properties": {
+        "description": "数学是研究数量、结构、变化、空间以及信息等概念的一门学科，通过抽象化和逻辑推理的使用，由计数、计算、量度和对物体形状及运动的观察而产生。",
+        "history": "数学的历史可以追溯到远古时代，最早的数学活动包括计数、测量和描述物体的形状。古埃及、巴比伦、印度和中国等文明在数学发展上都有重要贡献。古希腊数学在欧几里得的《几何原本》中达到了高峰，奠定了现代数学的基础。中世纪和文艺复兴时期，数学在欧洲和伊斯兰世界继续发展。17世纪，微积分的发明标志着现代数学的开始。19世纪和20世纪，数学经历了快速扩展和专业化，形成了众多分支学科。"
+      }
+    },
+    "N_64d357ca26894e85a1382cceb2ee4a69": {
+      "id": "N_64d357ca26894e85a1382cceb2ee4a69",
+      "label": "代数",
+      "type": "sub_domain",
+      "properties": {
+        "description": "代数是数学的一个分支，研究数、数量、关系、结构与代数方程的解法。",
+        "difficulty_level": "中等"
+      },
+      "color": "#4473e5"
+    },
+    "N_b7d20fb520d343a0be24a8048e6eeccc": {
+      "id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "label": "几何",
+      "type": "sub_domain",
+      "properties": {
+        "description": "几何是数学的一个分支，研究空间、形状、大小以及图形的相对位置等性质。",
+        "difficulty_level": "中等"
+      },
+      "color": "#4473e5"
+    },
+    "N_d67e3abd29ab43a8859e4c0f7b55e6e0": {
+      "id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "label": "数论",
+      "type": "sub_domain",
+      "properties": {
+        "description": "数论是研究整数及其性质的数学分支，主要研究整数的结构、分布和相互关系。",
+        "difficulty_level": "中等"
+      },
+      "color": "#4473e5"
+    },
+    "N_1b7f8d6ab0244c2fb276ebbc96f6997c": {
+      "id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "label": "拓扑学",
+      "type": "sub_domain",
+      "properties": {
+        "description": "拓扑学是数学的一个分支，研究在连续变形下保持不变的几何性质，如连通性和紧致性。",
+        "difficulty_level": "高"
+      },
+      "color": "#4473e5"
+    },
+    "N_c49475f1ddfe4572ac7b66818b343708": {
+      "id": "N_c49475f1ddfe4572ac7b66818b343708",
+      "label": "概率论",
+      "type": "sub_domain",
+      "properties": {
+        "description": "概率论是数学的一个分支，研究随机现象的统计规律性，包括概率、随机变量、概率分布、期望、方差等概念及其应用。",
+        "difficulty_level": "中等"
+      },
+      "color": "#4473e5"
+    },
+    "N_2243854b67ed43a98edc6f4e1770a4d7": {
+      "id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "label": "统计学",
+      "type": "sub_domain",
+      "properties": {
+        "description": "统计学是数学的一个分支，涉及数据的收集、分析、解释、呈现和组织。",
+        "difficulty_level": "中等"
+      },
+      "color": "#4473e5"
+    },
+    "N_87efcc8ac04345a19543e8791749ec25": {
+      "id": "N_87efcc8ac04345a19543e8791749ec25",
+      "label": "微积分",
+      "type": "sub_domain",
+      "properties": {
+        "description": "研究函数的微分和积分的数学分支，主要研究变化率和累积量",
+        "difficulty_level": "中等"
+      },
+      "color": "#4473e5"
+    },
+    "N_134b99b292614a818f6abc2abafa86cb": {
+      "id": "N_134b99b292614a818f6abc2abafa86cb",
+      "label": "离散数学",
+      "type": "sub_domain",
+      "properties": {
+        "description": "离散数学是研究离散对象及其性质的数学分支，主要包含集合论、图论、逻辑、组合数学等内容，广泛应用于计算机科学等领域。",
+        "difficulty_level": "中等"
+      },
+      "color": "#4473e5"
+    },
+    "N_9a71ca78a538453bb32f1d4d4214cfa8": {
+      "id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "label": "数学分析",
+      "type": "sub_domain",
+      "properties": {
+        "description": "数学分析是数学的一个分支，主要研究实数、复数以及函数的极限、连续性、微分和积分等概念及其应用。",
+        "difficulty_level": "高"
+      },
+      "color": "#4473e5"
+    },
+    "N_9a9fcc26c59c4c7c95cd5dc4539cc52c": {
+      "id": "N_9a9fcc26c59c4c7c95cd5dc4539cc52c",
+      "label": "应用数学",
+      "type": "sub_domain",
+      "properties": {
+        "description": "应用数学是数学的一个分支，主要研究数学在其他学科和实际生活中的应用，包括物理学、工程学、计算机科学、经济学等领域。",
+        "difficulty_level": "中等"
+      },
+      "color": "#4473e5"
+    },
+    "N_c530a4e52d784ad19c809303e2452d68": {
+      "id": "N_c530a4e52d784ad19c809303e2452d68",
+      "label": "埃米·诺特",
+      "type": "mathematician",
+      "properties": {
+        "name": "埃米·诺特",
+        "birth_year": "1882",
+        "nationality": "德国",
+        "contributions": "诺特定理、抽象代数、环论"
+      },
+      "color": "#a2e544"
+    },
+    "N_21476d0161d3415abb84c921e8821823": {
+      "id": "N_21476d0161d3415abb84c921e8821823",
+      "label": "埃瓦里斯特·伽罗瓦",
+      "type": "mathematician",
+      "properties": {
+        "name": "埃瓦里斯特·伽罗瓦",
+        "birth_year": "1811",
+        "nationality": "法国",
+        "contributions": "群论、伽罗瓦理论"
+      },
+      "color": "#a2e544"
+    },
+    "N_638f6db851b44287bb45b52f332c577e": {
+      "id": "N_638f6db851b44287bb45b52f332c577e",
+      "label": "尼尔斯·阿贝尔",
+      "type": "mathematician",
+      "properties": {
+        "name": "尼尔斯·阿贝尔",
+        "birth_year": "1802",
+        "nationality": "挪威",
+        "contributions": "阿贝尔积分、阿贝尔定理、阿贝尔群"
+      },
+      "color": "#a2e544"
+    },
+    "N_df0f511cfb2f4c4cb152bd5db7a8b902": {
+      "id": "N_df0f511cfb2f4c4cb152bd5db7a8b902",
+      "label": "卡尔·弗里德里希·高斯",
+      "type": "mathematician",
+      "properties": {
+        "name": "卡尔·弗里德里希·高斯",
+        "birth_year": "1777",
+        "nationality": "德国",
+        "contributions": "数论、微分几何、统计学、天文学、大地测量学"
+      },
+      "color": "#a2e544"
+    },
+    "N_77318de265fb481987c18cc65ae4815c": {
+      "id": "N_77318de265fb481987c18cc65ae4815c",
+      "label": "代数基本定理",
+      "type": "theorem",
+      "properties": {
+        "name": "代数基本定理",
+        "proof_year": "1799",
+        "importance": "高",
+        "applications": "多项式方程、复分析、代数几何"
+      },
+      "color": "#e544d1"
+    },
+    "N_f9e54ceb05a0460a903172eb54ac8615": {
+      "id": "N_f9e54ceb05a0460a903172eb54ac8615",
+      "label": "伽罗瓦理论",
+      "type": "theorem",
+      "properties": {
+        "name": "伽罗瓦理论",
+        "proof_year": "1832",
+        "importance": "高",
+        "applications": "代数方程的可解性、域论、数论"
+      },
+      "color": "#e544d1"
+    },
+    "N_bc3cfe72ec944917a24e9d0046a2e2e5": {
+      "id": "N_bc3cfe72ec944917a24e9d0046a2e2e5",
+      "label": "诺特定理",
+      "type": "theorem",
+      "properties": {
+        "name": "诺特定理",
+        "proof_year": "1918",
+        "importance": "high",
+        "applications": "理论物理学, 守恒定律, 对称性研究"
+      },
+      "color": "#e544d1"
+    },
+    "N_0322708292434c5fbbefb56d8a826861": {
+      "id": "N_0322708292434c5fbbefb56d8a826861",
+      "label": "中国剩余定理",
+      "type": "theorem",
+      "properties": {
+        "name": "中国剩余定理",
+        "proof_year": "约公元3世纪",
+        "importance": "高",
+        "applications": "密码学、计算机科学、数论"
+      },
+      "color": "#e544d1"
+    },
+    "N_5dee1271e66a40bfa4bb817259d326cf": {
+      "id": "N_5dee1271e66a40bfa4bb817259d326cf",
+      "label": "哈密顿-凯莱定理",
+      "type": "theorem",
+      "properties": {
+        "name": "哈密顿-凯莱定理",
+        "proof_year": "1853",
+        "importance": "high",
+        "applications": "线性代数、矩阵理论、特征多项式分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_c453751ec2b94bb2aaf6dfc8dc9aad6e": {
+      "id": "N_c453751ec2b94bb2aaf6dfc8dc9aad6e",
+      "label": "罗巴切夫斯基",
+      "type": "mathematician",
+      "properties": {
+        "name": "罗巴切夫斯基",
+        "birth_year": "1792",
+        "nationality": "俄罗斯",
+        "contributions": "非欧几何（罗巴切夫斯基几何）"
+      },
+      "color": "#a2e544"
+    },
+    "N_f679dfcf4df740b89d9623e866b3996f": {
+      "id": "N_f679dfcf4df740b89d9623e866b3996f",
+      "label": "庞加莱",
+      "type": "mathematician",
+      "properties": {
+        "name": "庞加莱",
+        "birth_year": "1854",
+        "nationality": "法国",
+        "contributions": "庞加莱猜想, 拓扑学, 混沌理论"
+      },
+      "color": "#a2e544"
+    },
+    "N_618d958e909f4b198cbf79d40dde866f": {
+      "id": "N_618d958e909f4b198cbf79d40dde866f",
+      "label": "克莱因",
+      "type": "mathematician",
+      "properties": {
+        "name": "Felix Klein",
+        "birth_year": "1849",
+        "nationality": "German",
+        "contributions": "Klein bottle, Erlangen program, function theory"
+      },
+      "color": "#a2e544"
+    },
+    "N_6ceb54de873d489f968011452265dcfa": {
+      "id": "N_6ceb54de873d489f968011452265dcfa",
+      "label": "费马",
+      "type": "mathematician",
+      "properties": {
+        "name": "皮埃尔·德·费马",
+        "birth_year": "1601",
+        "nationality": "法国",
+        "contributions": "费马大定理、费马小定理、解析几何、概率论"
+      },
+      "color": "#a2e544"
+    },
+    "N_9daef2bf4d6d453c9c433ee9fa855f67": {
+      "id": "N_9daef2bf4d6d453c9c433ee9fa855f67",
+      "label": "勾股定理",
+      "type": "theorem",
+      "properties": {
+        "name": "勾股定理",
+        "proof_year": "约公元前500年",
+        "importance": "高",
+        "applications": "几何学、三角学、物理学、工程学"
+      },
+      "color": "#e544d1"
+    },
+    "N_b1bd8ceb48e047a3a8761f4dcd312c7f": {
+      "id": "N_b1bd8ceb48e047a3a8761f4dcd312c7f",
+      "label": "余弦定理",
+      "type": "theorem",
+      "properties": {
+        "name": "余弦定理",
+        "proof_year": "未知",
+        "importance": "高",
+        "applications": "三角形边长和角度计算、导航、物理中的向量分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_b95e4df159244f4da9f495f9589743ba": {
+      "id": "N_b95e4df159244f4da9f495f9589743ba",
+      "label": "正弦定理",
+      "type": "theorem",
+      "properties": {
+        "name": "正弦定理",
+        "proof_year": "未知",
+        "importance": "高",
+        "applications": "三角形边长和角度计算"
+      },
+      "color": "#e544d1"
+    },
+    "N_f11abd596e32491bbf8eac76bb56737a": {
+      "id": "N_f11abd596e32491bbf8eac76bb56737a",
+      "label": "毕达哥拉斯定理",
+      "type": "theorem",
+      "properties": {
+        "name": "毕达哥拉斯定理",
+        "proof_year": "约公元前500年",
+        "importance": "高",
+        "applications": "几何学、三角学、物理学、工程学"
+      },
+      "color": "#e544d1"
+    },
+    "N_8dbaa81de96f4c69b82dd22800385356": {
+      "id": "N_8dbaa81de96f4c69b82dd22800385356",
+      "label": "托勒密定理",
+      "type": "theorem",
+      "properties": {
+        "name": "托勒密定理",
+        "proof_year": "约150年",
+        "importance": "高",
+        "applications": "圆内接四边形性质研究、三角学、几何证明"
+      },
+      "color": "#e544d1"
+    },
+    "N_1555b1f617e14d5b9a8cad0782321faa": {
+      "id": "N_1555b1f617e14d5b9a8cad0782321faa",
+      "label": "梅涅劳斯定理",
+      "type": "theorem",
+      "properties": {
+        "name": "梅涅劳斯定理",
+        "proof_year": "约公元100年",
+        "importance": "高",
+        "applications": "三角形几何、射影几何、共线性证明"
+      },
+      "color": "#e544d1"
+    },
+    "N_977ca1d4306c49a088de073c4860a895": {
+      "id": "N_977ca1d4306c49a088de073c4860a895",
+      "label": "塞瓦定理",
+      "type": "theorem",
+      "properties": {
+        "name": "塞瓦定理",
+        "proof_year": "1678",
+        "importance": "high",
+        "applications": "三角形几何、共点线证明"
+      },
+      "color": "#e544d1"
+    },
+    "N_e034b555ff674e6b9bff36baa5ff2d22": {
+      "id": "N_e034b555ff674e6b9bff36baa5ff2d22",
+      "label": "欧拉线定理",
+      "type": "theorem",
+      "properties": {
+        "name": "欧拉线定理",
+        "proof_year": "1765",
+        "importance": "high",
+        "applications": "三角形几何、重心坐标系统"
+      },
+      "color": "#e544d1"
+    },
+    "N_c99ebdd27d244a26a431395532e26214": {
+      "id": "N_c99ebdd27d244a26a431395532e26214",
+      "label": "九点圆定理",
+      "type": "theorem",
+      "properties": {
+        "name": "九点圆定理",
+        "proof_year": "1820",
+        "importance": "high",
+        "applications": "三角形几何、欧几里得几何"
+      },
+      "color": "#e544d1"
+    },
+    "N_daa52628218d499a88d91f92009cf11d": {
+      "id": "N_daa52628218d499a88d91f92009cf11d",
+      "label": "费马点定理",
+      "type": "theorem",
+      "properties": {
+        "name": "费马点定理",
+        "proof_year": "1643",
+        "importance": "高",
+        "applications": "几何优化、网络设计、最短路径问题"
+      },
+      "color": "#e544d1"
+    },
+    "N_06e187da4ae74fdba30e91bd0d0e497f": {
+      "id": "N_06e187da4ae74fdba30e91bd0d0e497f",
+      "label": "高斯",
+      "type": "mathematician",
+      "properties": {
+        "name": "高斯",
+        "birth_year": "1777",
+        "nationality": "德国",
+        "contributions": "数论、微分几何、天文学、大地测量学"
+      },
+      "color": "#a2e544"
+    },
+    "N_dd68da792dd046ebae0da60fe9bfaca0": {
+      "id": "N_dd68da792dd046ebae0da60fe9bfaca0",
+      "label": "欧拉",
+      "type": "mathematician",
+      "properties": {
+        "name": "欧拉",
+        "birth_year": "1707",
+        "nationality": "瑞士",
+        "contributions": "图论、数论、微积分、拓扑学、解析数论、复分析"
+      },
+      "color": "#a2e544"
+    },
+    "N_7a55520cc2aa499e8ae9ea09ac4953f8": {
+      "id": "N_7a55520cc2aa499e8ae9ea09ac4953f8",
+      "label": "黎曼",
+      "type": "mathematician",
+      "properties": {
+        "name": "黎曼",
+        "birth_year": "1826",
+        "nationality": "德国",
+        "contributions": "黎曼几何、黎曼积分、黎曼猜想"
+      },
+      "color": "#a2e544"
+    },
+    "N_c945d081b5dd462db38abb8886c6e033": {
+      "id": "N_c945d081b5dd462db38abb8886c6e033",
+      "label": "狄利克雷",
+      "type": "mathematician",
+      "properties": {
+        "name": "Johann Peter Gustav Lejeune Dirichlet",
+        "birth_year": "1805",
+        "nationality": "German",
+        "contributions": "Dirichlet's theorem on arithmetic progressions, Dirichlet eta function, Dirichlet boundary condition"
+      },
+      "color": "#a2e544"
+    },
+    "N_0f407f205e1a44d0b3ebe72641ded277": {
+      "id": "N_0f407f205e1a44d0b3ebe72641ded277",
+      "label": "华罗庚",
+      "type": "mathematician",
+      "properties": {
+        "name": "华罗庚",
+        "birth_year": "1910",
+        "nationality": "中国",
+        "contributions": "华氏定理、华-王方法、华氏不等式"
+      },
+      "color": "#a2e544"
+    },
+    "N_8619ee26e76449828b01020f6b30684e": {
+      "id": "N_8619ee26e76449828b01020f6b30684e",
+      "label": "费马小定理",
+      "type": "theorem",
+      "properties": {
+        "name": "费马小定理",
+        "proof_year": "1640",
+        "importance": "高",
+        "applications": "密码学、素数测试、模运算"
+      },
+      "color": "#e544d1"
+    },
+    "N_3b9efd74819c4afb986c420a41b450b2": {
+      "id": "N_3b9efd74819c4afb986c420a41b450b2",
+      "label": "欧拉定理",
+      "type": "theorem",
+      "properties": {
+        "name": "欧拉定理",
+        "proof_year": "1736",
+        "importance": "高",
+        "applications": "密码学、数论、群论"
+      },
+      "color": "#e544d1"
+    },
+    "N_2185b892c9064c1695bd981fcc3bb547": {
+      "id": "N_2185b892c9064c1695bd981fcc3bb547",
+      "label": "威尔逊定理",
+      "type": "theorem",
+      "properties": {
+        "name": "威尔逊定理",
+        "proof_year": "1771",
+        "importance": "高",
+        "applications": "素数判定、密码学"
+      },
+      "color": "#e544d1"
+    },
+    "N_61ad310f666049b9880098544a6fb2c1": {
+      "id": "N_61ad310f666049b9880098544a6fb2c1",
+      "label": "二次互反律",
+      "type": "theorem",
+      "properties": {
+        "name": "二次互反律",
+        "proof_year": "1796",
+        "importance": "高",
+        "applications": "数论中的二次剩余问题"
+      },
+      "color": "#e544d1"
+    },
+    "N_2eaa199aa45b44978e333783ede279b3": {
+      "id": "N_2eaa199aa45b44978e333783ede279b3",
+      "label": "素数定理",
+      "type": "theorem",
+      "properties": {
+        "name": "素数定理",
+        "proof_year": "1896",
+        "importance": "高",
+        "applications": "密码学、数论分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_a71c32d146dd49e4801ccd1a6290057c": {
+      "id": "N_a71c32d146dd49e4801ccd1a6290057c",
+      "label": "佩尔方程定理",
+      "type": "theorem",
+      "properties": {
+        "name": "佩尔方程定理",
+        "proof_year": "未知",
+        "importance": "高",
+        "applications": "数论、代数、密码学"
+      },
+      "color": "#e544d1"
+    },
+    "N_1222af3813464dfea5ca7ca7fadb94e8": {
+      "id": "N_1222af3813464dfea5ca7ca7fadb94e8",
+      "label": "狄利克雷定理",
+      "type": "theorem",
+      "properties": {
+        "name": "狄利克雷定理",
+        "proof_year": "1837",
+        "importance": "高",
+        "applications": "素数分布、解析数论"
+      },
+      "color": "#e544d1"
+    },
+    "N_420415a9697a4b2ea51621e497859878": {
+      "id": "N_420415a9697a4b2ea51621e497859878",
+      "label": "亨利·庞加莱",
+      "type": "mathematician",
+      "properties": {
+        "name": "亨利·庞加莱",
+        "birth_year": "1854",
+        "nationality": "法国",
+        "contributions": "拓扑学、混沌理论、庞加莱猜想"
+      },
+      "color": "#a2e544"
+    },
+    "N_9459a12d1dd648e1bfd29acdfc298889": {
+      "id": "N_9459a12d1dd648e1bfd29acdfc298889",
+      "label": "费利克斯·豪斯多夫",
+      "type": "mathematician",
+      "properties": {
+        "name": "费利克斯·豪斯多夫",
+        "birth_year": "1868",
+        "nationality": "德国",
+        "contributions": "豪斯多夫空间、豪斯多夫维数"
+      },
+      "color": "#a2e544"
+    },
+    "N_c60e67423c8b4b0a802b819a373b566a": {
+      "id": "N_c60e67423c8b4b0a802b819a373b566a",
+      "label": "所罗门·莱夫谢茨",
+      "type": "mathematician",
+      "properties": {
+        "name": "所罗门·莱夫谢茨",
+        "birth_year": "1884",
+        "nationality": "美国",
+        "contributions": "代数拓扑学、莱夫谢茨不动点定理"
+      },
+      "color": "#a2e544"
+    },
+    "N_e30bed7011bd4594b05fde73de322ae8": {
+      "id": "N_e30bed7011bd4594b05fde73de322ae8",
+      "label": "约翰·米尔诺",
+      "type": "mathematician",
+      "properties": {
+        "name": "约翰·米尔诺",
+        "birth_year": "1931",
+        "nationality": "美国",
+        "contributions": "微分拓扑、K-理论、动力系统"
+      },
+      "color": "#a2e544"
+    },
+    "N_d6556fc2345c41e1bb5daf5ccf178da3": {
+      "id": "N_d6556fc2345c41e1bb5daf5ccf178da3",
+      "label": "斯蒂芬·斯梅尔",
+      "type": "mathematician",
+      "properties": {
+        "name": "斯蒂芬·斯梅尔",
+        "birth_year": "1930",
+        "nationality": "美国",
+        "contributions": "微分拓扑学、动力系统、混沌理论"
+      },
+      "color": "#a2e544"
+    },
+    "N_19d1ecbce4bf4343917d31d005208a0b": {
+      "id": "N_19d1ecbce4bf4343917d31d005208a0b",
+      "label": "迈克尔·阿蒂亚",
+      "type": "mathematician",
+      "properties": {
+        "name": "迈克尔·阿蒂亚",
+        "birth_year": "1929",
+        "nationality": "英国",
+        "contributions": "阿蒂亚-辛格指标定理, K理论"
+      },
+      "color": "#a2e544"
+    },
+    "N_aaefdc94d44b494e976f8072d48a5e7f": {
+      "id": "N_aaefdc94d44b494e976f8072d48a5e7f",
+      "label": "威廉·瑟斯顿",
+      "type": "mathematician",
+      "properties": {
+        "name": "William Thurston",
+        "birth_year": "1946",
+        "nationality": "American",
+        "contributions": "geometric topology, low-dimensional topology, hyperbolic geometry"
+      },
+      "color": "#a2e544"
+    },
+    "N_19351b0486484ec4b8a3944b5049bb38": {
+      "id": "N_19351b0486484ec4b8a3944b5049bb38",
+      "label": "格里戈里·佩雷尔曼",
+      "type": "mathematician",
+      "properties": {
+        "name": "格里戈里·佩雷尔曼",
+        "birth_year": "1966",
+        "nationality": "俄罗斯",
+        "contributions": "庞加莱猜想的证明"
+      },
+      "color": "#a2e544"
+    },
+    "N_428d75f1f2bb4dffb4c4d1350502e421": {
+      "id": "N_428d75f1f2bb4dffb4c4d1350502e421",
+      "label": "布劳威尔不动点定理",
+      "type": "theorem",
+      "properties": {
+        "name": "布劳威尔不动点定理",
+        "proof_year": "1910",
+        "importance": "高",
+        "applications": "经济学、博弈论、微分方程"
+      },
+      "color": "#e544d1"
+    },
+    "N_cbff80ac99ce497da43164fe1e39c372": {
+      "id": "N_cbff80ac99ce497da43164fe1e39c372",
+      "label": "乌雷松引理",
+      "type": "theorem",
+      "properties": {
+        "name": "乌雷松引理",
+        "proof_year": "1925",
+        "importance": "高",
+        "applications": "正规空间、连续函数构造、度量空间"
+      },
+      "color": "#e544d1"
+    },
+    "N_ad6bb41f72264b98854ec583b0c1f589": {
+      "id": "N_ad6bb41f72264b98854ec583b0c1f589",
+      "label": "蒂茨扩张定理",
+      "type": "theorem",
+      "properties": {
+        "name": "蒂茨扩张定理",
+        "proof_year": "1951",
+        "importance": "高",
+        "applications": "泛函分析, 拓扑向量空间"
+      },
+      "color": "#e544d1"
+    },
+    "N_7093e0641dde4c5699a986f3831f0662": {
+      "id": "N_7093e0641dde4c5699a986f3831f0662",
+      "label": "吉洪诺夫定理",
+      "type": "theorem",
+      "properties": {
+        "name": "吉洪诺夫定理",
+        "proof_year": "1930",
+        "importance": "高",
+        "applications": "拓扑学、泛函分析、数学物理"
+      },
+      "color": "#e544d1"
+    },
+    "N_6142abe0b4f14eea97085d7b02900c94": {
+      "id": "N_6142abe0b4f14eea97085d7b02900c94",
+      "label": "亚历山大对偶定理",
+      "type": "theorem",
+      "properties": {
+        "name": "亚历山大对偶定理",
+        "proof_year": "未知",
+        "importance": "高",
+        "applications": "代数拓扑、同调论"
+      },
+      "color": "#e544d1"
+    },
+    "N_9aeae565690f453482a12b7870ff7c87": {
+      "id": "N_9aeae565690f453482a12b7870ff7c87",
+      "label": "乔丹曲线定理",
+      "type": "theorem",
+      "properties": {
+        "name": "乔丹曲线定理",
+        "proof_year": "1887",
+        "importance": "高",
+        "applications": "拓扑学、几何学、计算机图形学"
+      },
+      "color": "#e544d1"
+    },
+    "N_23aa3b061ef041bc8e861dd755de3a7f": {
+      "id": "N_23aa3b061ef041bc8e861dd755de3a7f",
+      "label": "贝尔纲定理",
+      "type": "theorem",
+      "properties": {
+        "name": "贝尔纲定理",
+        "proof_year": "1899",
+        "importance": "高",
+        "applications": "泛函分析、拓扑学、测度论"
+      },
+      "color": "#e544d1"
+    },
+    "N_89d3a14abe8c4d6fb3fc7283d8f4177a": {
+      "id": "N_89d3a14abe8c4d6fb3fc7283d8f4177a",
+      "label": "哈尔纳克定理",
+      "type": "theorem",
+      "properties": {
+        "name": "哈尔纳克定理",
+        "proof_year": "未知",
+        "importance": "在调和分析和偏微分方程理论中有重要应用",
+        "applications": "调和函数、椭圆型偏微分方程"
+      },
+      "color": "#e544d1"
+    },
+    "N_40152d82c5674921bf619c1dbd44bdce": {
+      "id": "N_40152d82c5674921bf619c1dbd44bdce",
+      "label": "拉普拉斯",
+      "type": "mathematician",
+      "properties": {
+        "name": "拉普拉斯",
+        "birth_year": "1749",
+        "nationality": "法国",
+        "contributions": "拉普拉斯变换、拉普拉斯方程、概率论、天体力学"
+      },
+      "color": "#a2e544"
+    },
+    "N_52efa99f63c1463481e6ea0f9fa505b0": {
+      "id": "N_52efa99f63c1463481e6ea0f9fa505b0",
+      "label": "柯尔莫哥洛夫",
+      "type": "mathematician",
+      "properties": {
+        "name": "Andrey Nikolaevich Kolmogorov",
+        "birth_year": "1903",
+        "nationality": "Russian",
+        "contributions": "Kolmogorov axioms, Kolmogorov complexity, probability theory, turbulence"
+      },
+      "color": "#a2e544"
+    },
+    "N_2b69696673314297a970f24eb3bcbac2": {
+      "id": "N_2b69696673314297a970f24eb3bcbac2",
+      "label": "大数定律",
+      "type": "theorem",
+      "properties": {
+        "name": "大数定律",
+        "proof_year": "1713",
+        "importance": "高",
+        "applications": "统计学、保险精算、金融风险管理"
+      },
+      "color": "#e544d1"
+    },
+    "N_635e1286050a4e55a106c95ac3fc0b08": {
+      "id": "N_635e1286050a4e55a106c95ac3fc0b08",
+      "label": "中心极限定理",
+      "type": "theorem",
+      "properties": {
+        "name": "中心极限定理",
+        "proof_year": "1733",
+        "importance": "高",
+        "applications": "统计学、质量控制、假设检验"
+      },
+      "color": "#e544d1"
+    },
+    "N_e59ea5be2f564caaac5031cdb17518be": {
+      "id": "N_e59ea5be2f564caaac5031cdb17518be",
+      "label": "贝叶斯定理",
+      "type": "theorem",
+      "properties": {
+        "name": "贝叶斯定理",
+        "proof_year": "1763",
+        "importance": "高",
+        "applications": "统计学、机器学习、医学诊断、信号处理"
+      },
+      "color": "#e544d1"
+    },
+    "N_b08bf92fa2104f5d9d885ba177a895ab": {
+      "id": "N_b08bf92fa2104f5d9d885ba177a895ab",
+      "label": "马尔可夫不等式",
+      "type": "theorem",
+      "properties": {
+        "name": "马尔可夫不等式",
+        "proof_year": "1913",
+        "importance": "高",
+        "applications": "概率论、统计学、信息论"
+      },
+      "color": "#e544d1"
+    },
+    "N_c2547bc2e8514ff4bd2f817806f4123c": {
+      "id": "N_c2547bc2e8514ff4bd2f817806f4123c",
+      "label": "切比雪夫不等式",
+      "type": "theorem",
+      "properties": {
+        "name": "切比雪夫不等式",
+        "proof_year": "1867",
+        "importance": "high",
+        "applications": "概率论、统计学、信号处理"
+      },
+      "color": "#e544d1"
+    },
+    "N_3c7cef9fd4f04e8e894a9267aad213e4": {
+      "id": "N_3c7cef9fd4f04e8e894a9267aad213e4",
+      "label": "卡尔·皮尔逊",
+      "type": "mathematician",
+      "properties": {
+        "name": "卡尔·皮尔逊",
+        "birth_year": "1857",
+        "nationality": "英国",
+        "contributions": "皮尔逊相关系数、卡方检验、统计学基础"
+      },
+      "color": "#a2e544"
+    },
+    "N_5d1ea8fc65c24efdae00163a1771d7af": {
+      "id": "N_5d1ea8fc65c24efdae00163a1771d7af",
+      "label": "罗纳德·费希尔",
+      "type": "mathematician",
+      "properties": {
+        "name": "罗纳德·费希尔",
+        "birth_year": "1890",
+        "nationality": "英国",
+        "contributions": "现代统计学、实验设计、方差分析、费希尔精确检验"
+      },
+      "color": "#a2e544"
+    },
+    "N_85bbf34e826e4f019676e55aa07a9a96": {
+      "id": "N_85bbf34e826e4f019676e55aa07a9a96",
+      "label": "耶日·内曼",
+      "type": "mathematician",
+      "properties": {
+        "name": "耶日·内曼",
+        "birth_year": "1894",
+        "nationality": "波兰",
+        "contributions": "统计学基础、假设检验、置信区间"
+      },
+      "color": "#a2e544"
+    },
+    "N_eff212eb25ae43d387e103500d5bdf44": {
+      "id": "N_eff212eb25ae43d387e103500d5bdf44",
+      "label": "威廉·戈塞特",
+      "type": "mathematician",
+      "properties": {
+        "name": "威廉·戈塞特",
+        "birth_year": "1876",
+        "nationality": "英国",
+        "contributions": "t分布、小样本理论"
+      },
+      "color": "#a2e544"
+    },
+    "N_ed9d468798a943c1943056bcabf668cb": {
+      "id": "N_ed9d468798a943c1943056bcabf668cb",
+      "label": "哈罗德·霍特林",
+      "type": "mathematician",
+      "properties": {
+        "name": "哈罗德·霍特林",
+        "birth_year": "1895",
+        "nationality": "美国",
+        "contributions": "霍特林引理、霍特林模型、霍特林T方分布"
+      },
+      "color": "#a2e544"
+    },
+    "N_216c958d325745798e5d1cd8e163b39c": {
+      "id": "N_216c958d325745798e5d1cd8e163b39c",
+      "label": "乔治·博克斯",
+      "type": "mathematician",
+      "properties": {
+        "name": "George Box",
+        "birth_year": "1919",
+        "nationality": "British",
+        "contributions": "Box-Jenkins methodology, Box-Cox transformation, design of experiments"
+      },
+      "color": "#a2e544"
+    },
+    "N_779c982fddec4dd4ad7386d62a497001": {
+      "id": "N_779c982fddec4dd4ad7386d62a497001",
+      "label": "布拉德利·埃弗龙",
+      "type": "mathematician",
+      "properties": {
+        "name": "Bradley Efron",
+        "birth_year": "1938",
+        "nationality": "American",
+        "contributions": "bootstrap resampling method"
+      },
+      "color": "#a2e544"
+    },
+    "N_22a32d1a1a3c4627a06047af61d21d45": {
+      "id": "N_22a32d1a1a3c4627a06047af61d21d45",
+      "label": "约翰·图基",
+      "type": "mathematician",
+      "properties": {
+        "name": "约翰·图基",
+        "birth_year": "1915",
+        "nationality": "美国",
+        "contributions": "快速傅里叶变换, 探索性数据分析, 箱线图"
+      },
+      "color": "#a2e544"
+    },
+    "N_bf87a2cc177342cd88bd22c6b5507ce5": {
+      "id": "N_bf87a2cc177342cd88bd22c6b5507ce5",
+      "label": "莫里斯·肯德尔",
+      "type": "mathematician",
+      "properties": {
+        "name": "莫里斯·肯德尔",
+        "birth_year": "1907",
+        "nationality": "英国",
+        "contributions": "肯德尔相关系数"
+      },
+      "color": "#a2e544"
+    },
+    "N_b72e04850749427fafbf59a3031774bf": {
+      "id": "N_b72e04850749427fafbf59a3031774bf",
+      "label": "柯尔莫哥洛夫强大数定律",
+      "type": "theorem",
+      "properties": {
+        "name": "柯尔莫哥洛夫强大数定律",
+        "proof_year": "1933",
+        "importance": "high",
+        "applications": "概率论、统计学、随机过程"
+      },
+      "color": "#e544d1"
+    },
+    "N_0f0c8152c31546d1b567476f7dbf499b": {
+      "id": "N_0f0c8152c31546d1b567476f7dbf499b",
+      "label": "费希尔信息不等式",
+      "type": "theorem",
+      "properties": {
+        "name": "费希尔信息不等式",
+        "proof_year": "1925",
+        "importance": "高",
+        "applications": "参数估计、统计推断、信息几何"
+      },
+      "color": "#e544d1"
+    },
+    "N_0e34e7aad5074c218d2f0dcb1edb29bd": {
+      "id": "N_0e34e7aad5074c218d2f0dcb1edb29bd",
+      "label": "戈特弗里德·莱布尼茨",
+      "type": "mathematician",
+      "properties": {
+        "name": "戈特弗里德·莱布尼茨",
+        "birth_year": "1646",
+        "nationality": "德国",
+        "contributions": "微积分、二进制系统、符号逻辑"
+      },
+      "color": "#a2e544"
+    },
+    "N_2e0069e397f546be8dae2a18d46390dd": {
+      "id": "N_2e0069e397f546be8dae2a18d46390dd",
+      "label": "奥古斯丁·路易·柯西",
+      "type": "mathematician",
+      "properties": {
+        "name": "奥古斯丁·路易·柯西",
+        "birth_year": "1789",
+        "nationality": "法国",
+        "contributions": "复变函数理论、微积分、数学分析"
+      },
+      "color": "#a2e544"
+    },
+    "N_d991cdb974cd4e1087e1a79cd8e298d8": {
+      "id": "N_d991cdb974cd4e1087e1a79cd8e298d8",
+      "label": "伯恩哈德·黎曼",
+      "type": "mathematician",
+      "properties": {
+        "name": "伯恩哈德·黎曼",
+        "birth_year": "1826",
+        "nationality": "德国",
+        "contributions": "黎曼几何、黎曼积分、黎曼猜想"
+      },
+      "color": "#a2e544"
+    },
+    "N_afda44eb5def412594ee65f40309dd0c": {
+      "id": "N_afda44eb5def412594ee65f40309dd0c",
+      "label": "卡尔·魏尔斯特拉斯",
+      "type": "mathematician",
+      "properties": {
+        "name": "卡尔·魏尔斯特拉斯",
+        "birth_year": "1815",
+        "nationality": "德国",
+        "contributions": "魏尔斯特拉斯函数、数学分析严格化"
+      },
+      "color": "#a2e544"
+    },
+    "N_29f9af19fea84bd98c8982b80a8ffb1d": {
+      "id": "N_29f9af19fea84bd98c8982b80a8ffb1d",
+      "label": "微积分基本定理",
+      "type": "theorem",
+      "properties": {
+        "name": "微积分基本定理",
+        "proof_year": "17世纪",
+        "importance": "高",
+        "applications": "物理学、工程学、经济学"
+      },
+      "color": "#e544d1"
+    },
+    "N_2dc7850034ac4b46a5ea7ea725716b01": {
+      "id": "N_2dc7850034ac4b46a5ea7ea725716b01",
+      "label": "中值定理",
+      "type": "theorem",
+      "properties": {
+        "name": "中值定理",
+        "proof_year": "1691",
+        "importance": "高",
+        "applications": "函数分析、微分方程、优化问题"
+      },
+      "color": "#e544d1"
+    },
+    "N_10f8fc4a41fd439bbcf16bc6c7334f23": {
+      "id": "N_10f8fc4a41fd439bbcf16bc6c7334f23",
+      "label": "泰勒定理",
+      "type": "theorem",
+      "properties": {
+        "name": "泰勒定理",
+        "proof_year": "1712",
+        "importance": "高",
+        "applications": "函数近似、数值分析、物理学、工程学"
+      },
+      "color": "#e544d1"
+    },
+    "N_e80433ee531f4c5fb11c5c71bc85c710": {
+      "id": "N_e80433ee531f4c5fb11c5c71bc85c710",
+      "label": "斯托克斯定理",
+      "type": "theorem",
+      "properties": {
+        "name": "斯托克斯定理",
+        "proof_year": "1854",
+        "importance": "高",
+        "applications": "流体力学、电磁学、微分几何"
+      },
+      "color": "#e544d1"
+    },
+    "N_c47845a7888843d1ba60ecf21e642d99": {
+      "id": "N_c47845a7888843d1ba60ecf21e642d99",
+      "label": "格林定理",
+      "type": "theorem",
+      "properties": {
+        "name": "格林定理",
+        "proof_year": "1828",
+        "importance": "高",
+        "applications": "计算曲线积分、面积分、电磁学、流体力学"
+      },
+      "color": "#e544d1"
+    },
+    "N_202548a1b77c42ec81b0440e3e68b77b": {
+      "id": "N_202548a1b77c42ec81b0440e3e68b77b",
+      "label": "高斯定理",
+      "type": "theorem",
+      "properties": {
+        "name": "高斯定理",
+        "proof_year": "1813",
+        "importance": "高",
+        "applications": "电磁学、流体力学、引力场理论"
+      },
+      "color": "#e544d1"
+    },
+    "N_ba58ba0966fa4110b73425a0a1b4964f": {
+      "id": "N_ba58ba0966fa4110b73425a0a1b4964f",
+      "label": "隐函数定理",
+      "type": "theorem",
+      "properties": {
+        "name": "隐函数定理",
+        "proof_year": "19世纪",
+        "importance": "高",
+        "applications": "微分方程、优化问题、经济学模型"
+      },
+      "color": "#e544d1"
+    },
+    "N_f891e55ba3a0408d9a80f817737c7c89": {
+      "id": "N_f891e55ba3a0408d9a80f817737c7c89",
+      "label": "反函数定理",
+      "type": "theorem",
+      "properties": {
+        "name": "反函数定理",
+        "proof_year": "未知",
+        "importance": "高",
+        "applications": "隐函数定理、微分几何、优化问题"
+      },
+      "color": "#e544d1"
+    },
+    "N_c3693298debc4b0dbd6fae77acb43eda": {
+      "id": "N_c3693298debc4b0dbd6fae77acb43eda",
+      "label": "极值定理",
+      "type": "theorem",
+      "properties": {
+        "name": "极值定理",
+        "proof_year": "未知",
+        "importance": "高",
+        "applications": "优化问题、工程学、经济学"
+      },
+      "color": "#e544d1"
+    },
+    "N_c13871df150542589e50d881864327e2": {
+      "id": "N_c13871df150542589e50d881864327e2",
+      "label": "罗尔定理",
+      "type": "theorem",
+      "properties": {
+        "name": "罗尔定理",
+        "proof_year": "1691",
+        "importance": "高",
+        "applications": "微积分基础、中值定理证明、函数分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_f4c4cc62415b4167b42e2b610d8b927b": {
+      "id": "N_f4c4cc62415b4167b42e2b610d8b927b",
+      "label": "克劳德·香农",
+      "type": "mathematician",
+      "properties": {
+        "name": "克劳德·香农",
+        "birth_year": "1916",
+        "nationality": "美国",
+        "contributions": "信息论、数字电路理论"
+      },
+      "color": "#a2e544"
+    },
+    "N_ab688e62934e413b8552e302bca0f814": {
+      "id": "N_ab688e62934e413b8552e302bca0f814",
+      "label": "鸽巢原理",
+      "type": "theorem",
+      "properties": {
+        "name": "鸽巢原理",
+        "proof_year": "1834",
+        "importance": "high",
+        "applications": "组合数学、计算机科学、密码学"
+      },
+      "color": "#e544d1"
+    },
+    "N_73ae7212fe8d4a4ea916816976c1df86": {
+      "id": "N_73ae7212fe8d4a4ea916816976c1df86",
+      "label": "容斥原理",
+      "type": "theorem",
+      "properties": {
+        "name": "容斥原理",
+        "proof_year": "未知",
+        "importance": "高",
+        "applications": "组合数学、概率论、集合论"
+      },
+      "color": "#e544d1"
+    },
+    "N_767df67b00854a8589fffab4d602e2b7": {
+      "id": "N_767df67b00854a8589fffab4d602e2b7",
+      "label": "握手定理",
+      "type": "theorem",
+      "properties": {
+        "name": "握手定理",
+        "proof_year": "1736",
+        "importance": "高",
+        "applications": "图论、网络分析、社交网络分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_78a0d96747814cb1b5a14c5dca51de73": {
+      "id": "N_78a0d96747814cb1b5a14c5dca51de73",
+      "label": "欧拉公式",
+      "type": "theorem",
+      "properties": {
+        "name": "欧拉公式",
+        "proof_year": "1748",
+        "importance": "high",
+        "applications": "复分析, 图论, 拓扑学"
+      },
+      "color": "#e544d1"
+    },
+    "N_ea7e5b62ebd949399a0f4b383bf3d1f8": {
+      "id": "N_ea7e5b62ebd949399a0f4b383bf3d1f8",
+      "label": "柯尼希定理",
+      "type": "theorem",
+      "properties": {
+        "name": "柯尼希定理",
+        "proof_year": "1927",
+        "importance": "high",
+        "applications": "图论, 组合数学"
+      },
+      "color": "#e544d1"
+    },
+    "N_7b706ee41a01487fbee8fdc992ca018a": {
+      "id": "N_7b706ee41a01487fbee8fdc992ca018a",
+      "label": "拉姆齐定理",
+      "type": "theorem",
+      "properties": {
+        "name": "拉姆齐定理",
+        "proof_year": "1930",
+        "importance": "高",
+        "applications": "图论、组合数学、计算机科学"
+      },
+      "color": "#e544d1"
+    },
+    "N_92227ba360544bed992e9845cc62a19a": {
+      "id": "N_92227ba360544bed992e9845cc62a19a",
+      "label": "霍尔婚姻定理",
+      "type": "theorem",
+      "properties": {
+        "name": "霍尔婚姻定理",
+        "proof_year": "1935",
+        "importance": "高",
+        "applications": "图论、组合数学、匹配问题"
+      },
+      "color": "#e544d1"
+    },
+    "N_09d19d1a195d4440ad7c755e58f71a38": {
+      "id": "N_09d19d1a195d4440ad7c755e58f71a38",
+      "label": "迪尔沃斯定理",
+      "type": "theorem",
+      "properties": {
+        "name": "迪尔沃斯定理",
+        "proof_year": "1950",
+        "importance": "高",
+        "applications": "偏序集、组合数学、图论"
+      },
+      "color": "#e544d1"
+    },
+    "N_a21dbd132df043edadcf35f03f576a27": {
+      "id": "N_a21dbd132df043edadcf35f03f576a27",
+      "label": "魏尔斯特拉斯",
+      "type": "mathematician",
+      "properties": {
+        "name": "魏尔斯特拉斯",
+        "birth_year": "1815",
+        "nationality": "德国",
+        "contributions": "魏尔斯特拉斯函数、数学分析严格化"
+      },
+      "color": "#a2e544"
+    },
+    "N_ab79ef883f6e4661bd8983450eedaf8e": {
+      "id": "N_ab79ef883f6e4661bd8983450eedaf8e",
+      "label": "拉格朗日",
+      "type": "mathematician",
+      "properties": {
+        "name": "拉格朗日",
+        "birth_year": "1736",
+        "nationality": "意大利",
+        "contributions": "拉格朗日力学、拉格朗日乘数法、数论、分析力学"
+      },
+      "color": "#a2e544"
+    },
+    "N_87ac520b86d94cb28e04b476eec5c326": {
+      "id": "N_87ac520b86d94cb28e04b476eec5c326",
+      "label": "莱布尼茨",
+      "type": "mathematician",
+      "properties": {
+        "name": "莱布尼茨",
+        "birth_year": "1646",
+        "nationality": "德国",
+        "contributions": "微积分、二进制系统、符号逻辑"
+      },
+      "color": "#a2e544"
+    },
+    "N_8a39edf490704d6caaf72ccf90c55f03": {
+      "id": "N_8a39edf490704d6caaf72ccf90c55f03",
+      "label": "傅里叶级数收敛定理",
+      "type": "theorem",
+      "properties": {
+        "name": "傅里叶级数收敛定理",
+        "proof_year": "1829",
+        "importance": "高",
+        "applications": "信号处理、热传导、振动分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_71921bd0a9034bfabb85e8870facefab": {
+      "id": "N_71921bd0a9034bfabb85e8870facefab",
+      "label": "黎曼积分定理",
+      "type": "theorem",
+      "properties": {
+        "name": "黎曼积分定理",
+        "proof_year": "1854",
+        "importance": "high",
+        "applications": "微积分、实分析、物理学"
+      },
+      "color": "#e544d1"
+    },
+    "N_d2c2062efff64dd8bc9a6154dd8ee487": {
+      "id": "N_d2c2062efff64dd8bc9a6154dd8ee487",
+      "label": "柯西收敛准则",
+      "type": "theorem",
+      "properties": {
+        "name": "柯西收敛准则",
+        "proof_year": "1821",
+        "importance": "高",
+        "applications": "实数完备性理论、函数序列收敛性分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_774a98ba840e4ff1a6c3a673ec162270": {
+      "id": "N_774a98ba840e4ff1a6c3a673ec162270",
+      "label": "约瑟夫·傅里叶",
+      "type": "mathematician",
+      "properties": {
+        "name": "约瑟夫·傅里叶",
+        "birth_year": "1768",
+        "nationality": "法国",
+        "contributions": "傅里叶级数、傅里叶变换"
+      },
+      "color": "#a2e544"
+    },
+    "N_c31e37d667d4498f9f76c0d79cf5e8f4": {
+      "id": "N_c31e37d667d4498f9f76c0d79cf5e8f4",
+      "label": "傅里叶变换定理",
+      "type": "theorem",
+      "properties": {
+        "name": "傅里叶变换定理",
+        "proof_year": "1822",
+        "importance": "高",
+        "applications": "信号处理、图像处理、量子力学、偏微分方程求解"
+      },
+      "color": "#e544d1"
+    },
+    "N_917344a353bb443ca2f114208f3629dc": {
+      "id": "N_917344a353bb443ca2f114208f3629dc",
+      "label": "拉格朗日中值定理",
+      "type": "theorem",
+      "properties": {
+        "name": "拉格朗日中值定理",
+        "proof_year": "1797",
+        "importance": "高",
+        "applications": "微积分、函数分析、物理学"
+      },
+      "color": "#e544d1"
+    },
+    "N_657e359106a34916ac9a975000c94952": {
+      "id": "N_657e359106a34916ac9a975000c94952",
+      "label": "最小二乘法",
+      "type": "theorem",
+      "properties": {
+        "name": "最小二乘法",
+        "proof_year": "1805",
+        "importance": "高",
+        "applications": "回归分析, 曲线拟合, 数据平滑, 参数估计"
+      },
+      "color": "#e544d1"
+    },
+    "N_5373b11b58704e51a90894c80b13ef91": {
+      "id": "N_5373b11b58704e51a90894c80b13ef91",
+      "label": "马尔可夫链定理",
+      "type": "theorem",
+      "properties": {
+        "name": "马尔可夫链定理",
+        "proof_year": "1906",
+        "importance": "高",
+        "applications": "统计学、物理学、经济学、信息科学"
+      },
+      "color": "#e544d1"
+    },
+    "N_865895d4436549c9a6be62f67fec73b8": {
+      "id": "N_865895d4436549c9a6be62f67fec73b8",
+      "label": "不动点定理",
+      "type": "theorem",
+      "properties": {
+        "name": "不动点定理",
+        "proof_year": "未知",
+        "importance": "高",
+        "applications": "经济学、博弈论、微分方程、拓扑学"
+      },
+      "color": "#e544d1"
+    },
+    "N_9340f55c6cae4b608c2bde305ad7fd05": {
+      "id": "N_9340f55c6cae4b608c2bde305ad7fd05",
+      "label": "最优停止定理",
+      "type": "theorem",
+      "properties": {
+        "name": "最优停止定理",
+        "proof_year": "未知",
+        "importance": "高",
+        "applications": "秘书问题、停车问题、婚姻选择"
+      },
+      "color": "#e544d1"
+    },
+    "N_82260d10add54c1f9a6d7bdf3ffc1db6": {
+      "id": "N_82260d10add54c1f9a6d7bdf3ffc1db6",
+      "label": "诺特第二定理",
+      "type": "theorem",
+      "properties": {
+        "name": "诺特第二定理",
+        "proof_year": "1921",
+        "importance": "high",
+        "applications": "理论物理、守恒定律、对称性研究"
+      },
+      "color": "#e544d1"
+    },
+    "N_443b67115feb4787b2addbff8270d33d": {
+      "id": "N_443b67115feb4787b2addbff8270d33d",
+      "label": "诺特第三定理",
+      "type": "theorem",
+      "properties": {
+        "name": "诺特第三定理",
+        "proof_year": "1921",
+        "importance": "high",
+        "applications": "理论物理、代数几何"
+      },
+      "color": "#e544d1"
+    },
+    "N_99ae460101d94576a048d7123510e5cc": {
+      "id": "N_99ae460101d94576a048d7123510e5cc",
+      "label": "伽罗瓦基本定理",
+      "type": "theorem",
+      "properties": {
+        "name": "伽罗瓦基本定理",
+        "proof_year": "1832",
+        "importance": "高",
+        "applications": "代数方程的可解性、域论、群论"
+      },
+      "color": "#e544d1"
+    },
+    "N_3b0330803295495c8aa47d26d9a35d8e": {
+      "id": "N_3b0330803295495c8aa47d26d9a35d8e",
+      "label": "伽罗瓦对应",
+      "type": "theorem",
+      "properties": {
+        "name": "伽罗瓦对应",
+        "proof_year": "1832",
+        "importance": "高",
+        "applications": "代数方程的可解性、域论、群论"
+      },
+      "color": "#e544d1"
+    },
+    "N_34e14db3232540c0b2e29fa8fc7c9fcc": {
+      "id": "N_34e14db3232540c0b2e29fa8fc7c9fcc",
+      "label": "阿贝尔-鲁菲尼定理",
+      "type": "theorem",
+      "properties": {
+        "name": "阿贝尔-鲁菲尼定理",
+        "proof_year": "1824",
+        "importance": "证明了五次及更高次的一般多项式方程没有根式解",
+        "applications": "代数方程理论、伽罗瓦理论"
+      },
+      "color": "#e544d1"
+    },
+    "N_9da6cb71fbee4e5ca1a4eb1d13dd9c7f": {
+      "id": "N_9da6cb71fbee4e5ca1a4eb1d13dd9c7f",
+      "label": "阿贝尔定理",
+      "type": "theorem",
+      "properties": {
+        "name": "阿贝尔定理",
+        "proof_year": "1824",
+        "importance": "高",
+        "applications": "代数方程、群论、数学物理"
+      },
+      "color": "#e544d1"
+    },
+    "N_1855ecd7a53449fbb1287d872e08cd3b": {
+      "id": "N_1855ecd7a53449fbb1287d872e08cd3b",
+      "label": "阿贝尔不可解定理",
+      "type": "theorem",
+      "properties": {
+        "name": "阿贝尔不可解定理",
+        "proof_year": "1824",
+        "importance": "high",
+        "applications": "代数方程理论"
+      },
+      "color": "#e544d1"
+    },
+    "N_21d93dc773b845b997845be105890ed3": {
+      "id": "N_21d93dc773b845b997845be105890ed3",
+      "label": "高斯-马尔可夫定理",
+      "type": "theorem",
+      "properties": {
+        "name": "高斯-马尔可夫定理",
+        "proof_year": "1821",
+        "importance": "统计学中线性回归模型的最优无偏估计的基础",
+        "applications": "线性回归分析、计量经济学、最小二乘法估计"
+      },
+      "color": "#e544d1"
+    },
+    "N_7fcdbbee312143eaa1b97c04af045ccc": {
+      "id": "N_7fcdbbee312143eaa1b97c04af045ccc",
+      "label": "高斯-博内定理",
+      "type": "theorem",
+      "properties": {
+        "name": "高斯-博内定理",
+        "proof_year": "1827",
+        "importance": "高",
+        "applications": "微分几何、拓扑学"
+      },
+      "color": "#e544d1"
+    },
+    "N_39758a16173b4c4684ca3f378b478b30": {
+      "id": "N_39758a16173b4c4684ca3f378b478b30",
+      "label": "罗巴切夫斯基平行公设",
+      "type": "theorem",
+      "properties": {
+        "name": "罗巴切夫斯基平行公设",
+        "proof_year": "1829",
+        "importance": "非欧几何的奠基性定理之一",
+        "applications": "广义相对论、天体物理学"
+      },
+      "color": "#e544d1"
+    },
+    "N_305abc5834524d2b9ee116e93e8ea47d": {
+      "id": "N_305abc5834524d2b9ee116e93e8ea47d",
+      "label": "罗巴切夫斯基几何基本定理",
+      "type": "theorem",
+      "properties": {
+        "name": "罗巴切夫斯基几何基本定理",
+        "proof_year": "1829",
+        "importance": "high",
+        "applications": "非欧几里得几何、广义相对论、天体物理学"
+      },
+      "color": "#e544d1"
+    },
+    "N_ebbce817e5984c69b933859ba3477a7f": {
+      "id": "N_ebbce817e5984c69b933859ba3477a7f",
+      "label": "庞加莱猜想",
+      "type": "theorem",
+      "properties": {
+        "name": "庞加莱猜想",
+        "proof_year": "2003",
+        "importance": "高",
+        "applications": "拓扑学"
+      },
+      "color": "#e544d1"
+    },
+    "N_98bdd610c32a429898aaa7e8c5e2c363": {
+      "id": "N_98bdd610c32a429898aaa7e8c5e2c363",
+      "label": "庞加莱-霍普夫定理",
+      "type": "theorem",
+      "properties": {
+        "name": "庞加莱-霍普夫定理",
+        "proof_year": "1927",
+        "importance": "高",
+        "applications": "微分方程、动力系统、拓扑学"
+      },
+      "color": "#e544d1"
+    },
+    "N_59cc036f17de4f6d974c83a0a768da1d": {
+      "id": "N_59cc036f17de4f6d974c83a0a768da1d",
+      "label": "庞加莱对偶定理",
+      "type": "theorem",
+      "properties": {
+        "name": "庞加莱对偶定理",
+        "proof_year": "1895",
+        "importance": "high",
+        "applications": "代数拓扑, 流形理论, 同调论"
+      },
+      "color": "#e544d1"
+    },
+    "N_0f90b35d540b4f7d9ed05b77ecc5e13b": {
+      "id": "N_0f90b35d540b4f7d9ed05b77ecc5e13b",
+      "label": "庞加莱-伯克霍夫不动点定理",
+      "type": "theorem",
+      "properties": {
+        "name": "庞加莱-伯克霍夫不动点定理",
+        "proof_year": "1912",
+        "importance": "high",
+        "applications": "动力系统, 拓扑学, 天体力学"
+      },
+      "color": "#e544d1"
+    },
+    "N_62ac3c0f17f54884881c74b75ef87de9": {
+      "id": "N_62ac3c0f17f54884881c74b75ef87de9",
+      "label": "克莱因四元群定理",
+      "type": "theorem",
+      "properties": {
+        "name": "克莱因四元群定理",
+        "proof_year": "1884",
+        "importance": "high",
+        "applications": "群论、几何学、对称性研究"
+      },
+      "color": "#e544d1"
+    },
+    "N_a8058c353d644c89b8b1d613f0d6851d": {
+      "id": "N_a8058c353d644c89b8b1d613f0d6851d",
+      "label": "费马大定理",
+      "type": "theorem",
+      "properties": {
+        "name": "费马大定理",
+        "proof_year": "1994",
+        "importance": "high",
+        "applications": "数论、代数几何"
+      },
+      "color": "#e544d1"
+    },
+    "N_e8fe286a445e4f5880d1a95fa6aeb827": {
+      "id": "N_e8fe286a445e4f5880d1a95fa6aeb827",
+      "label": "费马原理",
+      "type": "theorem",
+      "properties": {
+        "name": "费马原理",
+        "proof_year": "1662",
+        "importance": "high",
+        "applications": "光学、几何学"
+      },
+      "color": "#e544d1"
+    },
+    "N_5984a4527572430082d3e8034a95749c": {
+      "id": "N_5984a4527572430082d3e8034a95749c",
+      "label": "正态分布定理",
+      "type": "theorem",
+      "properties": {
+        "name": "正态分布定理",
+        "proof_year": "1809",
+        "importance": "高",
+        "applications": "统计学、概率论、误差分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_1d8083b0787047abbd3226e6e864d9d1": {
+      "id": "N_1d8083b0787047abbd3226e6e864d9d1",
+      "label": "欧拉乘积公式",
+      "type": "theorem",
+      "properties": {
+        "name": "欧拉乘积公式",
+        "proof_year": "1737",
+        "importance": "high",
+        "applications": "解析数论、素数分布研究"
+      },
+      "color": "#e544d1"
+    },
+    "N_96010c0571bc4196ac4087bd076c378e": {
+      "id": "N_96010c0571bc4196ac4087bd076c378e",
+      "label": "欧拉四平方和恒等式",
+      "type": "theorem",
+      "properties": {
+        "name": "欧拉四平方和恒等式",
+        "proof_year": "1748",
+        "importance": "high",
+        "applications": "数论, 代数, 组合数学"
+      },
+      "color": "#e544d1"
+    },
+    "N_75515727afd84a91bc660187c2581d76": {
+      "id": "N_75515727afd84a91bc660187c2581d76",
+      "label": "欧拉五边形数定理",
+      "type": "theorem",
+      "properties": {
+        "name": "欧拉五边形数定理",
+        "proof_year": "1750",
+        "importance": "high",
+        "applications": "整数分拆理论"
+      },
+      "color": "#e544d1"
+    },
+    "N_0f8f0ac3adaf4d249faa40e950143c98": {
+      "id": "N_0f8f0ac3adaf4d249faa40e950143c98",
+      "label": "黎曼猜想",
+      "type": "theorem",
+      "properties": {
+        "name": "黎曼猜想",
+        "proof_year": "未知",
+        "importance": "高",
+        "applications": "素数分布、密码学、量子力学"
+      },
+      "color": "#e544d1"
+    },
+    "N_4193c1e5b99940b690d8223222580fbf": {
+      "id": "N_4193c1e5b99940b690d8223222580fbf",
+      "label": "黎曼积分",
+      "type": "theorem",
+      "properties": {
+        "name": "黎曼积分",
+        "proof_year": "1854",
+        "importance": "high",
+        "applications": "微积分、实分析、物理学"
+      },
+      "color": "#e544d1"
+    },
+    "N_da070040520843cc8f77d3d53f2deba6": {
+      "id": "N_da070040520843cc8f77d3d53f2deba6",
+      "label": "黎曼几何基本定理",
+      "type": "theorem",
+      "properties": {
+        "name": "黎曼几何基本定理",
+        "proof_year": "1854",
+        "importance": "high",
+        "applications": "广义相对论、微分几何、理论物理"
+      },
+      "color": "#e544d1"
+    },
+    "N_9e7ac61f9a6e45788f06f8df9c83ebc4": {
+      "id": "N_9e7ac61f9a6e45788f06f8df9c83ebc4",
+      "label": "黎曼映射定理",
+      "type": "theorem",
+      "properties": {
+        "name": "黎曼映射定理",
+        "proof_year": "1851",
+        "importance": "高",
+        "applications": "复分析、共形映射、流体力学"
+      },
+      "color": "#e544d1"
+    },
+    "N_5e7af1cd88034016a74ca7cefd1968f2": {
+      "id": "N_5e7af1cd88034016a74ca7cefd1968f2",
+      "label": "黎曼-罗赫定理",
+      "type": "theorem",
+      "properties": {
+        "name": "黎曼-罗赫定理",
+        "proof_year": "1857",
+        "importance": "高",
+        "applications": "代数几何、复分析、拓扑学"
+      },
+      "color": "#e544d1"
+    },
+    "N_38db134e02764b3089289307e999a850": {
+      "id": "N_38db134e02764b3089289307e999a850",
+      "label": "狄利克雷逼近定理",
+      "type": "theorem",
+      "properties": {
+        "name": "狄利克雷逼近定理",
+        "proof_year": "1842",
+        "importance": "高",
+        "applications": "丢番图逼近, 有理数逼近实数, 数论"
+      },
+      "color": "#e544d1"
+    },
+    "N_713b3b5b1b21479eb9367c001e8210c0": {
+      "id": "N_713b3b5b1b21479eb9367c001e8210c0",
+      "label": "狄利克雷单位定理",
+      "type": "theorem",
+      "properties": {
+        "name": "狄利克雷单位定理",
+        "proof_year": "1846",
+        "importance": "高",
+        "applications": "代数数论, 单位群结构研究"
+      },
+      "color": "#e544d1"
+    },
+    "N_2ffd0bf4b5774b13a0220f12e4af3f0d": {
+      "id": "N_2ffd0bf4b5774b13a0220f12e4af3f0d",
+      "label": "狄利克雷卷积",
+      "type": "theorem",
+      "properties": {
+        "name": "狄利克雷卷积",
+        "proof_year": "1837",
+        "importance": "高",
+        "applications": "数论、解析数论、模形式"
+      },
+      "color": "#e544d1"
+    },
+    "N_67a60f228cfb4e6e8cb42fd31f7126a7": {
+      "id": "N_67a60f228cfb4e6e8cb42fd31f7126a7",
+      "label": "华氏定理",
+      "type": "theorem",
+      "properties": {
+        "name": "华氏定理",
+        "proof_year": "未知",
+        "importance": "在数论领域具有重要影响",
+        "applications": "数论研究"
+      },
+      "color": "#e544d1"
+    },
+    "N_42519817fe174366aab5b21e2bdaf4ec": {
+      "id": "N_42519817fe174366aab5b21e2bdaf4ec",
+      "label": "华罗庚定理",
+      "type": "theorem",
+      "properties": {
+        "name": "华罗庚定理",
+        "proof_year": "1937",
+        "importance": "high",
+        "applications": "数论、解析数论、堆垒素数论"
+      },
+      "color": "#e544d1"
+    },
+    "N_0a564a95777444edbe3363584b0fd362": {
+      "id": "N_0a564a95777444edbe3363584b0fd362",
+      "label": "华罗庚-王元定理",
+      "type": "theorem",
+      "properties": {
+        "name": "华罗庚-王元定理",
+        "proof_year": "1957",
+        "importance": "high",
+        "applications": "数论、解析数论"
+      },
+      "color": "#e544d1"
+    },
+    "N_c34f6826b6574751877b65b9646956b2": {
+      "id": "N_c34f6826b6574751877b65b9646956b2",
+      "label": "豪斯多夫空间",
+      "type": "theorem",
+      "properties": {
+        "name": "豪斯多夫空间",
+        "proof_year": "1914",
+        "importance": "高",
+        "applications": "拓扑学、泛函分析、测度论"
+      },
+      "color": "#e544d1"
+    },
+    "N_d52eb79a9e134fa4ba6fdd6319142280": {
+      "id": "N_d52eb79a9e134fa4ba6fdd6319142280",
+      "label": "豪斯多夫维数",
+      "type": "theorem",
+      "properties": {
+        "name": "豪斯多夫维数",
+        "proof_year": "1918",
+        "importance": "高",
+        "applications": "分形几何、动力系统、复杂网络分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_0512df0108084403961e336815e22bbd": {
+      "id": "N_0512df0108084403961e336815e22bbd",
+      "label": "豪斯多夫测度",
+      "type": "theorem",
+      "properties": {
+        "name": "豪斯多夫测度",
+        "proof_year": "1918",
+        "importance": "高",
+        "applications": "分形几何、测度论、动力系统"
+      },
+      "color": "#e544d1"
+    },
+    "N_da8a57336f814b7eb254702332140f86": {
+      "id": "N_da8a57336f814b7eb254702332140f86",
+      "label": "豪斯多夫距离",
+      "type": "theorem",
+      "properties": {
+        "name": "豪斯多夫距离",
+        "proof_year": "1914",
+        "importance": "高",
+        "applications": "形状匹配、计算机视觉、模式识别"
+      },
+      "color": "#e544d1"
+    },
+    "N_c8bc9885b0f74c5285c1afe0de3b43e2": {
+      "id": "N_c8bc9885b0f74c5285c1afe0de3b43e2",
+      "label": "莱夫谢茨不动点定理",
+      "type": "theorem",
+      "properties": {
+        "name": "莱夫谢茨不动点定理",
+        "proof_year": "1926",
+        "importance": "高",
+        "applications": "代数拓扑、微分方程、动力系统"
+      },
+      "color": "#e544d1"
+    },
+    "N_350eda4de06441c9ba97a2e02786c544": {
+      "id": "N_350eda4de06441c9ba97a2e02786c544",
+      "label": "莱夫谢茨对偶定理",
+      "type": "theorem",
+      "properties": {
+        "name": "莱夫谢茨对偶定理",
+        "proof_year": "1929",
+        "importance": "高",
+        "applications": "代数拓扑学、流形理论"
+      },
+      "color": "#e544d1"
+    },
+    "N_21be841191424d13b43a4b74089cfc56": {
+      "id": "N_21be841191424d13b43a4b74089cfc56",
+      "label": "莱夫谢茨超平面定理",
+      "type": "theorem",
+      "properties": {
+        "name": "莱夫谢茨超平面定理",
+        "proof_year": "1924",
+        "importance": "高",
+        "applications": "代数拓扑、代数几何"
+      },
+      "color": "#e544d1"
+    },
+    "N_18207a37016c4c2a8dfdb2107980711c": {
+      "id": "N_18207a37016c4c2a8dfdb2107980711c",
+      "label": "米尔诺定理",
+      "type": "theorem",
+      "properties": {
+        "name": "米尔诺定理",
+        "proof_year": "1956",
+        "importance": "高",
+        "applications": "微分拓扑、代数拓扑"
+      },
+      "color": "#e544d1"
+    },
+    "N_80ae25a519ea4a21ac0763f5970255fe": {
+      "id": "N_80ae25a519ea4a21ac0763f5970255fe",
+      "label": "h-配边定理",
+      "type": "theorem",
+      "properties": {
+        "name": "h-配边定理",
+        "proof_year": "1962",
+        "importance": "高",
+        "applications": "光滑流形的分类"
+      },
+      "color": "#e544d1"
+    },
+    "N_60965295f8ee44589633377c51bc6c85": {
+      "id": "N_60965295f8ee44589633377c51bc6c85",
+      "label": "怪球面",
+      "type": "theorem",
+      "properties": {
+        "name": "怪球面",
+        "proof_year": "1956",
+        "importance": "高",
+        "applications": "微分拓扑学"
+      },
+      "color": "#e544d1"
+    },
+    "N_994698d35b3d43bca7759d92658d076b": {
+      "id": "N_994698d35b3d43bca7759d92658d076b",
+      "label": "斯梅尔定理",
+      "type": "theorem",
+      "properties": {
+        "name": "斯梅尔定理",
+        "proof_year": "1960",
+        "importance": "高",
+        "applications": "微分拓扑学、动力系统"
+      },
+      "color": "#e544d1"
+    },
+    "N_2d2b1235adbc4d5cb528dbb41a1ac68c": {
+      "id": "N_2d2b1235adbc4d5cb528dbb41a1ac68c",
+      "label": "斯梅尔不动点定理",
+      "type": "theorem",
+      "properties": {
+        "name": "斯梅尔不动点定理",
+        "proof_year": "1960",
+        "importance": "高",
+        "applications": "经济学、博弈论、动力系统"
+      },
+      "color": "#e544d1"
+    },
+    "N_56a5893a6c904582ad60e506af84795e": {
+      "id": "N_56a5893a6c904582ad60e506af84795e",
+      "label": "阿蒂亚-辛格指标定理",
+      "type": "theorem",
+      "properties": {
+        "name": "阿蒂亚-辛格指标定理",
+        "proof_year": "1963",
+        "importance": "high",
+        "applications": "微分几何、理论物理"
+      },
+      "color": "#e544d1"
+    },
+    "N_f461356829ff4a96b61c93829a84c7f0": {
+      "id": "N_f461356829ff4a96b61c93829a84c7f0",
+      "label": "阿蒂亚-博特不动点定理",
+      "type": "theorem",
+      "properties": {
+        "name": "阿蒂亚-博特不动点定理",
+        "proof_year": "1967",
+        "importance": "高",
+        "applications": "代数几何、微分几何、数学物理"
+      },
+      "color": "#e544d1"
+    },
+    "N_e58540342c6147da81b438005ebebb05": {
+      "id": "N_e58540342c6147da81b438005ebebb05",
+      "label": "瑟斯顿几何化猜想",
+      "type": "theorem",
+      "properties": {
+        "name": "瑟斯顿几何化猜想",
+        "proof_year": "1982",
+        "importance": "高",
+        "applications": "三维流形的分类与几何化"
+      },
+      "color": "#e544d1"
+    },
+    "N_2e5d4624cc8842abbb06d224bc11c063": {
+      "id": "N_2e5d4624cc8842abbb06d224bc11c063",
+      "label": "拉普拉斯变换",
+      "type": "theorem",
+      "properties": {
+        "name": "拉普拉斯变换",
+        "proof_year": "1782",
+        "importance": "高",
+        "applications": "信号处理、控制理论、微分方程求解"
+      },
+      "color": "#e544d1"
+    },
+    "N_8de4571487ab4e7298178e56348c598c": {
+      "id": "N_8de4571487ab4e7298178e56348c598c",
+      "label": "拉普拉斯定理",
+      "type": "theorem",
+      "properties": {
+        "name": "拉普拉斯定理",
+        "proof_year": "1812",
+        "importance": "high",
+        "applications": "概率论、统计学、物理学"
+      },
+      "color": "#e544d1"
+    },
+    "N_33b1db40bedb474e90bfa2f95729b9dc": {
+      "id": "N_33b1db40bedb474e90bfa2f95729b9dc",
+      "label": "拉普拉斯展开",
+      "type": "theorem",
+      "properties": {
+        "name": "拉普拉斯展开",
+        "proof_year": "1772",
+        "importance": "高",
+        "applications": "线性代数、概率论、统计学"
+      },
+      "color": "#e544d1"
+    },
+    "N_240ccef7a37246488c049aae07fe4430": {
+      "id": "N_240ccef7a37246488c049aae07fe4430",
+      "label": "拉普拉斯方程",
+      "type": "theorem",
+      "properties": {
+        "name": "拉普拉斯方程",
+        "proof_year": "1782",
+        "importance": "high",
+        "applications": "电磁学、流体力学、引力场理论、热传导"
+      },
+      "color": "#e544d1"
+    },
+    "N_dd2dca466bc14334b8b581330c211c5a": {
+      "id": "N_dd2dca466bc14334b8b581330c211c5a",
+      "label": "拉普拉斯算子",
+      "type": "theorem",
+      "properties": {
+        "name": "拉普拉斯算子",
+        "proof_year": "1782",
+        "importance": "高",
+        "applications": "数学物理方程、概率论、电磁学、流体力学"
+      },
+      "color": "#e544d1"
+    },
+    "N_caf9ebddd31246989803d603a800a463": {
+      "id": "N_caf9ebddd31246989803d603a800a463",
+      "label": "柯尔莫哥洛夫连续性定理",
+      "type": "theorem",
+      "properties": {
+        "name": "柯尔莫哥洛夫连续性定理",
+        "proof_year": "1933",
+        "importance": "高",
+        "applications": "随机过程、概率论、统计学"
+      },
+      "color": "#e544d1"
+    },
+    "N_98314226715e4fe0aa7d4d2a3b20c9cc": {
+      "id": "N_98314226715e4fe0aa7d4d2a3b20c9cc",
+      "label": "柯尔莫哥洛夫扩张定理",
+      "type": "theorem",
+      "properties": {
+        "name": "柯尔莫哥洛夫扩张定理",
+        "proof_year": "1933",
+        "importance": "high",
+        "applications": "概率论基础, 随机过程, 测度论"
+      },
+      "color": "#e544d1"
+    },
+    "N_c3be265c64014f0f8313d816c5a503cf": {
+      "id": "N_c3be265c64014f0f8313d816c5a503cf",
+      "label": "柯尔莫哥洛夫零一律",
+      "type": "theorem",
+      "properties": {
+        "name": "柯尔莫哥洛夫零一律",
+        "proof_year": "1933",
+        "importance": "high",
+        "applications": "概率论基础、随机过程、统计学"
+      },
+      "color": "#e544d1"
+    },
+    "N_c187fda0afbc4e0d8df9afd120f96948": {
+      "id": "N_c187fda0afbc4e0d8df9afd120f96948",
+      "label": "柯尔莫哥洛夫不等式",
+      "type": "theorem",
+      "properties": {
+        "name": "柯尔莫哥洛夫不等式",
+        "proof_year": "1928",
+        "importance": "high",
+        "applications": "概率论、统计学、随机过程"
+      },
+      "color": "#e544d1"
+    },
+    "N_0b4d21782919474697485876a41901f6": {
+      "id": "N_0b4d21782919474697485876a41901f6",
+      "label": "皮尔逊相关系数",
+      "type": "theorem",
+      "properties": {
+        "name": "皮尔逊相关系数",
+        "proof_year": "1895",
+        "importance": "高",
+        "applications": "统计学、数据分析、机器学习、社会科学"
+      },
+      "color": "#e544d1"
+    },
+    "N_005e40bd1fb64ef6ae059f4870e9ec19": {
+      "id": "N_005e40bd1fb64ef6ae059f4870e9ec19",
+      "label": "皮尔逊卡方检验",
+      "type": "theorem",
+      "properties": {
+        "name": "皮尔逊卡方检验",
+        "proof_year": "1900",
+        "importance": "高",
+        "applications": "假设检验、分类数据关联性分析、拟合优度检验"
+      },
+      "color": "#e544d1"
+    },
+    "N_bc616542f9ed4151ba6f1f8d2b0cb44c": {
+      "id": "N_bc616542f9ed4151ba6f1f8d2b0cb44c",
+      "label": "费希尔不等式",
+      "type": "theorem",
+      "properties": {
+        "name": "费希尔不等式",
+        "proof_year": "1925",
+        "importance": "高",
+        "applications": "统计推断、信息几何、机器学习"
+      },
+      "color": "#e544d1"
+    },
+    "N_3c3f5bbad58a4e54812076a17530df0f": {
+      "id": "N_3c3f5bbad58a4e54812076a17530df0f",
+      "label": "费希尔精确检验",
+      "type": "theorem",
+      "properties": {
+        "name": "费希尔精确检验",
+        "proof_year": "1922",
+        "importance": "高",
+        "applications": "小样本统计检验、列联表分析、生物学实验设计"
+      },
+      "color": "#e544d1"
+    },
+    "N_bedc58d73f464cacb8c667d4cbf928a7": {
+      "id": "N_bedc58d73f464cacb8c667d4cbf928a7",
+      "label": "费希尔信息",
+      "type": "theorem",
+      "properties": {
+        "name": "费希尔信息",
+        "proof_year": "1925",
+        "importance": "高",
+        "applications": "参数估计、统计推断、信息几何"
+      },
+      "color": "#e544d1"
+    },
+    "N_a5b9574779dc4cc69dc0f48cef156eec": {
+      "id": "N_a5b9574779dc4cc69dc0f48cef156eec",
+      "label": "费希尔判别分析",
+      "type": "theorem",
+      "properties": {
+        "name": "费希尔判别分析",
+        "proof_year": "1936",
+        "importance": "高",
+        "applications": "模式识别、分类问题、降维"
+      },
+      "color": "#e544d1"
+    },
+    "N_d76be23d958045fe82e4408279aa96e4": {
+      "id": "N_d76be23d958045fe82e4408279aa96e4",
+      "label": "费希尔变换",
+      "type": "theorem",
+      "properties": {
+        "name": "费希尔变换",
+        "proof_year": "1921",
+        "importance": "高",
+        "applications": "统计学中的假设检验、方差分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_2ec330ded3f44bffa24b93a67d36a53f": {
+      "id": "N_2ec330ded3f44bffa24b93a67d36a53f",
+      "label": "内曼-皮尔逊引理",
+      "type": "theorem",
+      "properties": {
+        "name": "内曼-皮尔逊引理",
+        "proof_year": "1933",
+        "importance": "统计学中假设检验的基础理论",
+        "applications": "信号检测、统计决策理论、质量控制"
+      },
+      "color": "#e544d1"
+    },
+    "N_4382a6a5ce094eddb1ba535ae213e187": {
+      "id": "N_4382a6a5ce094eddb1ba535ae213e187",
+      "label": "内曼置信区间",
+      "type": "theorem",
+      "properties": {
+        "name": "内曼置信区间",
+        "proof_year": "1937",
+        "importance": "high",
+        "applications": "统计推断、参数估计、假设检验"
+      },
+      "color": "#e544d1"
+    },
+    "N_4c97b57e257a4e8a9a2630a233386324": {
+      "id": "N_4c97b57e257a4e8a9a2630a233386324",
+      "label": "内曼结构定理",
+      "type": "theorem",
+      "properties": {
+        "name": "内曼结构定理",
+        "proof_year": "1934",
+        "importance": "high",
+        "applications": "统计推断、假设检验"
+      },
+      "color": "#e544d1"
+    },
+    "N_ef3e6f009f3e41f88b5349ca530e257c": {
+      "id": "N_ef3e6f009f3e41f88b5349ca530e257c",
+      "label": "Student's t-distribution",
+      "type": "theorem",
+      "properties": {
+        "name": "Student's t-distribution",
+        "proof_year": "1908",
+        "importance": "high",
+        "applications": "hypothesis testing, confidence intervals, small sample statistics"
+      },
+      "color": "#e544d1"
+    },
+    "N_3f1404449eb54a2ab182c12efa25694a": {
+      "id": "N_3f1404449eb54a2ab182c12efa25694a",
+      "label": "霍特林引理",
+      "type": "theorem",
+      "properties": {
+        "name": "霍特林引理",
+        "proof_year": "1935",
+        "importance": "高",
+        "applications": "经济学、统计学、资源分配"
+      },
+      "color": "#e544d1"
+    },
+    "N_73cacc040f9f435f92ef0e42b9383106": {
+      "id": "N_73cacc040f9f435f92ef0e42b9383106",
+      "label": "霍特林定律",
+      "type": "theorem",
+      "properties": {
+        "name": "霍特林定律",
+        "proof_year": "1931",
+        "importance": "high",
+        "applications": "经济学、统计学、资源分配"
+      },
+      "color": "#e544d1"
+    },
+    "N_4d6fd1ce137b40c68ab30623a5884f73": {
+      "id": "N_4d6fd1ce137b40c68ab30623a5884f73",
+      "label": "霍特林T²分布",
+      "type": "theorem",
+      "properties": {
+        "name": "霍特林T²分布",
+        "proof_year": "1931",
+        "importance": "高",
+        "applications": "多元统计分析、假设检验、质量控制"
+      },
+      "color": "#e544d1"
+    },
+    "N_e7ec18c1805b4064a574b1202e32aa2c": {
+      "id": "N_e7ec18c1805b4064a574b1202e32aa2c",
+      "label": "Box–Jenkins方法",
+      "type": "theorem",
+      "properties": {
+        "name": "Box–Jenkins方法",
+        "proof_year": "1970",
+        "importance": "高",
+        "applications": "时间序列分析、预测建模"
+      },
+      "color": "#e544d1"
+    },
+    "N_c7cb727a66074514a757b05f55b71c97": {
+      "id": "N_c7cb727a66074514a757b05f55b71c97",
+      "label": "Box–Cox变换",
+      "type": "theorem",
+      "properties": {
+        "name": "Box–Cox变换",
+        "proof_year": "1964",
+        "importance": "高",
+        "applications": "数据正态化、方差稳定化、线性模型假设满足"
+      },
+      "color": "#e544d1"
+    },
+    "N_71d4780cef75482092f48d6c259ce41c": {
+      "id": "N_71d4780cef75482092f48d6c259ce41c",
+      "label": "Box–Muller变换",
+      "type": "theorem",
+      "properties": {
+        "name": "Box–Muller变换",
+        "proof_year": "1958",
+        "importance": "高",
+        "applications": "生成正态分布随机数"
+      },
+      "color": "#e544d1"
+    },
+    "N_b7cca12616884bb7ac9f827b7c417cc3": {
+      "id": "N_b7cca12616884bb7ac9f827b7c417cc3",
+      "label": "埃弗隆的bootstrap定理",
+      "type": "theorem",
+      "properties": {
+        "name": "埃弗隆的bootstrap定理",
+        "proof_year": "1979",
+        "importance": "高",
+        "applications": "统计推断、置信区间估计、假设检验"
+      },
+      "color": "#e544d1"
+    },
+    "N_1f1b766f18f04084bd0c705b0a94e261": {
+      "id": "N_1f1b766f18f04084bd0c705b0a94e261",
+      "label": "埃弗隆-施泰因不等式",
+      "type": "theorem",
+      "properties": {
+        "name": "埃弗隆-施泰因不等式",
+        "proof_year": "1981",
+        "importance": "高",
+        "applications": "统计学中的自助法（bootstrap）理论"
+      },
+      "color": "#e544d1"
+    },
+    "N_62bc332eabd941c0b869ebbe4a7bfc27": {
+      "id": "N_62bc332eabd941c0b869ebbe4a7bfc27",
+      "label": "Tukey's range test",
+      "type": "theorem",
+      "properties": {
+        "name": "Tukey's range test",
+        "proof_year": "1949",
+        "importance": "high",
+        "applications": "multiple comparisons in statistical analysis"
+      },
+      "color": "#e544d1"
+    },
+    "N_1fc1ff7503ec47909291db3fd621276c": {
+      "id": "N_1fc1ff7503ec47909291db3fd621276c",
+      "label": "Tukey's test of additivity",
+      "type": "theorem",
+      "properties": {
+        "name": "Tukey's test of additivity",
+        "proof_year": "1949",
+        "importance": "high",
+        "applications": "statistical analysis, experimental design, ANOVA"
+      },
+      "color": "#e544d1"
+    },
+    "N_8a5e346ffae54296bdfa34a8b298d316": {
+      "id": "N_8a5e346ffae54296bdfa34a8b298d316",
+      "label": "Cooley-Tukey FFT algorithm",
+      "type": "theorem",
+      "properties": {
+        "name": "Cooley-Tukey FFT algorithm",
+        "proof_year": "1965",
+        "importance": "high",
+        "applications": "signal processing, image analysis, data compression"
+      },
+      "color": "#e544d1"
+    },
+    "N_f2003463ec164ab6b47c575c11ac5459": {
+      "id": "N_f2003463ec164ab6b47c575c11ac5459",
+      "label": "肯德尔秩相关系数",
+      "type": "theorem",
+      "properties": {
+        "name": "肯德尔秩相关系数",
+        "proof_year": "1938",
+        "importance": "高",
+        "applications": "统计学、数据科学、经济学、心理学"
+      },
+      "color": "#e544d1"
+    },
+    "N_af202b808852461cad45f4b46ad74f98": {
+      "id": "N_af202b808852461cad45f4b46ad74f98",
+      "label": "肯德尔一致性系数",
+      "type": "theorem",
+      "properties": {
+        "name": "肯德尔一致性系数",
+        "proof_year": "1938",
+        "importance": "衡量多个变量或评分者之间一致性的重要统计指标",
+        "applications": "心理学评估、医学诊断、市场调研、社会科学研究"
+      },
+      "color": "#e544d1"
+    },
+    "N_37959a1c9e0f458e858d1e97dd9ae8b6": {
+      "id": "N_37959a1c9e0f458e858d1e97dd9ae8b6",
+      "label": "莱布尼茨定理",
+      "type": "theorem",
+      "properties": {
+        "name": "莱布尼茨定理",
+        "proof_year": "1673",
+        "importance": "高",
+        "applications": "交错级数收敛性判别"
+      },
+      "color": "#e544d1"
+    },
+    "N_99ea4ac7bc2942deab792edba51e505c": {
+      "id": "N_99ea4ac7bc2942deab792edba51e505c",
+      "label": "莱布尼茨积分法则",
+      "type": "theorem",
+      "properties": {
+        "name": "莱布尼茨积分法则",
+        "proof_year": "1675",
+        "importance": "高",
+        "applications": "积分计算、微分方程、物理学"
+      },
+      "color": "#e544d1"
+    },
+    "N_8795a54d88664285a2e275197e00e79b": {
+      "id": "N_8795a54d88664285a2e275197e00e79b",
+      "label": "莱布尼茨判别法",
+      "type": "theorem",
+      "properties": {
+        "name": "莱布尼茨判别法",
+        "proof_year": "1682",
+        "importance": "高",
+        "applications": "交错级数收敛性判别"
+      },
+      "color": "#e544d1"
+    },
+    "N_a9120a2ac8aa4510882a56f6e7dbd3b9": {
+      "id": "N_a9120a2ac8aa4510882a56f6e7dbd3b9",
+      "label": "柯西积分定理",
+      "type": "theorem",
+      "properties": {
+        "name": "柯西积分定理",
+        "proof_year": "1825",
+        "importance": "高",
+        "applications": "复变函数论, 解析函数积分计算, 留数定理基础"
+      },
+      "color": "#e544d1"
+    },
+    "N_51e436945b13411d84b9ae474e2c4251": {
+      "id": "N_51e436945b13411d84b9ae474e2c4251",
+      "label": "柯西-施瓦茨不等式",
+      "type": "theorem",
+      "properties": {
+        "name": "柯西-施瓦茨不等式",
+        "proof_year": "1821",
+        "importance": "高",
+        "applications": "线性代数、概率论、泛函分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_96d557788c6b4d1989963a1443d222e1": {
+      "id": "N_96d557788c6b4d1989963a1443d222e1",
+      "label": "柯西中值定理",
+      "type": "theorem",
+      "properties": {
+        "name": "柯西中值定理",
+        "proof_year": "1823",
+        "importance": "高",
+        "applications": "微积分、实分析、复分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_af7287cc59c948f8961e05d65f88ea2f": {
+      "id": "N_af7287cc59c948f8961e05d65f88ea2f",
+      "label": "柯西-黎曼方程",
+      "type": "theorem",
+      "properties": {
+        "name": "柯西-黎曼方程",
+        "proof_year": "1814",
+        "importance": "高",
+        "applications": "复变函数论、流体力学、电磁学"
+      },
+      "color": "#e544d1"
+    },
+    "N_3155c5709a6d4aefa65da628210725b1": {
+      "id": "N_3155c5709a6d4aefa65da628210725b1",
+      "label": "黎曼重排定理",
+      "type": "theorem",
+      "properties": {
+        "name": "黎曼重排定理",
+        "proof_year": "1854",
+        "importance": "揭示了条件收敛级数的重排行为及其对和的影响",
+        "applications": "级数理论、实分析、调和分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_af7518e8061d48f8ba1390889a9e6895": {
+      "id": "N_af7518e8061d48f8ba1390889a9e6895",
+      "label": "魏尔斯特拉斯逼近定理",
+      "type": "theorem",
+      "properties": {
+        "name": "魏尔斯特拉斯逼近定理",
+        "proof_year": "1885",
+        "importance": "高",
+        "applications": "函数逼近、数值分析、信号处理"
+      },
+      "color": "#e544d1"
+    },
+    "N_8397a45f852b4769a80e49a58c71e712": {
+      "id": "N_8397a45f852b4769a80e49a58c71e712",
+      "label": "魏尔斯特拉斯函数",
+      "type": "theorem",
+      "properties": {
+        "name": "魏尔斯特拉斯函数",
+        "proof_year": "1872",
+        "importance": "高",
+        "applications": "数学分析、分形几何"
+      },
+      "color": "#e544d1"
+    },
+    "N_1828401176394b4eb6758ed3ebc54ba1": {
+      "id": "N_1828401176394b4eb6758ed3ebc54ba1",
+      "label": "魏尔斯特拉斯分解定理",
+      "type": "theorem",
+      "properties": {
+        "name": "魏尔斯特拉斯分解定理",
+        "proof_year": "1876",
+        "importance": "高",
+        "applications": "复分析、整函数理论"
+      },
+      "color": "#e544d1"
+    },
+    "N_d70a69560952440a873afffc97bccaa8": {
+      "id": "N_d70a69560952440a873afffc97bccaa8",
+      "label": "魏尔斯特拉斯椭圆函数定理",
+      "type": "theorem",
+      "properties": {
+        "name": "魏尔斯特拉斯椭圆函数定理",
+        "proof_year": "1862",
+        "importance": "高",
+        "applications": "椭圆函数理论、数论、代数几何"
+      },
+      "color": "#e544d1"
+    },
+    "N_9147bd49ce2b43fd9956853f4e1de907": {
+      "id": "N_9147bd49ce2b43fd9956853f4e1de907",
+      "label": "魏尔斯特拉斯判别法",
+      "type": "theorem",
+      "properties": {
+        "name": "魏尔斯特拉斯判别法",
+        "proof_year": "19世纪",
+        "importance": "高",
+        "applications": "函数项级数的一致收敛性判别"
+      },
+      "color": "#e544d1"
+    },
+    "N_0ce69a456b864926963736e2eda20313": {
+      "id": "N_0ce69a456b864926963736e2eda20313",
+      "label": "香农采样定理",
+      "type": "theorem",
+      "properties": {
+        "name": "香农采样定理",
+        "proof_year": "1949",
+        "importance": "high",
+        "applications": "信号处理, 通信工程, 数字音频"
+      },
+      "color": "#e544d1"
+    },
+    "N_984feabf10824c59b99d46ae2462c369": {
+      "id": "N_984feabf10824c59b99d46ae2462c369",
+      "label": "香农-哈特利定理",
+      "type": "theorem",
+      "properties": {
+        "name": "香农-哈特利定理",
+        "proof_year": "1948",
+        "importance": "high",
+        "applications": "通信理论、信息论、数据压缩"
+      },
+      "color": "#e544d1"
+    },
+    "N_ab3d3b462acf4d4fb4675687be18e4a2": {
+      "id": "N_ab3d3b462acf4d4fb4675687be18e4a2",
+      "label": "香农编码定理",
+      "type": "theorem",
+      "properties": {
+        "name": "香农编码定理",
+        "proof_year": "1948",
+        "importance": "high",
+        "applications": "数据压缩, 通信系统, 信息论"
+      },
+      "color": "#e544d1"
+    },
+    "N_4f40f58791954d6a9ed076d09306333e": {
+      "id": "N_4f40f58791954d6a9ed076d09306333e",
+      "label": "波尔查诺-魏尔斯特拉斯定理",
+      "type": "theorem",
+      "properties": {
+        "name": "波尔查诺-魏尔斯特拉斯定理",
+        "proof_year": "19世纪",
+        "importance": "高",
+        "applications": "实数理论、泛函分析、拓扑学"
+      },
+      "color": "#e544d1"
+    },
+    "N_7fd408701e964db38723ca9b73190494": {
+      "id": "N_7fd408701e964db38723ca9b73190494",
+      "label": "拉格朗日四平方和定理",
+      "type": "theorem",
+      "properties": {
+        "name": "拉格朗日四平方和定理",
+        "proof_year": "1770",
+        "importance": "high",
+        "applications": "数论、密码学"
+      },
+      "color": "#e544d1"
+    },
+    "N_1ac08c2db2794d7f85f6e506fe630cff": {
+      "id": "N_1ac08c2db2794d7f85f6e506fe630cff",
+      "label": "莱布尼茨级数",
+      "type": "theorem",
+      "properties": {
+        "name": "莱布尼茨级数",
+        "proof_year": "1673",
+        "importance": "高",
+        "applications": "计算圆周率、级数收敛性分析"
+      },
+      "color": "#e544d1"
+    },
+    "N_07100065b10e4918a00f330a07e4b7dc": {
+      "id": "N_07100065b10e4918a00f330a07e4b7dc",
+      "label": "傅里叶级数",
+      "type": "theorem",
+      "properties": {
+        "name": "傅里叶级数",
+        "proof_year": "1822",
+        "importance": "高",
+        "applications": "信号处理、热传导、振动分析、量子力学"
+      },
+      "color": "#e544d1"
+    },
+    "N_6310cc5a1a464bf4b61658371b9dff1d": {
+      "id": "N_6310cc5a1a464bf4b61658371b9dff1d",
+      "label": "傅里叶变换",
+      "type": "theorem",
+      "properties": {
+        "name": "傅里叶变换",
+        "proof_year": "1822",
+        "importance": "高",
+        "applications": "信号处理、图像处理、量子力学、偏微分方程求解"
+      },
+      "color": "#e544d1"
+    },
+    "N_daf2e28c4ddb4604813600b6d5e11a8b": {
+      "id": "N_daf2e28c4ddb4604813600b6d5e11a8b",
+      "label": "傅里叶积分定理",
+      "type": "theorem",
+      "properties": {
+        "name": "傅里叶积分定理",
+        "proof_year": "1822",
+        "importance": "高",
+        "applications": "信号处理、热传导、量子力学"
+      },
+      "color": "#e544d1"
+    },
+    "N_e7e995f62ff64c478f2626b262ea6ce6": {
+      "id": "N_e7e995f62ff64c478f2626b262ea6ce6",
+      "label": "傅里叶反演公式",
+      "type": "theorem",
+      "properties": {
+        "name": "傅里叶反演公式",
+        "proof_year": "1822",
+        "importance": "高",
+        "applications": "信号处理、图像处理、量子力学、热传导分析"
+      },
+      "color": "#e544d1"
+    }
+  },
+  "relationships": [
+    {
+      "src_id": "N_1bde9b24436f474888d688f27aed0d8c",
+      "tgt_id": "N_64d357ca26894e85a1382cceb2ee4a69",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_1bde9b24436f474888d688f27aed0d8c",
+      "tgt_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_1bde9b24436f474888d688f27aed0d8c",
+      "tgt_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_1bde9b24436f474888d688f27aed0d8c",
+      "tgt_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_1bde9b24436f474888d688f27aed0d8c",
+      "tgt_id": "N_c49475f1ddfe4572ac7b66818b343708",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_1bde9b24436f474888d688f27aed0d8c",
+      "tgt_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_1bde9b24436f474888d688f27aed0d8c",
+      "tgt_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_1bde9b24436f474888d688f27aed0d8c",
+      "tgt_id": "N_134b99b292614a818f6abc2abafa86cb",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_1bde9b24436f474888d688f27aed0d8c",
+      "tgt_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_1bde9b24436f474888d688f27aed0d8c",
+      "tgt_id": "N_9a9fcc26c59c4c7c95cd5dc4539cc52c",
+      "type": "has_subdomain"
+    },
+    {
+      "src_id": "N_64d357ca26894e85a1382cceb2ee4a69",
+      "tgt_id": "N_c530a4e52d784ad19c809303e2452d68",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_64d357ca26894e85a1382cceb2ee4a69",
+      "tgt_id": "N_21476d0161d3415abb84c921e8821823",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_64d357ca26894e85a1382cceb2ee4a69",
+      "tgt_id": "N_638f6db851b44287bb45b52f332c577e",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_64d357ca26894e85a1382cceb2ee4a69",
+      "tgt_id": "N_df0f511cfb2f4c4cb152bd5db7a8b902",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_64d357ca26894e85a1382cceb2ee4a69",
+      "tgt_id": "N_77318de265fb481987c18cc65ae4815c",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_64d357ca26894e85a1382cceb2ee4a69",
+      "tgt_id": "N_f9e54ceb05a0460a903172eb54ac8615",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_64d357ca26894e85a1382cceb2ee4a69",
+      "tgt_id": "N_bc3cfe72ec944917a24e9d0046a2e2e5",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_64d357ca26894e85a1382cceb2ee4a69",
+      "tgt_id": "N_0322708292434c5fbbefb56d8a826861",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_64d357ca26894e85a1382cceb2ee4a69",
+      "tgt_id": "N_5dee1271e66a40bfa4bb817259d326cf",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_c453751ec2b94bb2aaf6dfc8dc9aad6e",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_f679dfcf4df740b89d9623e866b3996f",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_618d958e909f4b198cbf79d40dde866f",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_6ceb54de873d489f968011452265dcfa",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_9daef2bf4d6d453c9c433ee9fa855f67",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_b1bd8ceb48e047a3a8761f4dcd312c7f",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_b95e4df159244f4da9f495f9589743ba",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_f11abd596e32491bbf8eac76bb56737a",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_8dbaa81de96f4c69b82dd22800385356",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_1555b1f617e14d5b9a8cad0782321faa",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_977ca1d4306c49a088de073c4860a895",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_e034b555ff674e6b9bff36baa5ff2d22",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_c99ebdd27d244a26a431395532e26214",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_b7d20fb520d343a0be24a8048e6eeccc",
+      "tgt_id": "N_daa52628218d499a88d91f92009cf11d",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_6ceb54de873d489f968011452265dcfa",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_06e187da4ae74fdba30e91bd0d0e497f",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_dd68da792dd046ebae0da60fe9bfaca0",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_7a55520cc2aa499e8ae9ea09ac4953f8",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_c945d081b5dd462db38abb8886c6e033",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_0f407f205e1a44d0b3ebe72641ded277",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_8619ee26e76449828b01020f6b30684e",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_0322708292434c5fbbefb56d8a826861",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_3b9efd74819c4afb986c420a41b450b2",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_2185b892c9064c1695bd981fcc3bb547",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_61ad310f666049b9880098544a6fb2c1",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_2eaa199aa45b44978e333783ede279b3",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_a71c32d146dd49e4801ccd1a6290057c",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_d67e3abd29ab43a8859e4c0f7b55e6e0",
+      "tgt_id": "N_1222af3813464dfea5ca7ca7fadb94e8",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_420415a9697a4b2ea51621e497859878",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_9459a12d1dd648e1bfd29acdfc298889",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_c60e67423c8b4b0a802b819a373b566a",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_e30bed7011bd4594b05fde73de322ae8",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_d6556fc2345c41e1bb5daf5ccf178da3",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_19d1ecbce4bf4343917d31d005208a0b",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_aaefdc94d44b494e976f8072d48a5e7f",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_19351b0486484ec4b8a3944b5049bb38",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_428d75f1f2bb4dffb4c4d1350502e421",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_cbff80ac99ce497da43164fe1e39c372",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_ad6bb41f72264b98854ec583b0c1f589",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_7093e0641dde4c5699a986f3831f0662",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_6142abe0b4f14eea97085d7b02900c94",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_9aeae565690f453482a12b7870ff7c87",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_23aa3b061ef041bc8e861dd755de3a7f",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_1b7f8d6ab0244c2fb276ebbc96f6997c",
+      "tgt_id": "N_89d3a14abe8c4d6fb3fc7283d8f4177a",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_c49475f1ddfe4572ac7b66818b343708",
+      "tgt_id": "N_40152d82c5674921bf619c1dbd44bdce",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_c49475f1ddfe4572ac7b66818b343708",
+      "tgt_id": "N_06e187da4ae74fdba30e91bd0d0e497f",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_c49475f1ddfe4572ac7b66818b343708",
+      "tgt_id": "N_52efa99f63c1463481e6ea0f9fa505b0",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_c49475f1ddfe4572ac7b66818b343708",
+      "tgt_id": "N_2b69696673314297a970f24eb3bcbac2",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_c49475f1ddfe4572ac7b66818b343708",
+      "tgt_id": "N_635e1286050a4e55a106c95ac3fc0b08",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_c49475f1ddfe4572ac7b66818b343708",
+      "tgt_id": "N_e59ea5be2f564caaac5031cdb17518be",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_c49475f1ddfe4572ac7b66818b343708",
+      "tgt_id": "N_b08bf92fa2104f5d9d885ba177a895ab",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_c49475f1ddfe4572ac7b66818b343708",
+      "tgt_id": "N_c2547bc2e8514ff4bd2f817806f4123c",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_3c7cef9fd4f04e8e894a9267aad213e4",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_5d1ea8fc65c24efdae00163a1771d7af",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_85bbf34e826e4f019676e55aa07a9a96",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_eff212eb25ae43d387e103500d5bdf44",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_ed9d468798a943c1943056bcabf668cb",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_216c958d325745798e5d1cd8e163b39c",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_779c982fddec4dd4ad7386d62a497001",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_22a32d1a1a3c4627a06047af61d21d45",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_bf87a2cc177342cd88bd22c6b5507ce5",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_2b69696673314297a970f24eb3bcbac2",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_635e1286050a4e55a106c95ac3fc0b08",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_e59ea5be2f564caaac5031cdb17518be",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_b08bf92fa2104f5d9d885ba177a895ab",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_c2547bc2e8514ff4bd2f817806f4123c",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_b72e04850749427fafbf59a3031774bf",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_2243854b67ed43a98edc6f4e1770a4d7",
+      "tgt_id": "N_0f0c8152c31546d1b567476f7dbf499b",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_0e34e7aad5074c218d2f0dcb1edb29bd",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_2e0069e397f546be8dae2a18d46390dd",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_d991cdb974cd4e1087e1a79cd8e298d8",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_afda44eb5def412594ee65f40309dd0c",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_29f9af19fea84bd98c8982b80a8ffb1d",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_2dc7850034ac4b46a5ea7ea725716b01",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_10f8fc4a41fd439bbcf16bc6c7334f23",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_e80433ee531f4c5fb11c5c71bc85c710",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_c47845a7888843d1ba60ecf21e642d99",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_202548a1b77c42ec81b0440e3e68b77b",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_ba58ba0966fa4110b73425a0a1b4964f",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_f891e55ba3a0408d9a80f817737c7c89",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_c3693298debc4b0dbd6fae77acb43eda",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_87efcc8ac04345a19543e8791749ec25",
+      "tgt_id": "N_c13871df150542589e50d881864327e2",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_134b99b292614a818f6abc2abafa86cb",
+      "tgt_id": "N_f4c4cc62415b4167b42e2b610d8b927b",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_134b99b292614a818f6abc2abafa86cb",
+      "tgt_id": "N_ab688e62934e413b8552e302bca0f814",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_134b99b292614a818f6abc2abafa86cb",
+      "tgt_id": "N_73ae7212fe8d4a4ea916816976c1df86",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_134b99b292614a818f6abc2abafa86cb",
+      "tgt_id": "N_767df67b00854a8589fffab4d602e2b7",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_134b99b292614a818f6abc2abafa86cb",
+      "tgt_id": "N_78a0d96747814cb1b5a14c5dca51de73",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_134b99b292614a818f6abc2abafa86cb",
+      "tgt_id": "N_ea7e5b62ebd949399a0f4b383bf3d1f8",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_134b99b292614a818f6abc2abafa86cb",
+      "tgt_id": "N_7b706ee41a01487fbee8fdc992ca018a",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_134b99b292614a818f6abc2abafa86cb",
+      "tgt_id": "N_92227ba360544bed992e9845cc62a19a",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_134b99b292614a818f6abc2abafa86cb",
+      "tgt_id": "N_09d19d1a195d4440ad7c755e58f71a38",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_7a55520cc2aa499e8ae9ea09ac4953f8",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_a21dbd132df043edadcf35f03f576a27",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_ab79ef883f6e4661bd8983450eedaf8e",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_87ac520b86d94cb28e04b476eec5c326",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_29f9af19fea84bd98c8982b80a8ffb1d",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_2dc7850034ac4b46a5ea7ea725716b01",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_10f8fc4a41fd439bbcf16bc6c7334f23",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_ba58ba0966fa4110b73425a0a1b4964f",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_8a39edf490704d6caaf72ccf90c55f03",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_71921bd0a9034bfabb85e8870facefab",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_e80433ee531f4c5fb11c5c71bc85c710",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_c47845a7888843d1ba60ecf21e642d99",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_202548a1b77c42ec81b0440e3e68b77b",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a71ca78a538453bb32f1d4d4214cfa8",
+      "tgt_id": "N_d2c2062efff64dd8bc9a6154dd8ee487",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a9fcc26c59c4c7c95cd5dc4539cc52c",
+      "tgt_id": "N_774a98ba840e4ff1a6c3a673ec162270",
+      "type": "studied_by"
+    },
+    {
+      "src_id": "N_9a9fcc26c59c4c7c95cd5dc4539cc52c",
+      "tgt_id": "N_635e1286050a4e55a106c95ac3fc0b08",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a9fcc26c59c4c7c95cd5dc4539cc52c",
+      "tgt_id": "N_c31e37d667d4498f9f76c0d79cf5e8f4",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a9fcc26c59c4c7c95cd5dc4539cc52c",
+      "tgt_id": "N_917344a353bb443ca2f114208f3629dc",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a9fcc26c59c4c7c95cd5dc4539cc52c",
+      "tgt_id": "N_657e359106a34916ac9a975000c94952",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a9fcc26c59c4c7c95cd5dc4539cc52c",
+      "tgt_id": "N_5373b11b58704e51a90894c80b13ef91",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a9fcc26c59c4c7c95cd5dc4539cc52c",
+      "tgt_id": "N_e59ea5be2f564caaac5031cdb17518be",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a9fcc26c59c4c7c95cd5dc4539cc52c",
+      "tgt_id": "N_865895d4436549c9a6be62f67fec73b8",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_9a9fcc26c59c4c7c95cd5dc4539cc52c",
+      "tgt_id": "N_9340f55c6cae4b608c2bde305ad7fd05",
+      "type": "contains_theorem"
+    },
+    {
+      "src_id": "N_c530a4e52d784ad19c809303e2452d68",
+      "tgt_id": "N_bc3cfe72ec944917a24e9d0046a2e2e5",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_c530a4e52d784ad19c809303e2452d68",
+      "tgt_id": "N_82260d10add54c1f9a6d7bdf3ffc1db6",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_c530a4e52d784ad19c809303e2452d68",
+      "tgt_id": "N_443b67115feb4787b2addbff8270d33d",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_21476d0161d3415abb84c921e8821823",
+      "tgt_id": "N_f9e54ceb05a0460a903172eb54ac8615",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_21476d0161d3415abb84c921e8821823",
+      "tgt_id": "N_99ae460101d94576a048d7123510e5cc",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_21476d0161d3415abb84c921e8821823",
+      "tgt_id": "N_3b0330803295495c8aa47d26d9a35d8e",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_638f6db851b44287bb45b52f332c577e",
+      "tgt_id": "N_34e14db3232540c0b2e29fa8fc7c9fcc",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_638f6db851b44287bb45b52f332c577e",
+      "tgt_id": "N_9da6cb71fbee4e5ca1a4eb1d13dd9c7f",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_638f6db851b44287bb45b52f332c577e",
+      "tgt_id": "N_1855ecd7a53449fbb1287d872e08cd3b",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_df0f511cfb2f4c4cb152bd5db7a8b902",
+      "tgt_id": "N_77318de265fb481987c18cc65ae4815c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_df0f511cfb2f4c4cb152bd5db7a8b902",
+      "tgt_id": "N_61ad310f666049b9880098544a6fb2c1",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_df0f511cfb2f4c4cb152bd5db7a8b902",
+      "tgt_id": "N_21d93dc773b845b997845be105890ed3",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_df0f511cfb2f4c4cb152bd5db7a8b902",
+      "tgt_id": "N_7fcdbbee312143eaa1b97c04af045ccc",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_c453751ec2b94bb2aaf6dfc8dc9aad6e",
+      "tgt_id": "N_39758a16173b4c4684ca3f378b478b30",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_c453751ec2b94bb2aaf6dfc8dc9aad6e",
+      "tgt_id": "N_305abc5834524d2b9ee116e93e8ea47d",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_f679dfcf4df740b89d9623e866b3996f",
+      "tgt_id": "N_ebbce817e5984c69b933859ba3477a7f",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_f679dfcf4df740b89d9623e866b3996f",
+      "tgt_id": "N_98bdd610c32a429898aaa7e8c5e2c363",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_f679dfcf4df740b89d9623e866b3996f",
+      "tgt_id": "N_59cc036f17de4f6d974c83a0a768da1d",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_f679dfcf4df740b89d9623e866b3996f",
+      "tgt_id": "N_0f90b35d540b4f7d9ed05b77ecc5e13b",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_618d958e909f4b198cbf79d40dde866f",
+      "tgt_id": "N_62ac3c0f17f54884881c74b75ef87de9",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_6ceb54de873d489f968011452265dcfa",
+      "tgt_id": "N_8619ee26e76449828b01020f6b30684e",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_6ceb54de873d489f968011452265dcfa",
+      "tgt_id": "N_a8058c353d644c89b8b1d613f0d6851d",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_6ceb54de873d489f968011452265dcfa",
+      "tgt_id": "N_e8fe286a445e4f5880d1a95fa6aeb827",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_06e187da4ae74fdba30e91bd0d0e497f",
+      "tgt_id": "N_61ad310f666049b9880098544a6fb2c1",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_06e187da4ae74fdba30e91bd0d0e497f",
+      "tgt_id": "N_77318de265fb481987c18cc65ae4815c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_06e187da4ae74fdba30e91bd0d0e497f",
+      "tgt_id": "N_5984a4527572430082d3e8034a95749c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_06e187da4ae74fdba30e91bd0d0e497f",
+      "tgt_id": "N_7fcdbbee312143eaa1b97c04af045ccc",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_dd68da792dd046ebae0da60fe9bfaca0",
+      "tgt_id": "N_3b9efd74819c4afb986c420a41b450b2",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_dd68da792dd046ebae0da60fe9bfaca0",
+      "tgt_id": "N_1d8083b0787047abbd3226e6e864d9d1",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_dd68da792dd046ebae0da60fe9bfaca0",
+      "tgt_id": "N_96010c0571bc4196ac4087bd076c378e",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_dd68da792dd046ebae0da60fe9bfaca0",
+      "tgt_id": "N_75515727afd84a91bc660187c2581d76",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_7a55520cc2aa499e8ae9ea09ac4953f8",
+      "tgt_id": "N_0f8f0ac3adaf4d249faa40e950143c98",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_7a55520cc2aa499e8ae9ea09ac4953f8",
+      "tgt_id": "N_4193c1e5b99940b690d8223222580fbf",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_7a55520cc2aa499e8ae9ea09ac4953f8",
+      "tgt_id": "N_da070040520843cc8f77d3d53f2deba6",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_7a55520cc2aa499e8ae9ea09ac4953f8",
+      "tgt_id": "N_9e7ac61f9a6e45788f06f8df9c83ebc4",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_7a55520cc2aa499e8ae9ea09ac4953f8",
+      "tgt_id": "N_5e7af1cd88034016a74ca7cefd1968f2",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_c945d081b5dd462db38abb8886c6e033",
+      "tgt_id": "N_1222af3813464dfea5ca7ca7fadb94e8",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_c945d081b5dd462db38abb8886c6e033",
+      "tgt_id": "N_38db134e02764b3089289307e999a850",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_c945d081b5dd462db38abb8886c6e033",
+      "tgt_id": "N_713b3b5b1b21479eb9367c001e8210c0",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_c945d081b5dd462db38abb8886c6e033",
+      "tgt_id": "N_2ffd0bf4b5774b13a0220f12e4af3f0d",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_0f407f205e1a44d0b3ebe72641ded277",
+      "tgt_id": "N_67a60f228cfb4e6e8cb42fd31f7126a7",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_0f407f205e1a44d0b3ebe72641ded277",
+      "tgt_id": "N_42519817fe174366aab5b21e2bdaf4ec",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_0f407f205e1a44d0b3ebe72641ded277",
+      "tgt_id": "N_0a564a95777444edbe3363584b0fd362",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_420415a9697a4b2ea51621e497859878",
+      "tgt_id": "N_ebbce817e5984c69b933859ba3477a7f",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_420415a9697a4b2ea51621e497859878",
+      "tgt_id": "N_98bdd610c32a429898aaa7e8c5e2c363",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_420415a9697a4b2ea51621e497859878",
+      "tgt_id": "N_59cc036f17de4f6d974c83a0a768da1d",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_420415a9697a4b2ea51621e497859878",
+      "tgt_id": "N_0f90b35d540b4f7d9ed05b77ecc5e13b",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_9459a12d1dd648e1bfd29acdfc298889",
+      "tgt_id": "N_c34f6826b6574751877b65b9646956b2",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_9459a12d1dd648e1bfd29acdfc298889",
+      "tgt_id": "N_d52eb79a9e134fa4ba6fdd6319142280",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_9459a12d1dd648e1bfd29acdfc298889",
+      "tgt_id": "N_0512df0108084403961e336815e22bbd",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_9459a12d1dd648e1bfd29acdfc298889",
+      "tgt_id": "N_da8a57336f814b7eb254702332140f86",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_c60e67423c8b4b0a802b819a373b566a",
+      "tgt_id": "N_c8bc9885b0f74c5285c1afe0de3b43e2",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_c60e67423c8b4b0a802b819a373b566a",
+      "tgt_id": "N_350eda4de06441c9ba97a2e02786c544",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_c60e67423c8b4b0a802b819a373b566a",
+      "tgt_id": "N_21be841191424d13b43a4b74089cfc56",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_e30bed7011bd4594b05fde73de322ae8",
+      "tgt_id": "N_18207a37016c4c2a8dfdb2107980711c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_e30bed7011bd4594b05fde73de322ae8",
+      "tgt_id": "N_80ae25a519ea4a21ac0763f5970255fe",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_e30bed7011bd4594b05fde73de322ae8",
+      "tgt_id": "N_60965295f8ee44589633377c51bc6c85",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_d6556fc2345c41e1bb5daf5ccf178da3",
+      "tgt_id": "N_994698d35b3d43bca7759d92658d076b",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_d6556fc2345c41e1bb5daf5ccf178da3",
+      "tgt_id": "N_80ae25a519ea4a21ac0763f5970255fe",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_d6556fc2345c41e1bb5daf5ccf178da3",
+      "tgt_id": "N_2d2b1235adbc4d5cb528dbb41a1ac68c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_19d1ecbce4bf4343917d31d005208a0b",
+      "tgt_id": "N_56a5893a6c904582ad60e506af84795e",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_19d1ecbce4bf4343917d31d005208a0b",
+      "tgt_id": "N_f461356829ff4a96b61c93829a84c7f0",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_aaefdc94d44b494e976f8072d48a5e7f",
+      "tgt_id": "N_e58540342c6147da81b438005ebebb05",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_19351b0486484ec4b8a3944b5049bb38",
+      "tgt_id": "N_ebbce817e5984c69b933859ba3477a7f",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_40152d82c5674921bf619c1dbd44bdce",
+      "tgt_id": "N_2e5d4624cc8842abbb06d224bc11c063",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_40152d82c5674921bf619c1dbd44bdce",
+      "tgt_id": "N_8de4571487ab4e7298178e56348c598c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_40152d82c5674921bf619c1dbd44bdce",
+      "tgt_id": "N_33b1db40bedb474e90bfa2f95729b9dc",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_40152d82c5674921bf619c1dbd44bdce",
+      "tgt_id": "N_240ccef7a37246488c049aae07fe4430",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_40152d82c5674921bf619c1dbd44bdce",
+      "tgt_id": "N_dd2dca466bc14334b8b581330c211c5a",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_52efa99f63c1463481e6ea0f9fa505b0",
+      "tgt_id": "N_b72e04850749427fafbf59a3031774bf",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_52efa99f63c1463481e6ea0f9fa505b0",
+      "tgt_id": "N_caf9ebddd31246989803d603a800a463",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_52efa99f63c1463481e6ea0f9fa505b0",
+      "tgt_id": "N_98314226715e4fe0aa7d4d2a3b20c9cc",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_52efa99f63c1463481e6ea0f9fa505b0",
+      "tgt_id": "N_c3be265c64014f0f8313d816c5a503cf",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_52efa99f63c1463481e6ea0f9fa505b0",
+      "tgt_id": "N_c187fda0afbc4e0d8df9afd120f96948",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_3c7cef9fd4f04e8e894a9267aad213e4",
+      "tgt_id": "N_0b4d21782919474697485876a41901f6",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_3c7cef9fd4f04e8e894a9267aad213e4",
+      "tgt_id": "N_005e40bd1fb64ef6ae059f4870e9ec19",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_5d1ea8fc65c24efdae00163a1771d7af",
+      "tgt_id": "N_bc616542f9ed4151ba6f1f8d2b0cb44c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_5d1ea8fc65c24efdae00163a1771d7af",
+      "tgt_id": "N_3c3f5bbad58a4e54812076a17530df0f",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_5d1ea8fc65c24efdae00163a1771d7af",
+      "tgt_id": "N_bedc58d73f464cacb8c667d4cbf928a7",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_5d1ea8fc65c24efdae00163a1771d7af",
+      "tgt_id": "N_a5b9574779dc4cc69dc0f48cef156eec",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_5d1ea8fc65c24efdae00163a1771d7af",
+      "tgt_id": "N_d76be23d958045fe82e4408279aa96e4",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_85bbf34e826e4f019676e55aa07a9a96",
+      "tgt_id": "N_2ec330ded3f44bffa24b93a67d36a53f",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_85bbf34e826e4f019676e55aa07a9a96",
+      "tgt_id": "N_4382a6a5ce094eddb1ba535ae213e187",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_85bbf34e826e4f019676e55aa07a9a96",
+      "tgt_id": "N_4c97b57e257a4e8a9a2630a233386324",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_eff212eb25ae43d387e103500d5bdf44",
+      "tgt_id": "N_ef3e6f009f3e41f88b5349ca530e257c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_ed9d468798a943c1943056bcabf668cb",
+      "tgt_id": "N_3f1404449eb54a2ab182c12efa25694a",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_ed9d468798a943c1943056bcabf668cb",
+      "tgt_id": "N_73cacc040f9f435f92ef0e42b9383106",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_ed9d468798a943c1943056bcabf668cb",
+      "tgt_id": "N_4d6fd1ce137b40c68ab30623a5884f73",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_216c958d325745798e5d1cd8e163b39c",
+      "tgt_id": "N_e7ec18c1805b4064a574b1202e32aa2c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_216c958d325745798e5d1cd8e163b39c",
+      "tgt_id": "N_c7cb727a66074514a757b05f55b71c97",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_216c958d325745798e5d1cd8e163b39c",
+      "tgt_id": "N_71d4780cef75482092f48d6c259ce41c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_779c982fddec4dd4ad7386d62a497001",
+      "tgt_id": "N_b7cca12616884bb7ac9f827b7c417cc3",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_779c982fddec4dd4ad7386d62a497001",
+      "tgt_id": "N_1f1b766f18f04084bd0c705b0a94e261",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_22a32d1a1a3c4627a06047af61d21d45",
+      "tgt_id": "N_62bc332eabd941c0b869ebbe4a7bfc27",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_22a32d1a1a3c4627a06047af61d21d45",
+      "tgt_id": "N_1fc1ff7503ec47909291db3fd621276c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_22a32d1a1a3c4627a06047af61d21d45",
+      "tgt_id": "N_8a5e346ffae54296bdfa34a8b298d316",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_bf87a2cc177342cd88bd22c6b5507ce5",
+      "tgt_id": "N_f2003463ec164ab6b47c575c11ac5459",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_bf87a2cc177342cd88bd22c6b5507ce5",
+      "tgt_id": "N_af202b808852461cad45f4b46ad74f98",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_0e34e7aad5074c218d2f0dcb1edb29bd",
+      "tgt_id": "N_37959a1c9e0f458e858d1e97dd9ae8b6",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_0e34e7aad5074c218d2f0dcb1edb29bd",
+      "tgt_id": "N_99ea4ac7bc2942deab792edba51e505c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_0e34e7aad5074c218d2f0dcb1edb29bd",
+      "tgt_id": "N_8795a54d88664285a2e275197e00e79b",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_2e0069e397f546be8dae2a18d46390dd",
+      "tgt_id": "N_a9120a2ac8aa4510882a56f6e7dbd3b9",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_2e0069e397f546be8dae2a18d46390dd",
+      "tgt_id": "N_51e436945b13411d84b9ae474e2c4251",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_2e0069e397f546be8dae2a18d46390dd",
+      "tgt_id": "N_d2c2062efff64dd8bc9a6154dd8ee487",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_2e0069e397f546be8dae2a18d46390dd",
+      "tgt_id": "N_96d557788c6b4d1989963a1443d222e1",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_2e0069e397f546be8dae2a18d46390dd",
+      "tgt_id": "N_af7287cc59c948f8961e05d65f88ea2f",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_d991cdb974cd4e1087e1a79cd8e298d8",
+      "tgt_id": "N_4193c1e5b99940b690d8223222580fbf",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_d991cdb974cd4e1087e1a79cd8e298d8",
+      "tgt_id": "N_9e7ac61f9a6e45788f06f8df9c83ebc4",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_d991cdb974cd4e1087e1a79cd8e298d8",
+      "tgt_id": "N_da070040520843cc8f77d3d53f2deba6",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_d991cdb974cd4e1087e1a79cd8e298d8",
+      "tgt_id": "N_5e7af1cd88034016a74ca7cefd1968f2",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_d991cdb974cd4e1087e1a79cd8e298d8",
+      "tgt_id": "N_3155c5709a6d4aefa65da628210725b1",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_afda44eb5def412594ee65f40309dd0c",
+      "tgt_id": "N_af7518e8061d48f8ba1390889a9e6895",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_afda44eb5def412594ee65f40309dd0c",
+      "tgt_id": "N_8397a45f852b4769a80e49a58c71e712",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_afda44eb5def412594ee65f40309dd0c",
+      "tgt_id": "N_1828401176394b4eb6758ed3ebc54ba1",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_afda44eb5def412594ee65f40309dd0c",
+      "tgt_id": "N_d70a69560952440a873afffc97bccaa8",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_afda44eb5def412594ee65f40309dd0c",
+      "tgt_id": "N_9147bd49ce2b43fd9956853f4e1de907",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_f4c4cc62415b4167b42e2b610d8b927b",
+      "tgt_id": "N_0ce69a456b864926963736e2eda20313",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_f4c4cc62415b4167b42e2b610d8b927b",
+      "tgt_id": "N_984feabf10824c59b99d46ae2462c369",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_f4c4cc62415b4167b42e2b610d8b927b",
+      "tgt_id": "N_ab3d3b462acf4d4fb4675687be18e4a2",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_a21dbd132df043edadcf35f03f576a27",
+      "tgt_id": "N_af7518e8061d48f8ba1390889a9e6895",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_a21dbd132df043edadcf35f03f576a27",
+      "tgt_id": "N_4f40f58791954d6a9ed076d09306333e",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_a21dbd132df043edadcf35f03f576a27",
+      "tgt_id": "N_1828401176394b4eb6758ed3ebc54ba1",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_a21dbd132df043edadcf35f03f576a27",
+      "tgt_id": "N_8397a45f852b4769a80e49a58c71e712",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_ab79ef883f6e4661bd8983450eedaf8e",
+      "tgt_id": "N_917344a353bb443ca2f114208f3629dc",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_ab79ef883f6e4661bd8983450eedaf8e",
+      "tgt_id": "N_7fd408701e964db38723ca9b73190494",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_87ac520b86d94cb28e04b476eec5c326",
+      "tgt_id": "N_37959a1c9e0f458e858d1e97dd9ae8b6",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_87ac520b86d94cb28e04b476eec5c326",
+      "tgt_id": "N_99ea4ac7bc2942deab792edba51e505c",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_87ac520b86d94cb28e04b476eec5c326",
+      "tgt_id": "N_1ac08c2db2794d7f85f6e506fe630cff",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_87ac520b86d94cb28e04b476eec5c326",
+      "tgt_id": "N_8795a54d88664285a2e275197e00e79b",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_774a98ba840e4ff1a6c3a673ec162270",
+      "tgt_id": "N_07100065b10e4918a00f330a07e4b7dc",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_774a98ba840e4ff1a6c3a673ec162270",
+      "tgt_id": "N_6310cc5a1a464bf4b61658371b9dff1d",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_774a98ba840e4ff1a6c3a673ec162270",
+      "tgt_id": "N_daf2e28c4ddb4604813600b6d5e11a8b",
+      "type": "proved"
+    },
+    {
+      "src_id": "N_774a98ba840e4ff1a6c3a673ec162270",
+      "tgt_id": "N_e7e995f62ff64c478f2626b262ea6ce6",
+      "type": "proved"
+    }
+  ]
+}

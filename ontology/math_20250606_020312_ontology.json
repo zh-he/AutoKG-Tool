@@ -1,0 +1,68 @@
+{
+  "entity_types": [
+    {
+      "type": "math",
+      "description": "数学"
+    },
+    {
+      "type": "sub_domain",
+      "description": "数学领域下的子领域"
+    },
+    {
+      "type": "mathematician",
+      "description": "数学家"
+    },
+    {
+      "type": "theorem",
+      "description": "数学定理"
+    }
+  ],
+  "relationships": [
+    {
+      "src_type": "math",
+      "tgt_type": "sub_domain",
+      "relation": "has_subdomain",
+      "description": "数学领域包含不同的子领域"
+    },
+    {
+      "src_type": "sub_domain",
+      "tgt_type": "mathematician",
+      "relation": "studied_by",
+      "description": "数学子领域由数学家研究"
+    },
+    {
+      "src_type": "sub_domain",
+      "tgt_type": "theorem",
+      "relation": "contains_theorem",
+      "description": "数学子领域包含相关的定理"
+    },
+    {
+      "src_type": "mathematician",
+      "tgt_type": "theorem",
+      "relation": "proved",
+      "description": "数学家证明了定理"
+    }
+  ],
+  "properties": {
+    "math": [
+      "description",
+      "history"
+    ],
+    "sub_domain": [
+      "description",
+      "difficulty_level"
+    ],
+    "mathematician": [
+      "name",
+      "birth_year",
+      "nationality",
+      "contributions"
+    ],
+    "theorem": [
+      "name",
+      "proof_year",
+      "importance",
+      "applications"
+    ]
+  }
+}

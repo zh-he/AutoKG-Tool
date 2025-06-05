@@ -18,7 +18,11 @@
     }
   ],
   "properties": {
-    "computer_science": ["description"],
-    "sub_domain": ["description"]
+    "computer_science": [
+      "description"
+    ],
+    "sub_domain": [
+      "description"
+    ]
   }
 }
