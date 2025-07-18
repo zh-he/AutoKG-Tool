@@ -1,0 +1,75 @@
+{
+  "entity_types": [
+    {
+      "type": "icm_congress",
+      "description": "“国际数学家大会”这一核心事件概念，作为图谱的根节点。"
+    },
+    {
+      "type": "award",
+      "description": "在国际数学家大会上颁发的著名奖项，例如'菲尔兹奖'、'陈省身奖'等。"
+    },
+    {
+      "type": "laureate",
+      "description": "某个奖项的获奖者。"
+    },
+    {
+      "type": "math_field",
+      "description": "获奖者做出贡献的特定数学领域。"
+    },
+    {
+      "type": "country",
+      "description": "获奖者的国籍。"
+    }
+  ],
+  "relationships": [
+    {
+      "src_type": "icm_congress",
+      "tgt_type": "award",
+      "relation": "features_award",
+      "description": "描述国际数学家大会上设有或颁发哪些奖项。"
+    },
+    {
+      "src_type": "award",
+      "tgt_type": "laureate",
+      "relation": "awarded_to",
+      "description": "描述该奖项被授予了哪位获奖者。"
+    },
+    {
+      "src_type": "laureate",
+      "tgt_type": "math_field",
+      "relation": "contributed_to",
+      "description": "描述获奖者的主要贡献领域。"
+    },
+    {
+      "src_type": "laureate",
+      "tgt_type": "country",
+      "relation": "nationality_is",
+      "description": "描述获奖者的国籍是哪个国家。"
+    }
+  ],
+  "properties": {
+    "icm_congress": [
+      "name",
+      "description",
+      "organizer"
+    ],
+    "award": [
+      "name",
+      "description",
+      "founding_year"
+    ],
+    "laureate": [
+      "full_name",
+      "birth_year",
+      "award_year"
+    ],
+    "math_field": [
+      "name",
+      "description"
+    ],
+    "country": [
+      "name",
+      "continent"
+    ]
+  }
+}

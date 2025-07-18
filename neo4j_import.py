@@ -3,7 +3,6 @@ import sys
 from neo4j import GraphDatabase
 from config import Config
 
-# ====== 配置 Neo4j 连接信息 ======
 NEO4J_URI = Config.NEO4J_URI
 NEO4J_USERNAME = Config.NEO4J_USERNAME
 NEO4J_PASSWORD = Config.NEO4J_PASSWORD
@@ -19,15 +18,12 @@ class Neo4jImporter:
     def import_knowledge_graph(self, kg_data):
         """导入知识图谱数据到Neo4j数据库"""
         with self.driver.session() as session:
-            # 创建唯一性约束
             session.run("CREATE CONSTRAINT IF NOT EXISTS FOR (n:KGNode) REQUIRE n.id IS UNIQUE")
 
-            # 导入节点
             nodes_data = kg_data.get("nodes", {})
             for node_id, node_info in nodes_data.items():
                 session.write_transaction(self._create_node, node_id, node_info)
 
-            # 导入关系
             relationships_data = kg_data.get("relationships", [])
             for rel in relationships_data:
                 session.write_transaction(self._create_relationship, rel)
@@ -38,9 +34,7 @@ class Neo4jImporter:
         properties_str = json.dumps(node_info.get("properties", {}), ensure_ascii=False)
         node_type = node_info.get("type", "Unknown")
 
-        # 清理标签名称，确保符合Neo4j标签规范
         label = node_type.replace(" ", "_").replace("-", "_").replace(".", "_")
-        # 确保标签以字母开头
         if label and not label[0].isalpha():
             label = "Type_" + label
 
@@ -72,14 +66,11 @@ class Neo4jImporter:
         """创建关系的静态方法"""
         rel_type = rel.get("type", "RELATED")
 
-        # 关系类型应该是大写，只包含字母、数字和下划线
         rel_type = rel_type.upper().replace(" ", "_").replace("-", "_").replace(".", "_")
 
-        # 确保关系类型以字母开头
         if rel_type and not rel_type[0].isalpha():
             rel_type = "REL_" + rel_type
 
-        # 使用参数化查询避免SQL注入
         query = f"""
         MATCH (a:KGNode {{id: $from_id}}), (b:KGNode {{id: $to_id}})
         MERGE (a)-[r:{rel_type}]->(b)
@@ -87,8 +78,8 @@ class Neo4jImporter:
 
         tx.run(
             query,
-            from_id=rel["src_id"],  # 使用 src_id
-            to_id=rel["tgt_id"],  # 使用 tgt_id
+            from_id=rel["src_id"],
+            to_id=rel["tgt_id"],
         )
 
     def clear_database(self):
@@ -100,11 +91,9 @@ class Neo4jImporter:
     def get_stats(self):
         """获取数据库统计信息"""
         with self.driver.session() as session:
-            # 获取节点数量
             node_result = session.run("MATCH (n:KGNode) RETURN count(n) as count")
             node_count = node_result.single()["count"]
 
-            # 获取关系数量
             rel_result = session.run("MATCH ()-[r]->() RETURN count(r) as count")
             rel_count = rel_result.single()["count"]
 
@@ -114,10 +103,8 @@ class Neo4jImporter:
 def import_kg_from_file(kg_file_path: str) -> bool:
     """
     从指定文件导入知识图谱到Neo4j的便捷函数
-
     参数:
         kg_file_path (str): 知识图谱JSON文件路径
-
     返回:
         bool: 导入是否成功
     """
@@ -155,10 +142,8 @@ def import_kg_from_file(kg_file_path: str) -> bool:
 def import_kg_from_data(kg_data: dict) -> bool:
     """
     直接从数据导入知识图谱到Neo4j的便捷函数
-
     参数:
         kg_data (dict): 知识图谱数据字典
-
     返回:
         bool: 导入是否成功
     """
@@ -169,7 +154,6 @@ def import_kg_from_data(kg_data: dict) -> bool:
             print("开始导入知识图谱数据到Neo4j数据库...")
             importer.import_knowledge_graph(kg_data)
 
-            # 获取并显示统计信息
             stats = importer.get_stats()
             print(f"✅ 成功将知识图谱导入 Neo4j 数据库！")
             print(f"   - 节点数量: {stats['nodes']}")

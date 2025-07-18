@@ -4,11 +4,8 @@ from typing import Dict, Any, Optional
 
 from dotenv import load_dotenv
 
-# --- 项目设置 ---
-# 定位项目根目录
 BASE_DIR = Path(__file__).resolve().parent
 
-# 尝试加载 .env 文件
 dotenv_path = BASE_DIR / ".env"
 if dotenv_path.exists():
     load_dotenv(dotenv_path)
@@ -22,22 +19,20 @@ class Config:
     从环境变量或 .env 文件加载设置。
     """
     WORKING_DIR: Path = BASE_DIR
-    # --- LLM 配置 ---
-    # LLM_MODEL 环境变量决定使用哪个 LLM
-    LLM_TYPE: str = os.environ.get("LLM_MODEL", "deepseek-v3").lower()  # 规范化为小写以便查找
+    LLM_TYPE: str = os.environ.get("LLM_TYPE", "deepseek-v3").lower()
     LLM_CONFIG: Dict[str, Dict[str, Any]] = {
         "deepseek-v3": {
             "model": "deepseek-v3",
-            "base_url": "https://cloud.infini-ai.com/maas/v1/",  # 如果API需要，确保尾部有斜杠
-            "api_key": os.environ.get("GENSTUDIO_API_KEY"),  # API 密钥必须设置
+            "base_url": "https://cloud.infini-ai.com/maas/v1/",
+            "api_key": os.environ.get("GENSTUDIO_API_KEY"),
             "max_concurrency": int(os.environ.get("MAX_CONCURRENCY", "10")),
             "timeout_seconds": int(os.environ.get("LLM_TIMEOUT_SECONDS", "30")),
             "retry_attempts": int(os.environ.get("LLM_RETRY_ATTEMPTS", "5")),
         },
         "deepseek-chat": {
             "model": "deepseek-chat",
-            "base_url": os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/"),  # 确保尾部有斜杠
-            "api_key": os.environ.get("DEEPSEEK_API_KEY"),  # API 密钥必须设置
+            "base_url": os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/"),
+            "api_key": os.environ.get("DEEPSEEK_API_KEY"),
             "max_concurrency": int(os.environ.get("MAX_CONCURRENCY", "10")),
             "timeout_seconds": int(os.environ.get("LLM_TIMEOUT_SECONDS", "30")),
             "retry_attempts": int(os.environ.get("LLM_RETRY_ATTEMPTS", "5")),
@@ -65,11 +60,9 @@ class Config:
             )
         return config.copy()
 
-    # --- 嵌入模型配置 ---
     EMBEDDING_MODEL: str = os.environ.get("EMBEDDING_MODEL", "BAAI/bge-large-zh-v1.5")
     EMBEDDING_MAX_TOKEN_SIZE: int = int(os.environ.get("EMBEDDING_MAX_TOKEN_SIZE", "8192"))  # 嵌入模型的最大 token 数
 
-    # --- Neo4j 配置 ---
     NEO4J_URI: str = os.environ.get("NEO4J_URI", "bolt://localhost:7687")
     NEO4J_USERNAME: str = os.environ.get("NEO4J_USERNAME", "neo4j")
     NEO4J_PASSWORD: Optional[str] = os.environ.get("NEO4J_PASSWORD")
@@ -82,7 +75,6 @@ def validate_config() -> None:
     """
     print("正在验证配置...")
 
-    # 验证 LLM 配置 (这也会检查 LLM_TYPE 是否有效)
     try:
         llm_config = Config.get_llm_config()
         if not llm_config.get("api_key"):
@@ -92,22 +84,19 @@ def validate_config() -> None:
     except ValueError as e:
         raise e
 
-    # 验证嵌入模型
     if not Config.EMBEDDING_MODEL:
         raise ValueError(
             "错误: EMBEDDING_MODEL 未设置。 "
             "请在您的 .env 文件中指定一个有效的嵌入模型路径或名称。"
         )
 
-    # 验证 Neo4j 配置 (对默认值提供警告，而非错误)
-    if Config.NEO4J_URI == "bolt://localhost:7687":  # 检查是否为默认值
+    if Config.NEO4J_URI == "bolt://localhost:7687":
         print(f"警告: NEO4J_URI 正在使用默认值 '{Config.NEO4J_URI}'。请确保这是预期的行为。")
-    if Config.NEO4J_USERNAME == "neo4j":  # 检查是否为默认值
+    if Config.NEO4J_USERNAME == "neo4j":
         print(f"警告: NEO4J_USERNAME 正在使用默认值 '{Config.NEO4J_USERNAME}'。请确保这是预期的行为。")
     if not Config.NEO4J_PASSWORD:
         print("警告: NEO4J_PASSWORD 未设置。如果您的 Neo4j 实例需要密码，连接可能会失败。")
 
-    # 确保工作目录存在，如果不存在则创建
     if not Config.WORKING_DIR.exists():
         print(f"工作目录 {Config.WORKING_DIR} 未找到。正在创建它...")
         try:
@@ -130,8 +119,7 @@ if __name__ == "__main__":
         print(f"选定的 LLM 类型 (Selected LLM Type): {Config.LLM_TYPE}")
         print(f"  模型名称 (Model Name): {current_llm_config.get('model')}")
         print(f"  基础 URL (Base URL): {current_llm_config.get('base_url')}")
-        print(
-            f"  API 密钥已设置 (API Key Set): {'是 (Yes)' if current_llm_config.get('api_key') else '否 (No) (如果未使用但需要则会报错!)'}")
+        print(f"  API 密钥已设置 (API Key Set): {'是 (Yes)' if current_llm_config.get('api_key') else '否 (No) (如果未使用但需要则会报错!)'}")
         print(f"  最大并发数 (Max Concurrency): {current_llm_config.get('max_concurrency')}")
         print(f"  超时 (秒) (Timeout (seconds)): {current_llm_config.get('timeout_seconds')}")
         print(f"  重试次数 (Retry Attempts): {current_llm_config.get('retry_attempts')}")

@@ -19,13 +19,11 @@ os.makedirs(KG_FOLDER, exist_ok=True)
 
 def validate_ontology(ontology_data):
     """验证本体层设计的合理性"""
-    # 检查必需字段
     required_fields = ["entity_types", "relationships", "properties"]
     for field in required_fields:
         if field not in ontology_data:
             return False, f"缺少必需字段: {field}"
 
-    # 检查entity_types
     if not isinstance(ontology_data["entity_types"], list):
         return False, "entity_types必须是列表类型"
 
@@ -35,7 +33,6 @@ def validate_ontology(ontology_data):
         if "type" not in entity_type:
             return False, "entity_types中的每个元素必须包含'type'字段"
 
-    # 检查relationships
     if not isinstance(ontology_data["relationships"], list):
         return False, "relationships必须是列表类型"
 
@@ -47,11 +44,9 @@ def validate_ontology(ontology_data):
             if field not in rel:
                 return False, f"relationships中的每个元素必须包含'{field}'字段"
 
-    # 检查properties
     if not isinstance(ontology_data["properties"], dict):
         return False, "properties必须是字典类型"
 
-    # 检查properties中的每个实体类型是否在entity_types中定义
     entity_types = {et["type"] for et in ontology_data["entity_types"]}
     for entity_type in ontology_data["properties"]:
         if entity_type not in entity_types:
@@ -93,24 +88,18 @@ def upload_ontology_and_generate_kg():
         return jsonify({"error": "只支持JSON格式的文件"}), 400
 
     try:
-        # 读取并解析JSON文件
         ontology_data = json.loads(file.read())
 
-        # 验证本体层设计
         is_valid, message = validate_ontology(ontology_data)
         if not is_valid:
             return jsonify({"error": f"本体层设计验证失败: {message}"}), 400
 
-        # 验证root_type是否存在于entity_types中
         entity_types = {et["type"] for et in ontology_data["entity_types"]}
         if root_type not in entity_types:
-            return jsonify({
-                               "error": f"指定的根节点类型 '{root_type}' 不存在于本体定义中。可用的类型有: {', '.join(entity_types)}"}), 400
+            return jsonify({"error": f"指定的根节点类型 '{root_type}' 不存在于本体定义中。可用的类型有: {', '.join(entity_types)}"}), 400
 
-        # 生成时间戳
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-        # 保存文件
         ontology_filename = f"{root_type}_{timestamp}_ontology.json"
         ontology_path = os.path.join(UPLOAD_FOLDER, ontology_filename)
 
@@ -118,32 +107,25 @@ def upload_ontology_and_generate_kg():
             json.dump(ontology_data, f, ensure_ascii=False, indent=2)
         print(f"本体文件已保存: {ontology_path}")
 
-        # 生成知识图谱文件名
         kg_filename = f"{root_type}_{timestamp}_kg.json"
         kg_path = os.path.join(KG_FOLDER, kg_filename)
 
         try:
-            # 创建知识图谱构建器实例
             builder = KnowledgeGraphBuilder(domain=domain_name, root_type=root_type)
-
             try:
-                # 直接使用保存的本体文件，不再需要临时文件
                 kg_data = asyncio.run(builder.build_with_ontology(ontology_path))
-                print(
-                    f"知识图谱构建完成，节点数: {len(kg_data.get('nodes', {}))}, 关系数: {len(kg_data.get('relationships', []))}")
+                print(f"知识图谱构建完成，节点数: {len(kg_data.get('nodes', {}))}, 关系数: {len(kg_data.get('relationships', []))}")
 
-                # 保存生成的知识图谱
                 with open(kg_path, 'w', encoding='utf-8') as f:
                     json.dump(kg_data, f, ensure_ascii=False, indent=2)
 
                 return jsonify({
                     "success": True,
-                    "kg_path": f"KG/{kg_filename}",  # 返回相对路径
-                    "ontology_path": f"ontology/{ontology_filename}",  # 返回本体文件路径
+                    "kg_path": f"KG/{kg_filename}",
+                    "ontology_path": f"ontology/{ontology_filename}",
                     "message": f"知识图谱 {kg_filename} 生成成功，本体文件已保存为 {ontology_filename}"
                 })
             except Exception as e:
-                # 如果构建失败，删除已保存的本体文件
                 if os.path.exists(ontology_path):
                     os.unlink(ontology_path)
                     print(f"构建失败，已删除本体文件: {ontology_path}")
@@ -154,7 +136,6 @@ def upload_ontology_and_generate_kg():
                 return jsonify({"error": f"处理文件时发生错误: {str(e)}"}), 500
 
         except Exception as e:
-            # 如果构建器创建失败，删除已保存的本体文件
             if os.path.exists(ontology_path):
                 os.unlink(ontology_path)
                 print(f"构建器创建失败，已删除本体文件: {ontology_path}")
@@ -205,7 +186,6 @@ def import_to_neo4j():
         with open(kg_path, 'r', encoding='utf-8') as f:
             kg_data = json.load(f)
 
-        # 使用Neo4jImporter类导入数据
         importer = Neo4jImporter(Config.NEO4J_URI, Config.NEO4J_USERNAME, Config.NEO4J_PASSWORD)
         try:
             importer.import_knowledge_graph(kg_data)
@@ -230,7 +210,6 @@ def import_to_neo4j():
 
 if __name__ == '__main__':
     try:
-        # 验证配置
         validate_config()
         print("✅ 配置验证成功，启动Flask应用...")
         app.run(debug=True, host='0.0.0.0', port=5000)

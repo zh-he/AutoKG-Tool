@@ -1,0 +1,1565 @@
+{
+  "nodes": {
+    "N_013bef9b7e274f48978732c2c0c5e7ec": {
+      "id": "N_013bef9b7e274f48978732c2c0c5e7ec",
+      "label": "国际数学家大会",
+      "type": "icm_congress",
+      "color": "#e54444",
+      "properties": {
+        "name": "国际数学家大会",
+        "description": "国际数学家大会（International Congress of Mathematicians，简称ICM）是由国际数学联盟（IMU）主办的全球性数学学术会议，每四年举办一次，被誉为数学界的奥林匹克盛会。",
+        "organizer": "国际数学联盟（IMU）"
+      }
+    },
+    "N_fdb36dfc0f8344bb9506879b8129fb4d": {
+      "id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "label": "菲尔兹奖",
+      "type": "award",
+      "properties": {
+        "name": "菲尔兹奖",
+        "description": "在国际数学家大会上颁发的著名奖项，被誉为数学界的诺贝尔奖，授予40岁以下的杰出数学家。",
+        "founding_year": "1936"
+      },
+      "color": "#4473e5"
+    },
+    "N_9216c3467e044241a4462c3390b33cbc": {
+      "id": "N_9216c3467e044241a4462c3390b33cbc",
+      "label": "陈省身奖",
+      "type": "award",
+      "properties": {
+        "name": "陈省身奖",
+        "description": "在国际数学家大会上颁发的著名奖项，以表彰在数学领域做出杰出贡献的数学家。",
+        "founding_year": "2009"
+      },
+      "color": "#4473e5"
+    },
+    "N_6fa09c579041421aa3fee5a6adf4c49b": {
+      "id": "N_6fa09c579041421aa3fee5a6adf4c49b",
+      "label": "高斯奖",
+      "type": "award",
+      "properties": {
+        "name": "高斯奖",
+        "description": "在国际数学家大会上颁发的著名奖项，以纪念数学家卡尔·弗里德里希·高斯。",
+        "founding_year": "2006"
+      },
+      "color": "#4473e5"
+    },
+    "N_bdf56ecf9b464f22ba9e15948a2b84c8": {
+      "id": "N_bdf56ecf9b464f22ba9e15948a2b84c8",
+      "label": "内万林纳奖",
+      "type": "award",
+      "properties": {
+        "name": "内万林纳奖",
+        "description": "在国际数学家大会上颁发的著名奖项，主要表彰在信息科学的数学方面做出杰出贡献的数学家。",
+        "founding_year": "1981"
+      },
+      "color": "#4473e5"
+    },
+    "N_d456140e5c15497db4813ec01ae10a29": {
+      "id": "N_d456140e5c15497db4813ec01ae10a29",
+      "label": "利拉瓦蒂奖",
+      "type": "award",
+      "properties": {
+        "name": "利拉瓦蒂奖",
+        "description": "在国际数学家大会上颁发的著名奖项，旨在表彰在数学普及和教育方面做出杰出贡献的个人或团体。",
+        "founding_year": "2010"
+      },
+      "color": "#4473e5"
+    },
+    "N_cb9b5c821f0040768e042f347a39d9dd": {
+      "id": "N_cb9b5c821f0040768e042f347a39d9dd",
+      "label": "让-皮埃尔·塞尔",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Jean-Pierre Serre",
+        "birth_year": "1926",
+        "award_year": "1954"
+      },
+      "color": "#a2e544"
+    },
+    "N_125de098b8f840d9bb5715f731bf5d49": {
+      "id": "N_125de098b8f840d9bb5715f731bf5d49",
+      "label": "陶哲轩",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Terence Tao",
+        "birth_year": "1975",
+        "award_year": "2006"
+      },
+      "color": "#a2e544"
+    },
+    "N_500d4bf1c70249e89265a03de23874ac": {
+      "id": "N_500d4bf1c70249e89265a03de23874ac",
+      "label": "玛丽安·米尔札哈尼",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Maryam Mirzakhani",
+        "birth_year": "1977",
+        "award_year": "2014"
+      },
+      "color": "#a2e544"
+    },
+    "N_597359cdfdb149fd83b3ced79a49ec71": {
+      "id": "N_597359cdfdb149fd83b3ced79a49ec71",
+      "label": "爱德华·威滕",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Edward Witten",
+        "birth_year": "1951",
+        "award_year": "1990"
+      },
+      "color": "#a2e544"
+    },
+    "N_0cdf940888cd4e6a804227a4ff368751": {
+      "id": "N_0cdf940888cd4e6a804227a4ff368751",
+      "label": "格里戈里·佩雷尔曼",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Grigori Yakovlevich Perelman",
+        "birth_year": "1966",
+        "award_year": "2006"
+      },
+      "color": "#a2e544"
+    },
+    "N_d7f25f2625764da5ac8de608ad511fc8": {
+      "id": "N_d7f25f2625764da5ac8de608ad511fc8",
+      "label": "吴宝珠",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Ngô Bảo Châu",
+        "birth_year": "1972",
+        "award_year": "2010"
+      },
+      "color": "#a2e544"
+    },
+    "N_ee6d6b7704ad4a768751f861ffc4da8e": {
+      "id": "N_ee6d6b7704ad4a768751f861ffc4da8e",
+      "label": "曼朱尔·巴尔加瓦",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Manjul Bhargava",
+        "birth_year": "1974",
+        "award_year": "2014"
+      },
+      "color": "#a2e544"
+    },
+    "N_0e5002b9738d4ee1b1575bd46d71a5d8": {
+      "id": "N_0e5002b9738d4ee1b1575bd46d71a5d8",
+      "label": "阿莱西奥·菲加利",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Alessio Figalli",
+        "birth_year": "1984",
+        "award_year": "2018"
+      },
+      "color": "#a2e544"
+    },
+    "N_28d84a108c1b42ca81afa24067633c5a": {
+      "id": "N_28d84a108c1b42ca81afa24067633c5a",
+      "label": "考切尔·比尔卡尔",
+      "type": "laureate",
+      "properties": {
+        "full_name": "考切尔·比尔卡尔",
+        "birth_year": "1978",
+        "award_year": "2022"
+      },
+      "color": "#a2e544"
+    },
+    "N_1ab440c80bcb453aab51731b8608f4e4": {
+      "id": "N_1ab440c80bcb453aab51731b8608f4e4",
+      "label": "彼得·舒尔茨",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Peter Scholze",
+        "birth_year": "1987",
+        "award_year": "2018"
+      },
+      "color": "#a2e544"
+    },
+    "N_9594d392a27c4807a03c6155fafcad6f": {
+      "id": "N_9594d392a27c4807a03c6155fafcad6f",
+      "label": "阿克萨伊·文卡特什",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Akshay Venkatesh",
+        "birth_year": "1981",
+        "award_year": "2018"
+      },
+      "color": "#a2e544"
+    },
+    "N_e61068d2974b44a2a574aecfc738696e": {
+      "id": "N_e61068d2974b44a2a574aecfc738696e",
+      "label": "雨果·迪米尼-科潘",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Hugo Duminil-Copin",
+        "birth_year": "1985",
+        "award_year": "2022"
+      },
+      "color": "#a2e544"
+    },
+    "N_c9f07533455645e4a05f8cfe64c5348a": {
+      "id": "N_c9f07533455645e4a05f8cfe64c5348a",
+      "label": "谷超豪",
+      "type": "laureate",
+      "properties": {
+        "full_name": "谷超豪",
+        "birth_year": "1926",
+        "award_year": "2010"
+      },
+      "color": "#a2e544"
+    },
+    "N_3ec2b9a34299434a9e17e1a29988f48c": {
+      "id": "N_3ec2b9a34299434a9e17e1a29988f48c",
+      "label": "萧荫堂",
+      "type": "laureate",
+      "properties": {
+        "full_name": "萧荫堂",
+        "birth_year": "1943",
+        "award_year": "2010"
+      },
+      "color": "#a2e544"
+    },
+    "N_961d4e1ed7cd4906b1ebd36d7769593a": {
+      "id": "N_961d4e1ed7cd4906b1ebd36d7769593a",
+      "label": "菲利普·格里菲斯",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Philip Griffiths",
+        "birth_year": "1938",
+        "award_year": "2014"
+      },
+      "color": "#a2e544"
+    },
+    "N_4b3c5817b4b54513aa4a3317e81ffe64": {
+      "id": "N_4b3c5817b4b54513aa4a3317e81ffe64",
+      "label": "伊藤清",
+      "type": "laureate",
+      "properties": {
+        "full_name": "伊藤清",
+        "birth_year": "1915",
+        "award_year": "2006"
+      },
+      "color": "#a2e544"
+    },
+    "N_c5244dfbf0764b958e7523664ecff6eb": {
+      "id": "N_c5244dfbf0764b958e7523664ecff6eb",
+      "label": "彼得·拉克斯",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Peter David Lax",
+        "birth_year": "1926",
+        "award_year": "2005"
+      },
+      "color": "#a2e544"
+    },
+    "N_6b14d67fcaf6499ab4e58b8b07d4c77a": {
+      "id": "N_6b14d67fcaf6499ab4e58b8b07d4c77a",
+      "label": "雅克·路易斯·利翁斯",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Jacques-Louis Lions",
+        "birth_year": "1928",
+        "award_year": "1999"
+      },
+      "color": "#a2e544"
+    },
+    "N_ad1be4f58e95467c82b91774057387fb": {
+      "id": "N_ad1be4f58e95467c82b91774057387fb",
+      "label": "西格尔",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Carl Ludwig Siegel",
+        "birth_year": "1896",
+        "award_year": ""
+      },
+      "color": "#a2e544"
+    },
+    "N_e240bad1643b4c0ebd51b3728f7b5247": {
+      "id": "N_e240bad1643b4c0ebd51b3728f7b5247",
+      "label": "安德鲁·马杰",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Andrew Majda",
+        "birth_year": "1949",
+        "award_year": "2010"
+      },
+      "color": "#a2e544"
+    },
+    "N_d615b17bbe024308aba9da605c573cb0": {
+      "id": "N_d615b17bbe024308aba9da605c573cb0",
+      "label": "斯坦尼斯拉夫·斯米尔诺夫",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Stanislav Konstantinovich Smirnov",
+        "birth_year": "1970",
+        "award_year": "2010"
+      },
+      "color": "#a2e544"
+    },
+    "N_c0c0441eaeb4435ba2fc806c5ffe622d": {
+      "id": "N_c0c0441eaeb4435ba2fc806c5ffe622d",
+      "label": "米歇尔·塔拉格兰德",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Michel Talagrand",
+        "birth_year": "1952",
+        "award_year": "2019"
+      },
+      "color": "#a2e544"
+    },
+    "N_dfda15b07f204b1784490625c5f7c6fd": {
+      "id": "N_dfda15b07f204b1784490625c5f7c6fd",
+      "label": "温德林·沃纳",
+      "type": "laureate",
+      "properties": {
+        "full_name": "Wendelin Werner",
+        "birth_year": "1968",
+        "award_year": "2006"
+      },
+      "color": "#a2e544"
+    },
+    "N_71a6501e0f554c8fae0dae845d6ad830": {
+      "id": "N_71a6501e0f554c8fae0dae845d6ad830",
+      "label": "代数几何",
+      "type": "math_field",
+      "properties": {
+        "name": "代数几何",
+        "description": "代数几何是数学的一个分支，研究多项式方程组的解集所定义的几何对象，结合了代数与几何的方法。"
+      },
+      "color": "#e544d1"
+    },
+    "N_d3abf6cd33524995874874a5118858ab": {
+      "id": "N_d3abf6cd33524995874874a5118858ab",
+      "label": "数论",
+      "type": "math_field",
+      "properties": {
+        "name": "数论",
+        "description": "数论是纯数学的一个分支，主要研究整数的性质及其相互关系。它在数学中具有基础性地位，涵盖素数分布、模形式、丢番图方程等重要课题。让-皮埃尔·塞尔在该领域做出了开创性贡献，包括代数几何与数论的交叉研究。"
+      },
+      "color": "#e544d1"
+    },
+    "N_f443cae2e4574b688717f871a385c611": {
+      "id": "N_f443cae2e4574b688717f871a385c611",
+      "label": "拓扑学",
+      "type": "math_field",
+      "properties": {
+        "name": "拓扑学",
+        "description": "拓扑学是数学的一个分支，研究在连续变形下保持不变的几何性质，如连通性、紧致性和边界等。让-皮埃尔·塞尔在代数拓扑和同伦理论方面做出了重要贡献。"
+      },
+      "color": "#e544d1"
+    },
+    "N_1eb3058b4d5140b69082330c92b332ce": {
+      "id": "N_1eb3058b4d5140b69082330c92b332ce",
+      "label": "法国",
+      "type": "country",
+      "properties": {
+        "name": "法国",
+        "continent": "欧洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_353ee97c0df8458db70179e7a2868e04": {
+      "id": "N_353ee97c0df8458db70179e7a2868e04",
+      "label": "调和分析",
+      "type": "math_field",
+      "properties": {
+        "name": "调和分析",
+        "description": "调和分析是数学分析的一个分支，主要研究函数的傅里叶变换及其相关性质，广泛应用于偏微分方程、数论和信号处理等领域。"
+      },
+      "color": "#e544d1"
+    },
+    "N_18ab433550c54d77ac70ffdd37870bf1": {
+      "id": "N_18ab433550c54d77ac70ffdd37870bf1",
+      "label": "偏微分方程",
+      "type": "math_field",
+      "properties": {
+        "name": "偏微分方程",
+        "description": "偏微分方程是数学中研究含有多个变量的函数的偏导数的方程，广泛应用于物理学、工程学等领域。陶哲轩在这一领域做出了重要贡献，特别是在非线性偏微分方程和流体力学中的数学理论方面。"
+      },
+      "color": "#e544d1"
+    },
+    "N_66107d1727ba4a1590f96828da9ba378": {
+      "id": "N_66107d1727ba4a1590f96828da9ba378",
+      "label": "组合数学",
+      "type": "math_field",
+      "properties": {
+        "name": "组合数学",
+        "description": "组合数学是数学的一个分支，主要研究离散结构和对象之间的组合关系、排列方式以及计数问题。它在计算机科学、统计学、密码学等领域有广泛应用。陶哲轩在该领域做出了重要贡献，特别是在加性组合学和极值组合学方面。"
+      },
+      "color": "#e544d1"
+    },
+    "N_f06ac48c0d254cae988ab0a115afd8f4": {
+      "id": "N_f06ac48c0d254cae988ab0a115afd8f4",
+      "label": "压缩感知",
+      "type": "math_field",
+      "properties": {
+        "name": "压缩感知",
+        "description": "压缩感知是一种利用信号的稀疏性，通过远少于传统奈奎斯特采样定理要求的采样数来重建信号的技术。陶哲轩在该领域的贡献包括提出了高效的压缩感知算法和理论框架，显著推动了信号处理和数据压缩的发展。"
+      },
+      "color": "#e544d1"
+    },
+    "N_c10ba44b0ded42d287de6c27e6bd922d": {
+      "id": "N_c10ba44b0ded42d287de6c27e6bd922d",
+      "label": "澳大利亚",
+      "type": "country",
+      "properties": {
+        "name": "澳大利亚",
+        "continent": "大洋洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_d9093916433b455cba4aadfb7f25cc96": {
+      "id": "N_d9093916433b455cba4aadfb7f25cc96",
+      "label": "双曲几何",
+      "type": "math_field",
+      "properties": {
+        "name": "双曲几何",
+        "description": "双曲几何是一种非欧几里得几何，其平行公设被替换为：对于任意直线和不在该直线上的点，存在至少两条直线通过该点且不与原直线相交。玛丽安·米尔札哈尼在双曲几何领域做出了重要贡献，特别是在理解模空间和双曲曲面的动力学性质方面。"
+      },
+      "color": "#e544d1"
+    },
+    "N_1decb8e5771a4e0fa9176d837f04449c": {
+      "id": "N_1decb8e5771a4e0fa9176d837f04449c",
+      "label": "遍历理论",
+      "type": "math_field",
+      "properties": {
+        "name": "遍历理论",
+        "description": "遍历理论是数学的一个分支，研究动力系统中保持测度的变换的长期统计行为，与概率论、统计力学和混沌理论等领域密切相关。"
+      },
+      "color": "#e544d1"
+    },
+    "N_037a5066cd1f4fc298243f1dd38554c2": {
+      "id": "N_037a5066cd1f4fc298243f1dd38554c2",
+      "label": "泰希米勒空间",
+      "type": "math_field",
+      "properties": {
+        "name": "泰希米勒空间",
+        "description": "泰希米勒空间是复分析和Teichmüller理论中的重要概念，主要研究黎曼曲面的模空间及其复结构变形。玛丽安·米尔札哈尼在该领域的研究对双曲几何和动力系统有深远影响。"
+      },
+      "color": "#e544d1"
+    },
+    "N_506d65c4362a4a19aa62408aae89a932": {
+      "id": "N_506d65c4362a4a19aa62408aae89a932",
+      "label": "伊朗",
+      "type": "country",
+      "properties": {
+        "name": "伊朗",
+        "continent": "亚洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_3d57f91fe7d642538aafc02b42340ae5": {
+      "id": "N_3d57f91fe7d642538aafc02b42340ae5",
+      "label": "数学物理",
+      "type": "math_field",
+      "properties": {
+        "name": "数学物理",
+        "description": "数学物理是数学与物理学交叉的领域，主要研究物理问题的数学方法和数学结构的物理应用。"
+      },
+      "color": "#e544d1"
+    },
+    "N_483094d140af462db8f4c0564022542b": {
+      "id": "N_483094d140af462db8f4c0564022542b",
+      "label": "拓扑量子场论",
+      "type": "math_field",
+      "properties": {
+        "name": "拓扑量子场论",
+        "description": "拓扑量子场论（Topological Quantum Field Theory, TQFT）是数学和理论物理学中的一个重要领域，研究具有拓扑不变性的量子场论。它将拓扑学与量子场论相结合，用于描述低维拓扑空间中的量子物理现象，并在数学上为纽结理论、三维流形分类等提供了新的工具。爱德华·威滕因其在这一领域的开创性工作而闻名。"
+      },
+      "color": "#e544d1"
+    },
+    "N_9d6d425bedfb42e7bc82b9327da5791a": {
+      "id": "N_9d6d425bedfb42e7bc82b9327da5791a",
+      "label": "弦理论",
+      "type": "math_field",
+      "properties": {
+        "name": "弦理论",
+        "description": "弦理论是理论物理学的一个分支，它试图将量子力学与广义相对论统一起来，认为物质的基本组成不是点粒子，而是一维的弦。"
+      },
+      "color": "#e544d1"
+    },
+    "N_dc44229fff8b45e9bfda071b731f9454": {
+      "id": "N_dc44229fff8b45e9bfda071b731f9454",
+      "label": "规范理论",
+      "type": "math_field",
+      "properties": {
+        "name": "规范理论",
+        "description": "规范理论是物理学中描述基本相互作用的理论框架，通过规范对称性和规范场来统一描述电磁力、弱力和强力。它在数学上与纤维丛理论密切相关，并由爱德华·威滕等人在数学物理领域做出了重要贡献。"
+      },
+      "color": "#e544d1"
+    },
+    "N_c1b706faf90a46b2a26a90019af43213": {
+      "id": "N_c1b706faf90a46b2a26a90019af43213",
+      "label": "美国",
+      "type": "country",
+      "properties": {
+        "name": "美国",
+        "continent": "北美洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_614a5e2f847242198e599b6acf4e76ee": {
+      "id": "N_614a5e2f847242198e599b6acf4e76ee",
+      "label": "几何分析",
+      "type": "math_field",
+      "properties": {
+        "name": "几何分析",
+        "description": "几何分析是数学的一个分支，结合了几何学和数学分析的方法，研究流形、度量空间和偏微分方程等几何对象的性质。格里戈里·佩雷尔曼因其在几何分析领域的贡献，特别是对庞加莱猜想的证明而闻名。"
+      },
+      "color": "#e544d1"
+    },
+    "N_b96b8ab93e374875b33f53945623e357": {
+      "id": "N_b96b8ab93e374875b33f53945623e357",
+      "label": "里奇流",
+      "type": "math_field",
+      "properties": {
+        "name": "Ricci flow",
+        "description": "A geometric flow that deforms the metric of a Riemannian manifold in a manner formally analogous to the diffusion of heat, smoothing out irregularities in the metric."
+      },
+      "color": "#e544d1"
+    },
+    "N_93aed32ee9994599b0b92fcb63b9dede": {
+      "id": "N_93aed32ee9994599b0b92fcb63b9dede",
+      "label": "庞加莱猜想",
+      "type": "math_field",
+      "properties": {
+        "name": "庞加莱猜想",
+        "description": "庞加莱猜想是拓扑学中的一个重要问题，由法国数学家亨利·庞加莱于1904年提出。该猜想指出，任何一个单连通的、闭合的三维流形都与三维球面同胚。2003年，俄罗斯数学家格里戈里·佩雷尔曼证明了这一猜想，这一成就为他赢得了2006年的菲尔兹奖。"
+      },
+      "color": "#e544d1"
+    },
+    "N_474b2a60b49c4d5b93d9f08ca151810a": {
+      "id": "N_474b2a60b49c4d5b93d9f08ca151810a",
+      "label": "俄罗斯",
+      "type": "country",
+      "properties": {
+        "name": "俄罗斯",
+        "continent": "欧洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_d7f8d4a9e9f74954814963a310ecbe3e": {
+      "id": "N_d7f8d4a9e9f74954814963a310ecbe3e",
+      "label": "表示论",
+      "type": "math_field",
+      "properties": {
+        "name": "表示论",
+        "description": "表示论是数学中研究群、代数、李代数等代数结构如何通过线性变换作用于向量空间的一个分支领域。它通过将抽象的代数结构转化为具体的线性变换，从而利用线性代数的工具研究这些结构的性质。"
+      },
+      "color": "#e544d1"
+    },
+    "N_94515a7b93b24d43a9cb779d6de4d25a": {
+      "id": "N_94515a7b93b24d43a9cb779d6de4d25a",
+      "label": "朗兰兹纲领",
+      "type": "math_field",
+      "properties": {
+        "name": "朗兰兹纲领",
+        "description": "朗兰兹纲领是数学中一系列影响深远的构想，连接了数论、代数几何和群表示论等领域，由罗伯特·朗兰兹在1967年提出。该纲领提出了一系列深刻的猜想，揭示了不同数学分支之间的深刻联系，特别是通过自守形式和L-函数的理论。"
+      },
+      "color": "#e544d1"
+    },
+    "N_cef1bbcd43ab4a3da7b2086cc1ffac8c": {
+      "id": "N_cef1bbcd43ab4a3da7b2086cc1ffac8c",
+      "label": "自守形式",
+      "type": "math_field",
+      "properties": {
+        "name": "自守形式",
+        "description": "自守形式是一类在数论和表示论中具有重要作用的特殊函数，它们与李群、模形式和代数几何等领域密切相关。自守形式在朗兰兹纲领中扮演核心角色，是连接数论和表示论的桥梁。"
+      },
+      "color": "#e544d1"
+    },
+    "N_8ca6e2eea7c94cc7b93114d0e9e61d7d": {
+      "id": "N_8ca6e2eea7c94cc7b93114d0e9e61d7d",
+      "label": "越南",
+      "type": "country",
+      "properties": {
+        "name": "越南",
+        "continent": "亚洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_566d07160c19441fa18f71e0c7d466e6": {
+      "id": "N_566d07160c19441fa18f71e0c7d466e6",
+      "label": "椭圆曲线",
+      "type": "math_field",
+      "properties": {
+        "name": "椭圆曲线",
+        "description": "椭圆曲线是代数几何中的一个重要研究对象，定义为由韦尔斯特拉斯方程描述的非奇异代数曲线。在数论和密码学中有广泛应用，特别是椭圆曲线密码学（ECC）。曼朱尔·巴尔加瓦因其在椭圆曲线秩的研究和构造高秩椭圆曲线方面的突破性工作而闻名。"
+      },
+      "color": "#e544d1"
+    },
+    "N_8a684e332a2043d8aec5ba1c10e9e92a": {
+      "id": "N_8a684e332a2043d8aec5ba1c10e9e92a",
+      "label": "加拿大",
+      "type": "country",
+      "properties": {
+        "name": "加拿大",
+        "continent": "北美洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_4b58743945f84d4ea6cd848bbea7c011": {
+      "id": "N_4b58743945f84d4ea6cd848bbea7c011",
+      "label": "变分法",
+      "type": "math_field",
+      "properties": {
+        "name": "变分法",
+        "description": "变分法是数学中研究泛函极值的方法，广泛应用于物理学、工程学和最优控制等领域。阿莱西奥·菲加利在变分法领域做出了重要贡献，特别是在最优传输问题和几何测度论中的应用。"
+      },
+      "color": "#e544d1"
+    },
+    "N_ebd3ac30f52b4353b16842b9523e4b30": {
+      "id": "N_ebd3ac30f52b4353b16842b9523e4b30",
+      "label": "最优传输理论",
+      "type": "math_field",
+      "properties": {
+        "name": "最优传输理论",
+        "description": "最优传输理论是数学中的一个研究领域，主要研究在给定成本函数下，如何将一个概率分布最优地传输到另一个概率分布。该理论在概率论、偏微分方程、几何分析和经济学等领域有广泛应用。"
+      },
+      "color": "#e544d1"
+    },
+    "N_849f6b6da39c4a6492a9ce26ebb39e91": {
+      "id": "N_849f6b6da39c4a6492a9ce26ebb39e91",
+      "label": "意大利",
+      "type": "country",
+      "properties": {
+        "name": "意大利",
+        "continent": "欧洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_37ef84461b0d437284fa5e47a7d7f487": {
+      "id": "N_37ef84461b0d437284fa5e47a7d7f487",
+      "label": "概率论",
+      "type": "math_field",
+      "properties": {
+        "name": "概率论",
+        "description": "概率论是数学的一个分支，研究随机现象及其规律性，包括概率的定义、性质、计算方法及其应用。"
+      },
+      "color": "#e544d1"
+    },
+    "N_e1e9c24c83ba4c2c9df557045233a0f6": {
+      "id": "N_e1e9c24c83ba4c2c9df557045233a0f6",
+      "label": "随机偏微分方程",
+      "type": "math_field",
+      "properties": {
+        "name": "随机偏微分方程",
+        "description": "随机偏微分方程是数学中研究包含随机过程的偏微分方程的分支，结合了概率论与偏微分方程的理论，用于描述受随机噪声影响的动态系统。"
+      },
+      "color": "#e544d1"
+    },
+    "N_eb22a3767ddf4489acf77166d9628e3b": {
+      "id": "N_eb22a3767ddf4489acf77166d9628e3b",
+      "label": "英国",
+      "type": "country",
+      "properties": {
+        "name": "英国",
+        "continent": "欧洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_144441c4cd4b4f3a9ec672586acc1666": {
+      "id": "N_144441c4cd4b4f3a9ec672586acc1666",
+      "label": "算术几何",
+      "type": "math_field",
+      "properties": {
+        "name": "算术几何",
+        "description": "算术几何是数学的一个分支，研究数论与代数几何之间的联系，特别是通过几何方法研究数论问题。"
+      },
+      "color": "#e544d1"
+    },
+    "N_b5634a12cc274d629f6004b589b5cd4a": {
+      "id": "N_b5634a12cc274d629f6004b589b5cd4a",
+      "label": "p进霍奇理论",
+      "type": "math_field",
+      "properties": {
+        "name": "p进霍奇理论",
+        "description": "p进霍奇理论是代数几何和数论中的一个重要领域，研究p进数域上的霍奇结构和相关理论，由彼得·舒尔茨等数学家做出了重要贡献。"
+      },
+      "color": "#e544d1"
+    },
+    "N_6fb7e868b57743e9818bcf4db7dc713f": {
+      "id": "N_6fb7e868b57743e9818bcf4db7dc713f",
+      "label": "德国",
+      "type": "country",
+      "properties": {
+        "name": "德国",
+        "continent": "欧洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_10589b6f30874532b6142a57118a2b09": {
+      "id": "N_10589b6f30874532b6142a57118a2b09",
+      "label": "印度",
+      "type": "country",
+      "properties": {
+        "name": "印度",
+        "continent": "亚洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_0fa4e719780843c9a7b05b0409f10c9c": {
+      "id": "N_0fa4e719780843c9a7b05b0409f10c9c",
+      "label": "统计物理学",
+      "type": "math_field",
+      "properties": {
+        "name": "统计物理学",
+        "description": "统计物理学是数学和物理学的交叉领域，主要研究大量粒子系统的宏观性质与微观动力学之间的关系，应用概率论和统计方法分析复杂系统的行为。"
+      },
+      "color": "#e544d1"
+    },
+    "N_b5910e9c0d724aa49f6e0f6e24349efc": {
+      "id": "N_b5910e9c0d724aa49f6e0f6e24349efc",
+      "label": "微分几何",
+      "type": "math_field",
+      "properties": {
+        "name": "微分几何",
+        "description": "微分几何是数学的一个分支，主要研究光滑流形及其上的微分结构，包括曲线、曲面以及高维流形的几何性质。它广泛应用于物理学、工程学和其他科学领域。"
+      },
+      "color": "#e544d1"
+    },
+    "N_4af9ad8d242c4243927bc85801055e9d": {
+      "id": "N_4af9ad8d242c4243927bc85801055e9d",
+      "label": "中国",
+      "type": "country",
+      "properties": {
+        "name": "中国",
+        "continent": "亚洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_2c29bb78995c4b9486cccc9659006be0": {
+      "id": "N_2c29bb78995c4b9486cccc9659006be0",
+      "label": "复几何",
+      "type": "math_field",
+      "properties": {
+        "name": "复几何",
+        "description": "复几何是数学的一个分支，研究复流形及其上的解析性质，涉及复分析、代数几何和微分几何等多个领域。"
+      },
+      "color": "#e544d1"
+    },
+    "N_95effadccb8c40c7b47bedbb7e271159": {
+      "id": "N_95effadccb8c40c7b47bedbb7e271159",
+      "label": "随机分析",
+      "type": "math_field",
+      "properties": {
+        "name": "随机分析",
+        "description": "随机分析是数学的一个分支，主要研究随机过程及其在微分方程、概率论等领域的应用。伊藤清在这一领域做出了开创性贡献，特别是发展了伊藤积分和伊藤引理，为随机微分方程奠定了理论基础。"
+      },
+      "color": "#e544d1"
+    },
+    "N_746fdb81a9194b5ba3d4bf7b50715eaa": {
+      "id": "N_746fdb81a9194b5ba3d4bf7b50715eaa",
+      "label": "伊藤积分",
+      "type": "math_field",
+      "properties": {
+        "name": "伊藤积分",
+        "description": "伊藤积分是由日本数学家伊藤清提出的一种随机积分，用于处理随机过程（如布朗运动）的积分问题。它是随机分析中的核心概念之一，广泛应用于金融数学、物理学和工程学等领域。"
+      },
+      "color": "#e544d1"
+    },
+    "N_761d458bad6543289d032d88864bffc0": {
+      "id": "N_761d458bad6543289d032d88864bffc0",
+      "label": "日本",
+      "type": "country",
+      "properties": {
+        "name": "日本",
+        "continent": "亚洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_d88dbac7ca1647abb1590d3ee9515259": {
+      "id": "N_d88dbac7ca1647abb1590d3ee9515259",
+      "label": "可积系统",
+      "type": "math_field",
+      "properties": {
+        "name": "可积系统",
+        "description": "可积系统是数学物理学中的一个重要领域，研究具有特殊对称性和守恒量的动力系统，如孤立子方程和完全可积模型。"
+      },
+      "color": "#e544d1"
+    },
+    "N_f2dc41f865634cd9b2ebabd23b2fdccb": {
+      "id": "N_f2dc41f865634cd9b2ebabd23b2fdccb",
+      "label": "流体动力学",
+      "type": "math_field",
+      "properties": {
+        "name": "流体动力学",
+        "description": "流体动力学是数学的一个分支，研究流体（液体和气体）的运动规律及其与力的相互作用。彼得·拉克斯在该领域做出了重要贡献，特别是在非线性波和激波理论方面。"
+      },
+      "color": "#e544d1"
+    },
+    "N_250a5543d0e346d19e91361b1a4c0971": {
+      "id": "N_250a5543d0e346d19e91361b1a4c0971",
+      "label": "散射理论",
+      "type": "math_field",
+      "properties": {
+        "name": "散射理论",
+        "description": "散射理论是数学物理学中的一个重要领域，研究波或粒子与目标相互作用后的行为。彼得·拉克斯在该领域做出了重要贡献，特别是在线性偏微分方程和可积系统的散射理论方面。"
+      },
+      "color": "#e544d1"
+    },
+    "N_b2fc551eb87b419ab7e16f3337218e78": {
+      "id": "N_b2fc551eb87b419ab7e16f3337218e78",
+      "label": "匈牙利",
+      "type": "country",
+      "properties": {
+        "name": "匈牙利",
+        "continent": "欧洲"
+      },
+      "color": "#44e5ca"
+    },
+    "N_a04a2ed007c54370b7bce96aed875159": {
+      "id": "N_a04a2ed007c54370b7bce96aed875159",
+      "label": "数值分析",
+      "type": "math_field",
+      "properties": {
+        "name": "数值分析",
+        "description": "数值分析是数学的一个分支，专注于开发、分析和实现用于解决数学问题的数值算法。雅克·路易斯·利翁斯在该领域做出了重要贡献，特别是在偏微分方程的数值解和科学计算方面。"
+      },
+      "color": "#e544d1"
+    },
+    "N_39aede73984948819b155dd4f9577b27": {
+      "id": "N_39aede73984948819b155dd4f9577b27",
+      "label": "科学计算",
+      "type": "math_field",
+      "properties": {
+        "name": "科学计算",
+        "description": "科学计算是数学的一个分支，专注于利用数学模型和数值方法解决科学和工程中的复杂问题。雅克·路易斯·利翁斯在该领域做出了重要贡献，特别是在偏微分方程和数值分析方面。"
+      },
+      "color": "#e544d1"
+    },
+    "N_e9de5719d28b4da5b2a2a749e045eafb": {
+      "id": "N_e9de5719d28b4da5b2a2a749e045eafb",
+      "label": "解析数论",
+      "type": "math_field",
+      "properties": {
+        "name": "解析数论",
+        "description": "解析数论是数论的一个分支，主要使用数学分析的工具来研究整数的性质，特别是素数分布和相关问题。"
+      },
+      "color": "#e544d1"
+    },
+    "N_baba899801904887a73ae7df0a9b743e": {
+      "id": "N_baba899801904887a73ae7df0a9b743e",
+      "label": "模形式",
+      "type": "math_field",
+      "properties": {
+        "name": "模形式",
+        "description": "模形式是复平面上的全纯函数，满足特定的变换性质。它们在数论、代数几何和表示论等多个数学领域中具有重要应用。"
+      },
+      "color": "#e544d1"
+    },
+    "N_361b12982bb14582b3bb690198db6007": {
+      "id": "N_361b12982bb14582b3bb690198db6007",
+      "label": "计算数学",
+      "type": "math_field",
+      "properties": {
+        "name": "计算数学",
+        "description": "计算数学是数学的一个分支，专注于利用数学方法和计算机技术解决科学和工程中的复杂问题，涉及数值分析、算法设计和数学建模等领域。"
+      },
+      "color": "#e544d1"
+    },
+    "N_3b8f1cb5437d440caa5a787a677a3831": {
+      "id": "N_3b8f1cb5437d440caa5a787a677a3831",
+      "label": "偏微分方程数值解",
+      "type": "math_field",
+      "properties": {
+        "name": "偏微分方程数值解",
+        "description": "偏微分方程数值解是数学中研究如何通过数值方法近似求解偏微分方程的分支领域，广泛应用于工程、物理和计算科学中。"
+      },
+      "color": "#e544d1"
+    },
+    "N_711046cbe1ff429b83355ccd57f8f33f": {
+      "id": "N_711046cbe1ff429b83355ccd57f8f33f",
+      "label": "统计力学",
+      "type": "math_field",
+      "properties": {
+        "name": "统计力学",
+        "description": "统计力学是数学物理学的一个分支，研究大量粒子组成的系统的宏观性质与微观状态之间的关系。"
+      },
+      "color": "#e544d1"
+    },
+    "N_d05cf86a1c1849968b9e96d2d499a8a2": {
+      "id": "N_d05cf86a1c1849968b9e96d2d499a8a2",
+      "label": "复分析",
+      "type": "math_field",
+      "properties": {
+        "name": "复分析",
+        "description": "复分析是数学中研究复变函数及其性质的一个分支，主要涉及解析函数、共形映射、黎曼曲面等内容。斯坦尼斯拉夫·斯米尔诺夫在该领域做出了重要贡献。"
+      },
+      "color": "#e544d1"
+    },
+    "N_c9199998ad404e31b6bc1f9b2d5e27a7": {
+      "id": "N_c9199998ad404e31b6bc1f9b2d5e27a7",
+      "label": "共形场论",
+      "type": "math_field",
+      "properties": {
+        "name": "共形场论",
+        "description": "共形场论是量子场论的一个分支，研究在共形变换下不变的物理系统。它在统计力学、弦理论和凝聚态物理中有广泛应用。"
+      },
+      "color": "#e544d1"
+    },
+    "N_ca6a1ce9a56445c28261df4552afe1ed": {
+      "id": "N_ca6a1ce9a56445c28261df4552afe1ed",
+      "label": "泛函分析",
+      "type": "math_field",
+      "properties": {
+        "name": "泛函分析",
+        "description": "泛函分析是数学的一个分支，研究无限维向量空间上的函数和算子，以及这些结构的性质和应用。"
+      },
+      "color": "#e544d1"
+    },
+    "N_9615c1eabf254f8a84c7ad2319dadf13": {
+      "id": "N_9615c1eabf254f8a84c7ad2319dadf13",
+      "label": "随机过程",
+      "type": "math_field",
+      "properties": {
+        "name": "随机过程",
+        "description": "随机过程是概率论的一个重要分支，研究随时间变化的随机现象。它由一系列随机变量组成，通常用于建模具有不确定性的动态系统。温德林·沃纳因其在随机过程领域的贡献而获得高斯奖。"
+      },
+      "color": "#e544d1"
+    }
+  },
+  "relationships": [
+    {
+      "src_id": "N_013bef9b7e274f48978732c2c0c5e7ec",
+      "tgt_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "type": "features_award"
+    },
+    {
+      "src_id": "N_013bef9b7e274f48978732c2c0c5e7ec",
+      "tgt_id": "N_9216c3467e044241a4462c3390b33cbc",
+      "type": "features_award"
+    },
+    {
+      "src_id": "N_013bef9b7e274f48978732c2c0c5e7ec",
+      "tgt_id": "N_6fa09c579041421aa3fee5a6adf4c49b",
+      "type": "features_award"
+    },
+    {
+      "src_id": "N_013bef9b7e274f48978732c2c0c5e7ec",
+      "tgt_id": "N_bdf56ecf9b464f22ba9e15948a2b84c8",
+      "type": "features_award"
+    },
+    {
+      "src_id": "N_013bef9b7e274f48978732c2c0c5e7ec",
+      "tgt_id": "N_d456140e5c15497db4813ec01ae10a29",
+      "type": "features_award"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_cb9b5c821f0040768e042f347a39d9dd",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_125de098b8f840d9bb5715f731bf5d49",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_500d4bf1c70249e89265a03de23874ac",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_597359cdfdb149fd83b3ced79a49ec71",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_0cdf940888cd4e6a804227a4ff368751",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_d7f25f2625764da5ac8de608ad511fc8",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_ee6d6b7704ad4a768751f861ffc4da8e",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_0e5002b9738d4ee1b1575bd46d71a5d8",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_28d84a108c1b42ca81afa24067633c5a",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_1ab440c80bcb453aab51731b8608f4e4",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_9594d392a27c4807a03c6155fafcad6f",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_fdb36dfc0f8344bb9506879b8129fb4d",
+      "tgt_id": "N_e61068d2974b44a2a574aecfc738696e",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_9216c3467e044241a4462c3390b33cbc",
+      "tgt_id": "N_c9f07533455645e4a05f8cfe64c5348a",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_9216c3467e044241a4462c3390b33cbc",
+      "tgt_id": "N_3ec2b9a34299434a9e17e1a29988f48c",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_9216c3467e044241a4462c3390b33cbc",
+      "tgt_id": "N_961d4e1ed7cd4906b1ebd36d7769593a",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_6fa09c579041421aa3fee5a6adf4c49b",
+      "tgt_id": "N_4b3c5817b4b54513aa4a3317e81ffe64",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_6fa09c579041421aa3fee5a6adf4c49b",
+      "tgt_id": "N_c5244dfbf0764b958e7523664ecff6eb",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_6fa09c579041421aa3fee5a6adf4c49b",
+      "tgt_id": "N_6b14d67fcaf6499ab4e58b8b07d4c77a",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_6fa09c579041421aa3fee5a6adf4c49b",
+      "tgt_id": "N_ad1be4f58e95467c82b91774057387fb",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_6fa09c579041421aa3fee5a6adf4c49b",
+      "tgt_id": "N_e240bad1643b4c0ebd51b3728f7b5247",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_6fa09c579041421aa3fee5a6adf4c49b",
+      "tgt_id": "N_d615b17bbe024308aba9da605c573cb0",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_6fa09c579041421aa3fee5a6adf4c49b",
+      "tgt_id": "N_c0c0441eaeb4435ba2fc806c5ffe622d",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_6fa09c579041421aa3fee5a6adf4c49b",
+      "tgt_id": "N_dfda15b07f204b1784490625c5f7c6fd",
+      "type": "awarded_to"
+    },
+    {
+      "src_id": "N_cb9b5c821f0040768e042f347a39d9dd",
+      "tgt_id": "N_71a6501e0f554c8fae0dae845d6ad830",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_cb9b5c821f0040768e042f347a39d9dd",
+      "tgt_id": "N_d3abf6cd33524995874874a5118858ab",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_cb9b5c821f0040768e042f347a39d9dd",
+      "tgt_id": "N_f443cae2e4574b688717f871a385c611",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_cb9b5c821f0040768e042f347a39d9dd",
+      "tgt_id": "N_1eb3058b4d5140b69082330c92b332ce",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_125de098b8f840d9bb5715f731bf5d49",
+      "tgt_id": "N_353ee97c0df8458db70179e7a2868e04",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_125de098b8f840d9bb5715f731bf5d49",
+      "tgt_id": "N_18ab433550c54d77ac70ffdd37870bf1",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_125de098b8f840d9bb5715f731bf5d49",
+      "tgt_id": "N_66107d1727ba4a1590f96828da9ba378",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_125de098b8f840d9bb5715f731bf5d49",
+      "tgt_id": "N_d3abf6cd33524995874874a5118858ab",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_125de098b8f840d9bb5715f731bf5d49",
+      "tgt_id": "N_f06ac48c0d254cae988ab0a115afd8f4",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_125de098b8f840d9bb5715f731bf5d49",
+      "tgt_id": "N_c10ba44b0ded42d287de6c27e6bd922d",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_500d4bf1c70249e89265a03de23874ac",
+      "tgt_id": "N_d9093916433b455cba4aadfb7f25cc96",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_500d4bf1c70249e89265a03de23874ac",
+      "tgt_id": "N_1decb8e5771a4e0fa9176d837f04449c",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_500d4bf1c70249e89265a03de23874ac",
+      "tgt_id": "N_037a5066cd1f4fc298243f1dd38554c2",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_500d4bf1c70249e89265a03de23874ac",
+      "tgt_id": "N_506d65c4362a4a19aa62408aae89a932",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_597359cdfdb149fd83b3ced79a49ec71",
+      "tgt_id": "N_3d57f91fe7d642538aafc02b42340ae5",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_597359cdfdb149fd83b3ced79a49ec71",
+      "tgt_id": "N_483094d140af462db8f4c0564022542b",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_597359cdfdb149fd83b3ced79a49ec71",
+      "tgt_id": "N_9d6d425bedfb42e7bc82b9327da5791a",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_597359cdfdb149fd83b3ced79a49ec71",
+      "tgt_id": "N_dc44229fff8b45e9bfda071b731f9454",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_597359cdfdb149fd83b3ced79a49ec71",
+      "tgt_id": "N_c1b706faf90a46b2a26a90019af43213",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_0cdf940888cd4e6a804227a4ff368751",
+      "tgt_id": "N_614a5e2f847242198e599b6acf4e76ee",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_0cdf940888cd4e6a804227a4ff368751",
+      "tgt_id": "N_b96b8ab93e374875b33f53945623e357",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_0cdf940888cd4e6a804227a4ff368751",
+      "tgt_id": "N_93aed32ee9994599b0b92fcb63b9dede",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_0cdf940888cd4e6a804227a4ff368751",
+      "tgt_id": "N_474b2a60b49c4d5b93d9f08ca151810a",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_d7f25f2625764da5ac8de608ad511fc8",
+      "tgt_id": "N_d7f8d4a9e9f74954814963a310ecbe3e",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_d7f25f2625764da5ac8de608ad511fc8",
+      "tgt_id": "N_94515a7b93b24d43a9cb779d6de4d25a",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_d7f25f2625764da5ac8de608ad511fc8",
+      "tgt_id": "N_cef1bbcd43ab4a3da7b2086cc1ffac8c",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_d7f25f2625764da5ac8de608ad511fc8",
+      "tgt_id": "N_8ca6e2eea7c94cc7b93114d0e9e61d7d",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_ee6d6b7704ad4a768751f861ffc4da8e",
+      "tgt_id": "N_d3abf6cd33524995874874a5118858ab",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_ee6d6b7704ad4a768751f861ffc4da8e",
+      "tgt_id": "N_71a6501e0f554c8fae0dae845d6ad830",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_ee6d6b7704ad4a768751f861ffc4da8e",
+      "tgt_id": "N_566d07160c19441fa18f71e0c7d466e6",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_ee6d6b7704ad4a768751f861ffc4da8e",
+      "tgt_id": "N_8a684e332a2043d8aec5ba1c10e9e92a",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_ee6d6b7704ad4a768751f861ffc4da8e",
+      "tgt_id": "N_c1b706faf90a46b2a26a90019af43213",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_0e5002b9738d4ee1b1575bd46d71a5d8",
+      "tgt_id": "N_18ab433550c54d77ac70ffdd37870bf1",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_0e5002b9738d4ee1b1575bd46d71a5d8",
+      "tgt_id": "N_4b58743945f84d4ea6cd848bbea7c011",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_0e5002b9738d4ee1b1575bd46d71a5d8",
+      "tgt_id": "N_ebd3ac30f52b4353b16842b9523e4b30",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_0e5002b9738d4ee1b1575bd46d71a5d8",
+      "tgt_id": "N_849f6b6da39c4a6492a9ce26ebb39e91",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_28d84a108c1b42ca81afa24067633c5a",
+      "tgt_id": "N_37ef84461b0d437284fa5e47a7d7f487",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_28d84a108c1b42ca81afa24067633c5a",
+      "tgt_id": "N_18ab433550c54d77ac70ffdd37870bf1",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_28d84a108c1b42ca81afa24067633c5a",
+      "tgt_id": "N_e1e9c24c83ba4c2c9df557045233a0f6",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_28d84a108c1b42ca81afa24067633c5a",
+      "tgt_id": "N_506d65c4362a4a19aa62408aae89a932",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_28d84a108c1b42ca81afa24067633c5a",
+      "tgt_id": "N_eb22a3767ddf4489acf77166d9628e3b",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_1ab440c80bcb453aab51731b8608f4e4",
+      "tgt_id": "N_71a6501e0f554c8fae0dae845d6ad830",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_1ab440c80bcb453aab51731b8608f4e4",
+      "tgt_id": "N_144441c4cd4b4f3a9ec672586acc1666",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_1ab440c80bcb453aab51731b8608f4e4",
+      "tgt_id": "N_b5634a12cc274d629f6004b589b5cd4a",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_1ab440c80bcb453aab51731b8608f4e4",
+      "tgt_id": "N_6fb7e868b57743e9818bcf4db7dc713f",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_9594d392a27c4807a03c6155fafcad6f",
+      "tgt_id": "N_d3abf6cd33524995874874a5118858ab",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_9594d392a27c4807a03c6155fafcad6f",
+      "tgt_id": "N_cef1bbcd43ab4a3da7b2086cc1ffac8c",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_9594d392a27c4807a03c6155fafcad6f",
+      "tgt_id": "N_1decb8e5771a4e0fa9176d837f04449c",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_9594d392a27c4807a03c6155fafcad6f",
+      "tgt_id": "N_10589b6f30874532b6142a57118a2b09",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_e61068d2974b44a2a574aecfc738696e",
+      "tgt_id": "N_37ef84461b0d437284fa5e47a7d7f487",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_e61068d2974b44a2a574aecfc738696e",
+      "tgt_id": "N_0fa4e719780843c9a7b05b0409f10c9c",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_e61068d2974b44a2a574aecfc738696e",
+      "tgt_id": "N_66107d1727ba4a1590f96828da9ba378",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_e61068d2974b44a2a574aecfc738696e",
+      "tgt_id": "N_1eb3058b4d5140b69082330c92b332ce",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_c9f07533455645e4a05f8cfe64c5348a",
+      "tgt_id": "N_18ab433550c54d77ac70ffdd37870bf1",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_c9f07533455645e4a05f8cfe64c5348a",
+      "tgt_id": "N_b5910e9c0d724aa49f6e0f6e24349efc",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_c9f07533455645e4a05f8cfe64c5348a",
+      "tgt_id": "N_3d57f91fe7d642538aafc02b42340ae5",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_c9f07533455645e4a05f8cfe64c5348a",
+      "tgt_id": "N_4af9ad8d242c4243927bc85801055e9d",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_3ec2b9a34299434a9e17e1a29988f48c",
+      "tgt_id": "N_2c29bb78995c4b9486cccc9659006be0",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_3ec2b9a34299434a9e17e1a29988f48c",
+      "tgt_id": "N_71a6501e0f554c8fae0dae845d6ad830",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_3ec2b9a34299434a9e17e1a29988f48c",
+      "tgt_id": "N_b5910e9c0d724aa49f6e0f6e24349efc",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_3ec2b9a34299434a9e17e1a29988f48c",
+      "tgt_id": "N_c1b706faf90a46b2a26a90019af43213",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_961d4e1ed7cd4906b1ebd36d7769593a",
+      "tgt_id": "N_71a6501e0f554c8fae0dae845d6ad830",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_961d4e1ed7cd4906b1ebd36d7769593a",
+      "tgt_id": "N_2c29bb78995c4b9486cccc9659006be0",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_961d4e1ed7cd4906b1ebd36d7769593a",
+      "tgt_id": "N_b5910e9c0d724aa49f6e0f6e24349efc",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_961d4e1ed7cd4906b1ebd36d7769593a",
+      "tgt_id": "N_c1b706faf90a46b2a26a90019af43213",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_4b3c5817b4b54513aa4a3317e81ffe64",
+      "tgt_id": "N_37ef84461b0d437284fa5e47a7d7f487",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_4b3c5817b4b54513aa4a3317e81ffe64",
+      "tgt_id": "N_95effadccb8c40c7b47bedbb7e271159",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_4b3c5817b4b54513aa4a3317e81ffe64",
+      "tgt_id": "N_746fdb81a9194b5ba3d4bf7b50715eaa",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_4b3c5817b4b54513aa4a3317e81ffe64",
+      "tgt_id": "N_761d458bad6543289d032d88864bffc0",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_c5244dfbf0764b958e7523664ecff6eb",
+      "tgt_id": "N_18ab433550c54d77ac70ffdd37870bf1",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_c5244dfbf0764b958e7523664ecff6eb",
+      "tgt_id": "N_d88dbac7ca1647abb1590d3ee9515259",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_c5244dfbf0764b958e7523664ecff6eb",
+      "tgt_id": "N_f2dc41f865634cd9b2ebabd23b2fdccb",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_c5244dfbf0764b958e7523664ecff6eb",
+      "tgt_id": "N_250a5543d0e346d19e91361b1a4c0971",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_c5244dfbf0764b958e7523664ecff6eb",
+      "tgt_id": "N_b2fc551eb87b419ab7e16f3337218e78",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_6b14d67fcaf6499ab4e58b8b07d4c77a",
+      "tgt_id": "N_18ab433550c54d77ac70ffdd37870bf1",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_6b14d67fcaf6499ab4e58b8b07d4c77a",
+      "tgt_id": "N_a04a2ed007c54370b7bce96aed875159",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_6b14d67fcaf6499ab4e58b8b07d4c77a",
+      "tgt_id": "N_39aede73984948819b155dd4f9577b27",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_6b14d67fcaf6499ab4e58b8b07d4c77a",
+      "tgt_id": "N_1eb3058b4d5140b69082330c92b332ce",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_ad1be4f58e95467c82b91774057387fb",
+      "tgt_id": "N_d3abf6cd33524995874874a5118858ab",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_ad1be4f58e95467c82b91774057387fb",
+      "tgt_id": "N_cef1bbcd43ab4a3da7b2086cc1ffac8c",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_ad1be4f58e95467c82b91774057387fb",
+      "tgt_id": "N_e9de5719d28b4da5b2a2a749e045eafb",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_ad1be4f58e95467c82b91774057387fb",
+      "tgt_id": "N_baba899801904887a73ae7df0a9b743e",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_ad1be4f58e95467c82b91774057387fb",
+      "tgt_id": "N_6fb7e868b57743e9818bcf4db7dc713f",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_e240bad1643b4c0ebd51b3728f7b5247",
+      "tgt_id": "N_a04a2ed007c54370b7bce96aed875159",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_e240bad1643b4c0ebd51b3728f7b5247",
+      "tgt_id": "N_361b12982bb14582b3bb690198db6007",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_e240bad1643b4c0ebd51b3728f7b5247",
+      "tgt_id": "N_3b8f1cb5437d440caa5a787a677a3831",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_e240bad1643b4c0ebd51b3728f7b5247",
+      "tgt_id": "N_c1b706faf90a46b2a26a90019af43213",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_d615b17bbe024308aba9da605c573cb0",
+      "tgt_id": "N_37ef84461b0d437284fa5e47a7d7f487",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_d615b17bbe024308aba9da605c573cb0",
+      "tgt_id": "N_711046cbe1ff429b83355ccd57f8f33f",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_d615b17bbe024308aba9da605c573cb0",
+      "tgt_id": "N_d05cf86a1c1849968b9e96d2d499a8a2",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_d615b17bbe024308aba9da605c573cb0",
+      "tgt_id": "N_c9199998ad404e31b6bc1f9b2d5e27a7",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_d615b17bbe024308aba9da605c573cb0",
+      "tgt_id": "N_474b2a60b49c4d5b93d9f08ca151810a",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_c0c0441eaeb4435ba2fc806c5ffe622d",
+      "tgt_id": "N_37ef84461b0d437284fa5e47a7d7f487",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_c0c0441eaeb4435ba2fc806c5ffe622d",
+      "tgt_id": "N_ca6a1ce9a56445c28261df4552afe1ed",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_c0c0441eaeb4435ba2fc806c5ffe622d",
+      "tgt_id": "N_3d57f91fe7d642538aafc02b42340ae5",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_c0c0441eaeb4435ba2fc806c5ffe622d",
+      "tgt_id": "N_1eb3058b4d5140b69082330c92b332ce",
+      "type": "nationality_is"
+    },
+    {
+      "src_id": "N_dfda15b07f204b1784490625c5f7c6fd",
+      "tgt_id": "N_37ef84461b0d437284fa5e47a7d7f487",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_dfda15b07f204b1784490625c5f7c6fd",
+      "tgt_id": "N_711046cbe1ff429b83355ccd57f8f33f",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_dfda15b07f204b1784490625c5f7c6fd",
+      "tgt_id": "N_9615c1eabf254f8a84c7ad2319dadf13",
+      "type": "contributed_to"
+    },
+    {
+      "src_id": "N_dfda15b07f204b1784490625c5f7c6fd",
+      "tgt_id": "N_1eb3058b4d5140b69082330c92b332ce",
+      "type": "nationality_is"
+    }
+  ]
+}

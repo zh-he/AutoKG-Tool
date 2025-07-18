@@ -20,9 +20,25 @@
 
 ## 使用流程：
 
-1. 在.env文件中配置NEO4J_URI（Neo4j运行地址）、 NEO4J_USERNAME（Neo4j用户名）、 NEO4J_PASSWORD（Neo4j密码）、DEEPSEEK_API_KEY(DEEPSEEK API KEY)、GENSTUDIO_API_KEY(无问芯穹API KEY)、 LLM_TYPE（选择的LLM类型）、 MAX_CONCURRENCY(并发量)、LLM_TIMEOUT_SECONDS（LLM API调用的超时时间）、LLM_RETRY_ATTEMPTS（响应出错时的重试次数）、EMBEDDING_MODEL（Embedding路径）
+1. 在.env文件中配置环境变量。
+
+   | 环境变量            | 说明                  |
+   | ------------------- | --------------------- |
+   | NEO4J_URI           | Neo4j运行地址         |
+   | NEO4J_USERNAME      | Neo4j用户名           |
+   | NEO4J_PASSWORD      | Neo4j密码             |
+   | DEEPSEEK_API_KEY    | DEEPSEEK API KEY      |
+   | GENSTUDIO_API_KEY   | 无问芯穹API KEY       |
+   | LLM_TYPE            | 选择的LLM类型         |
+   | MAX_CONCURRENCY     | 并发量                |
+   | LLM_TIMEOUT_SECONDS | LLM API调用的超时时间 |
+   | LLM_RETRY_ATTEMPTS  | 响应出错时的重试次数  |
+   | EMBEDDING_MODEL     | Embedding路径         |
+
 2. 启动neo4j（便于将生成的节点导入至neo4j）
+
 3. ```python app.py```启动后端
+
 4. http://127.0.0.1:5000/ 打开前端
 
 ## 本体层设计示例：

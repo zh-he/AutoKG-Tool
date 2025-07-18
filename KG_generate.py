@@ -14,7 +14,7 @@ from config import Config, validate_config
 
 # ---------------- 日志配置 ----------------
 logging.basicConfig(
-    level=logging.INFO,  # 保持 INFO 级别以获取总体进度
+    level=logging.INFO,
     format="[%(asctime)s] %(name)s %(levelname)s: %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S"
 )
@@ -30,17 +30,14 @@ def parse_response_json(content: str) -> dict | list | None:
     text = content.strip()
     json_string = None
 
-    # 模式 1: ```json ... ```
     if text.startswith("```json"):
         parts = text.split("```json", 1)
         if len(parts) > 1:
             json_string = parts[1].split("```", 1)[0].strip()
-    # 模式 2: ``` ... ``` (如果模式1失败，则假设为JSON)
     elif text.startswith("```"):
         parts = text.split("```", 1)
         if len(parts) > 1:
             json_string = parts[1].split("```", 1)[0].strip()
-    # 模式 3: 直接以 { 或 [ 开头
     elif text.startswith("{") and text.endswith("}"):
         json_string = text
     elif text.startswith("[") and text.endswith("]"):
@@ -75,9 +72,7 @@ def generate_dynamic_color(node_type: str, color_map: dict) -> str:
     """根据节点类型生成或获取颜色。"""
     if node_type in color_map:
         return color_map[node_type]
-    # 使用黄金比例来生成区分度较高的色调
     hue = (len(color_map) * 0.618033988749895) % 1.0
-    # 保持饱和度和亮度相对较高，以获得鲜艳的颜色
     rgb = colorsys.hsv_to_rgb(hue, 0.7, 0.9)
     color = '#{:02x}{:02x}{:02x}'.format(int(rgb[0] * 255), int(rgb[1] * 255), int(rgb[2] * 255))
     color_map[node_type] = color
@@ -116,7 +111,7 @@ class LLMService:
             raise
 
         self.semaphore = asyncio.Semaphore(self.max_concurrency)
-        self.cache: dict[str, str] = {}  # 简单的内存缓存
+        self.cache: dict[str, str] = {}
 
     async def _call_model(self, prompt: str) -> str:
         """
@@ -167,7 +162,7 @@ class LLMService:
                 logger.debug(f"缓存命中: {prompt_key[:50]}...")
                 return self.cache[prompt_key]
 
-            async with self.semaphore:  # 控制并发
+            async with self.semaphore:
                 for i in range(self.retry_attempts):
                     try:
                         logger.debug(
@@ -276,7 +271,7 @@ def load_ontology(path: Path) -> dict:
         raise
 
 
-# ---------------- 智能体代理 (修改为异步) ----------------
+# ---------------- Agent ----------------
 class NodeGeneratorAgent:
     """节点生成智能体，负责根据父节点和本体生成子节点候选项。"""
 
@@ -349,14 +344,12 @@ class NodeGeneratorAgent:
 
 class NodeValidationAgent:
     """节点验证智能体，负责验证节点间关系的合理性。"""
-
     def __init__(self, ontology: dict, llm: LLMService):
         self.ontology = ontology
         self.llm = llm
-        # 预处理关系描述，方便查找
         self._rel_descriptions = {}
         for rel in self.ontology.get('relationships', []):
-            key = (rel.get('src_type'), rel.get('tgt_type'), rel.get('relation'))
+            key = (rel.get('src_type'), rel.get('tgt_type'), rel.get('relation'))  # 同一对实体之间可能有多种关系
             self._rel_descriptions[key] = rel.get('description', '无描述')
 
     async def validate_nodes_batch(self, reqs: list) -> dict:
@@ -396,8 +389,8 @@ class NodeValidationAgent:
         texts = await self.llm.generate_async(prompts)
 
         out = {}
-        for i, txt in enumerate(texts):  # i 从0开始
-            req_key = str(i)  # 使用从0开始的字符串索引作为键
+        for i, txt in enumerate(texts):
+            req_key = str(i)
             if txt is None:
                 logger.warning(f"LLM验证节点失败 (Prompt {i + 1})")
                 out[req_key] = {'valid': False, 'reason': 'LLM调用失败'}
@@ -435,13 +428,13 @@ class PropertyGeneratorAgent:
         """
         if not reqs: return {}
         prompts = []
-        prompt_label_map = {}  # 将prompt索引映射回节点标签
+        prompt_label_map = {}
 
         logger.info(f"准备生成 {len(reqs)} 个节点属性 prompts")
 
-        for idx, r in enumerate(reqs):  # idx 从0开始
+        for idx, r in enumerate(reqs):
             node_type = r['node_type']
-            template_props = self.ontology['properties'].get(node_type, ['description'])  # 若本体未定义则默认description
+            template_props = self.ontology['properties'].get(node_type, ['description'])
             template_str = json.dumps(template_props, ensure_ascii=False)
             node_type_desc = self.ontology['entity_types'].get(node_type, {}).get('description', '无描述')
 
@@ -449,8 +442,8 @@ class PropertyGeneratorAgent:
                 f"请为以下知识图谱节点生成属性值:\n"
                 f"节点名称: '{r['node_label']}'\n"
                 f"节点类型: {node_type} (含义: {node_type_desc})\n"
-                f"知识图谱路径 (供参考): {r['full_path']}\n"
-                f"需要生成的属性列表 (来自本体): {template_str}\n"
+                f"知识图谱路径 : {r['full_path']}\n"
+                f"需要生成的属性列表 : {template_str}\n"
                 f"\n请以 JSON 对象的形式返回属性及其对应的值，例如:\n"
                 f"{{ \"属性名1\": \"属性值1\", \"属性名2\": \"属性值2\", ... }}\n"
                 f"请严格按照此 JSON 格式输出，不要包含任何其他文本或解释。\n"
@@ -487,7 +480,6 @@ class PropertyGeneratorAgent:
 
 class PropertyValidationAgent:
     """属性验证智能体，负责验证生成的节点属性是否符合本体要求。"""
-
     def __init__(self, ontology: dict, llm: LLMService):
         self.ontology = ontology
         self.llm = llm
@@ -504,13 +496,13 @@ class PropertyValidationAgent:
         """
         if not reqs: return {}
         prompts = []
-        prompt_label_map = {}  # 将prompt索引映射回节点标签
+        prompt_label_map = {}
 
         logger.info(f"准备验证 {len(reqs)} 组节点属性 prompts")
 
-        for idx, r in enumerate(reqs):  # idx 从0开始
+        for idx, r in enumerate(reqs):
             node_type = r['node_type']
-            template_props = self.ontology['properties'].get(node_type, [])  # 若本体未定义则必需属性列表为空
+            template_props = self.ontology['properties'].get(node_type, [])
             prop_str = json.dumps(r['properties'], ensure_ascii=False)
             template_str = json.dumps(template_props, ensure_ascii=False)
             node_type_desc = self.ontology['entity_types'].get(node_type, {}).get('description', '无描述')
@@ -520,7 +512,7 @@ class PropertyValidationAgent:
                 f"节点名称: '{r['node_label']}'\n"
                 f"节点类型: {node_type} (含义: {node_type_desc})\n"
                 f"生成的属性: {prop_str}\n"
-                f"必需的属性列表 (来自本体): {template_str}\n"
+                f"必需的属性列表: {template_str}\n"
                 f"注意: 如果必需属性列表为空 ([])，则认为属性是有效的 (除非属性本身明显不合理)。\n"
                 f"\n请以 JSON 对象的形式返回判断结果，例如:\n"
                 f"{{ \"valid\": true, \"reason\": \"判断理由或空字符串\" }}\n"
@@ -555,10 +547,9 @@ class PropertyValidationAgent:
         return out
 
 
-# ---------------- 构建器 (修改为异步并实现完整的图谱构建逻辑) ----------------
+# ---------------- 构建器 ----------------
 class KnowledgeGraphBuilder:
     """知识图谱构建器类，负责协调整个构建过程。"""
-
     def __init__(self, domain: str = None, root_type: str = None):
         """
         初始化知识图谱构建器。
@@ -587,7 +578,6 @@ class KnowledgeGraphBuilder:
         if not self.property_generator or not self.property_validator:
             raise RuntimeError("属性生成器和验证器未初始化")
 
-        # 生成属性
         property_reqs = [{
             "node_label": node_label,
             "node_type": node_type,
@@ -595,7 +585,6 @@ class KnowledgeGraphBuilder:
         }]
         generated_props = await self.property_generator.generate_properties_batch(property_reqs)
 
-        # 验证属性
         validation_reqs = [{
             "node_label": node_label,
             "node_type": node_type,
@@ -604,7 +593,7 @@ class KnowledgeGraphBuilder:
         validated_props = await self.property_validator.validate_properties_batch(validation_reqs)
 
         validation_result = validated_props.get(node_label, {})
-        if not validation_result.get('valid', True):
+        if not validation_result.get('valid', False):
             logger.warning(f"节点 '{node_label}' 的属性验证失败: {validation_result.get('reason', '')}")
 
         return generated_props.get(node_label, {})
@@ -614,7 +603,6 @@ class KnowledgeGraphBuilder:
         if not nodes_to_process:
             return
 
-        # 分批处理
         batches = []
         current_batch = []
         for node in nodes_to_process:
@@ -674,7 +662,6 @@ class KnowledgeGraphBuilder:
                 raise ValueError("根节点类型(root_type)不能为空")
             if not hasattr(self, 'ontology') or self.ontology is None:
                 raise ValueError("本体文件未加载，请先调用 build_with_ontology() 方法")
-            # 验证root_type是否存在于本体定义中
             entity_types = {et["type"] for et in self.ontology["entity_types"]}
             if self.root_type not in entity_types:
                 raise ValueError(f"指定的根节点类型 '{self.root_type}' 不存在于本体定义中。可用的类型有: {', '.join(entity_types)}")
@@ -789,7 +776,7 @@ class KnowledgeGraphBuilder:
                                 added_nodes += 1
 
                             else:
-                                # 节点已存在，只添加关系（如果不存在的话）
+                                # 节点已存在，只添加关系
                                 existing_node_id = None
                                 for node_id, node_info in self.nodes.items():
                                     if node_info["label"] == child:
@@ -846,29 +833,22 @@ class KnowledgeGraphBuilder:
             dict: 包含节点和关系的知识图谱数据
         """
         try:
-            # 验证必要参数
             if not self.domain:
                 raise ValueError("领域名称(domain)不能为空")
             if not self.root_type:
                 raise ValueError("根节点类型(root_type)不能为空")
 
-            # 加载指定的本体文件
             self.ontology = load_ontology(Path(ontology_path))
 
-            # 添加调试信息
             logger.info(f"本体数据结构: {type(self.ontology)}")
             logger.info(f"本体keys: {self.ontology.keys()}")
             logger.info(f"entity_types类型: {type(self.ontology.get('entity_types', 'NOT_FOUND'))}")
             logger.info(f"entity_types内容: {self.ontology.get('entity_types', 'NOT_FOUND')}")
 
-            # 验证root_type是否存在于本体定义中
-            # load_ontology已经将entity_types转换为字典格式: {type_name: type_info}
             entity_types_dict = self.ontology.get("entity_types", {})
             if isinstance(entity_types_dict, dict):
-                # 从字典中提取类型名称
                 entity_types = set(entity_types_dict.keys())
             else:
-                # 如果还是列表格式，转换为集合
                 entity_types = {et["type"] for et in entity_types_dict if isinstance(et, dict) and "type" in et}
 
             logger.info(f"提取到的实体类型: {entity_types}")
@@ -877,11 +857,9 @@ class KnowledgeGraphBuilder:
                 raise ValueError(
                     f"指定的根节点类型 '{self.root_type}' 不存在于本体定义中。可用的类型有: {', '.join(entity_types)}")
 
-            # 初始化LLM服务
             llm_config = Config.get_llm_config()
             self.llm = LLMService(llm_config)
 
-            # 初始化各个代理
             self.node_generator = NodeGeneratorAgent(self.ontology, self.llm)
             self.node_validator = NodeValidationAgent(self.ontology, self.llm)
             self.property_generator = PropertyGeneratorAgent(self.ontology, self.llm)
@@ -1038,10 +1016,8 @@ class KnowledgeGraphBuilder:
             path = Path(f"KG/{self.domain}_kg.json")
 
         try:
-            # 确保输出目录存在
             path.parent.mkdir(parents=True, exist_ok=True)
 
-            # 为节点添加颜色信息
             kg_copy = {
                 "domain": self.domain,
                 "nodes": {},
@@ -1060,16 +1036,3 @@ class KnowledgeGraphBuilder:
             logger.error(f"保存知识图谱时发生错误: {e}")
             raise
 
-
-# ---------------- 主函数 ----------------
-if __name__ == '__main__':
-    try:
-        validate_config()  # 验证配置
-        print("✅ 配置验证成功")
-        print("知识图谱构建器已准备就绪，请通过Web界面使用")
-        print("\n使用示例：")
-        print("builder = KnowledgeGraphBuilder(domain='计算机科学', root_type='computer_science')")
-        print("kg_data = asyncio.run(builder.build_with_ontology('path/to/ontology.json'))")
-    except (ValueError, FileNotFoundError, OSError) as e:
-        logger.error(f"配置验证失败: {e}")
-        sys.exit(1)

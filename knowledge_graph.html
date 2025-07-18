@@ -53,11 +53,11 @@
             z-index: 100;
             display: flex;
             justify-content: space-between;
-            align-items: center; /* 确保垂直居中对齐 */
+            align-items: center;
             flex-wrap: wrap;
             gap: 0.5rem;
             box-sizing: border-box;
-            min-height: 60px; /* 设置最小高度 */
+            min-height: 60px;
         }
 
         .header-bar h4 .fas {
@@ -69,7 +69,7 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
-            height: 32px; /* 统一控件组高度 */
+            height: 32px;
         }
 
         .header-controls .input-group {
@@ -114,7 +114,7 @@
         }
 
         /* 下拉选择框 */
-        .header-controls .form-select {
+        .header-controls {
             height: 32px !important;
             min-height: 32px !important;
             font-size: 14px !important;
@@ -172,7 +172,7 @@
         }
 
         /* input-group-text 标签 */
-        .header-controls .input-group-text {
+        .header-controls {
             height: 32px !important;
             min-height: 32px !important;
             display: flex !important;
@@ -209,7 +209,7 @@
             flex-grow: 1;
             display: flex;
             overflow: hidden;
-            padding: 0 1.25rem 1.25rem 1.25rem; /* 上 0，右下左 1.25rem */
+            padding: 0 1.25rem 1.25rem 1.25rem;
             gap: 1.25rem;
         }
 
@@ -247,7 +247,7 @@
         .card-body-custom {
             overflow-y: auto;
             padding: 1.25rem;
-            font-size: 0.95rem; /* 增大基础字体大小 */
+            font-size: 0.95rem;
         }
 
         .card-body-custom h6 {
@@ -255,7 +255,7 @@
             margin-bottom: 0.75rem;
             font-weight: 600;
             color: var(--primary-color);
-            font-size: 1.1rem; /* 增大标题字体大小 */
+            font-size: 1.1rem;
         }
 
         .card-body-custom hr {
@@ -264,69 +264,44 @@
             opacity: 0.5;
         }
 
-        /* 调整列表项样式 */
         .card-body-custom .list-group-item {
-            font-size: 0.95rem; /* 增大列表项字体大小 */
-            padding: 0.5rem 0; /* 增加内边距 */
+            font-size: 0.95rem;
+            padding: 0.5rem 0;
         }
 
-        /* 调整图例容器样式 */
         #legend-container {
-            font-size: 0.95rem; /* 增大图例字体大小 */
+            font-size: 0.95rem;
         }
 
-        .legend-item {
-            margin-bottom: 0.5rem; /* 增加图例项间距 */
-            display: flex;
-            align-items: center;
-        }
-
-        .legend-color {
-            width: 16px; /* 增大图例颜色块大小 */
-            height: 16px;
-            border-radius: 50%;
-            margin-right: 0.75rem; /* 增加颜色块和文字的间距 */
-            border: 2px solid var(--node-stroke);
-        }
-
-        /* 调整过滤器容器样式 */
         #filter-container {
-            font-size: 0.95rem; /* 增大过滤器字体大小 */
-        }
-
-        .filter-item {
-            margin-bottom: 0.5rem; /* 增加过滤器项间距 */
+            font-size: 0.95rem;
         }
 
         .form-check-label {
-            font-size: 0.95rem; /* 增大复选框标签字体大小 */
+            font-size: 0.95rem;
         }
 
-        /* 调整统计数字样式 */
         .badge {
-            font-size: 0.75rem; /* 减小徽章字体大小 */
-            padding: 0.35em 0.65em; /* 减小徽章内边距 */
-            font-weight: 500; /* 调整字体粗细 */
+            font-size: 0.75rem;
+            padding: 0.35em 0.65em;
+            font-weight: 500;
         }
 
-        /* 特别调整统计数字徽章样式 */
         .list-group-item .badge {
-            font-size: 0.75rem; /* 确保统计数字徽章大小一致 */
+            font-size: 0.75rem;
             padding: 0.35em 0.65em;
-            min-width: 2.5em; /* 设置最小宽度，使数字对齐 */
+            min-width: 2.5em;
             text-align: center;
         }
 
-        /* 调整按钮样式 */
         .card-body-custom .btn {
-            font-size: 0.95rem; /* 增大按钮字体大小 */
-            padding: 0.5rem 1rem; /* 增加按钮内边距 */
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
         }
 
-        /* 调整当前图谱信息样式 */
         #current-kg-info {
-            font-size: 0.95rem; /* 增大信息文字大小 */
-            margin-bottom: 1rem; /* 增加底部间距 */
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
 
         #graph-controls {
@@ -352,7 +327,6 @@
             display: block;
         }
 
-        /* D3 Styles Refined */
         .links line {
             stroke-opacity: .4;
             stroke-width: 1.5px;
@@ -410,7 +384,6 @@
         }
 
 
-        /* Modal - Enhanced */
         .modal-header {
             background: var(--primary-color);
             color: white;
@@ -796,7 +769,6 @@
             </div>
             <div class="modal-body">
                 <div class="list-group" id="kg-list">
-                    <!-- 图谱列表将通过 JavaScript 动态填充 -->
                 </div>
             </div>
             <div class="modal-footer">
@@ -825,7 +797,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // --- Global Variables & Configuration ---
     let allNodesData = [], allLinksData = [];
     let currentGraphRawData = null;
     let currentNodes = [], currentLinks = [];
@@ -866,14 +837,12 @@
         }
     };
 
-    // --- DOM Elements ---
     let ontologyFileInput, generateKgButton, currentKgInfoElement;
 
     document.addEventListener('DOMContentLoaded', () => {
         initDOMReferences();
         initEventListeners();
 
-        // 初始化所有模态框
         nodeDetailModalInstance = new bootstrap.Modal(document.getElementById('nodeDetailModal'));
         helpModalInstance = new bootstrap.Modal(document.getElementById('helpModal'));
         selectKgModalInstance = new bootstrap.Modal(document.getElementById('selectKgModal'));
@@ -885,7 +854,6 @@
         clearGraphDisplay();
         currentKgInfoElement.textContent = "请点击选择图谱按钮选择一个图谱进行展示。";
 
-        // 确保初始状态下清除按钮是隐藏的
         const clearButton = document.getElementById('clear-search-button');
         const searchInput = document.getElementById('search-input');
 
@@ -894,7 +862,7 @@
         }
 
         if (searchInput) {
-            searchInput.value = ""; // 确保搜索框初始为空
+            searchInput.value = "";
         }
         isSearchActive = false;
     });
@@ -1713,42 +1681,72 @@
         const searchTerm = searchInput.value.toLowerCase().trim();
         const clearButton = document.getElementById('clear-search-button');
 
-        // 只有在有搜索词并且执行搜索时才显示清除按钮
-        if (searchTerm.length > 0) {
-            isSearchActive = true;
-            clearButton.style.display = 'inline-block';  // 显示清除按钮
-        } else {
-            // 如果搜索词为空，重置状态
-            isSearchActive = false;
-            clearButton.style.display = 'none';
-            clearSearch();  // 清除搜索状态
+        if (!searchTerm) {
+            clearSearch();
             return;
         }
 
-        applyFilters();
+        isSearchActive = true;
+        clearButton.style.display = 'inline-block';
 
-        if (searchTerm) {
-            const firstMatch = currentNodes.find(n =>
-                n.label.toLowerCase().includes(searchTerm) ||
-                n.type.toLowerCase().includes(searchTerm) ||
-                n.id.toLowerCase().includes(searchTerm) ||
-                (n.properties && Object.values(n.properties).some(val =>
-                    String(val).toLowerCase().includes(searchTerm)
-                ))
-            );
+        let bestMatch = {node: null, score: 0};
 
-            if (firstMatch) {
-                activeNode = firstMatch;
-                centerOnNode(firstMatch, true);
-                updateNodeSelectionStyles();
-                showNodeDetailModal(firstMatch);
-            } else {
-                clearHighlights();
-                activeNode = null;
-                updateNodeSelectionStyles();
-                showNodeDetailModal(null);
-                console.log(`未找到包含 "${searchTerm}" 的节点`);
+        // 遍历所有当前节点，进行评分来找到最佳匹配
+        currentNodes.forEach(node => {
+            const label = node.label.toLowerCase();
+            let currentScore = 0;
+
+            // --- 评分机制 ---
+            // 1. 完全匹配：最高分
+            if (label === searchTerm) {
+                currentScore = 100;
             }
+            // 2. 开头匹配：次高分
+            else if (label.startsWith(searchTerm)) {
+                currentScore = 50;
+            }
+            // 3. 包含匹配：基础分
+            else if (label.includes(searchTerm)) {
+                currentScore = 10;
+            }
+
+            // 如果有得分，根据名称长度差异进行微调，鼓励更精确的匹配
+            if (currentScore > 0) {
+                currentScore -= (label.length - searchTerm.length) * 0.1;
+            }
+
+            // 如果当前节点得分更高，则更新最佳匹配
+            if (currentScore > bestMatch.score) {
+                bestMatch = {node: node, score: currentScore};
+            }
+        });
+
+        // 如果找到了匹配的节点
+        if (bestMatch.node) {
+            const foundNode = bestMatch.node;
+
+            // 模拟用户点击该节点的全部流程
+            activeNode = foundNode;
+
+            // 1. 使用现有的高亮函数，实现和点击完全一致的效果
+            highlightConnected(foundNode, true);
+
+            // 2. 更新节点的“选中”样式（例如，描边）
+            updateNodeSelectionStyles();
+
+            // 3. 将视图聚焦到该节点
+            centerOnNode(foundNode, false); // 定位，但不需要重复高亮
+
+            // 4. 显示该节点的详细信息模态框
+            showNodeDetailModal(foundNode);
+
+        } else {
+            // 如果未找到任何匹配项
+            clearHighlights();
+            activeNode = null;
+            updateNodeSelectionStyles();
+            console.log(`未找到与 "${searchTerm}" 相关的节点`);
+            alert(`在当前图谱中未找到与 "${searchTerm}" 相关的节点。`);
         }
     }
 
@@ -1757,19 +1755,26 @@
         const searchInput = document.getElementById('search-input');
         const clearButton = document.getElementById('clear-search-button');
 
+        // 重置UI和状态
         if (searchInput) searchInput.value = "";
         if (clearButton) clearButton.style.display = 'none';
-        isSearchActive = false; // 重置搜索状态
+        isSearchActive = false;
 
-        // 重新应用过滤器（不带搜索条件）
-        applyFilters();
-        clearHighlights();
+        // 如果图谱未加载，直接返回
+        if (!nodeElements || !labelElements || !linkElements) return;
+
+        // 移除所有由搜索添加的样式
+        nodeElements.classed("dimmed", false);
+        labelElements.classed("dimmed", false);
+        linkElements.style("stroke-opacity", 0.4); // 恢复默认的连接透明度
+
+        // 清除活动的节点选择和高亮
         activeNode = null;
         updateNodeSelectionStyles();
         showNodeDetailModal(null);
+        clearHighlights(); // 确保清除所有高亮状态
 
-        // 确保搜索框失去焦点
-        if (searchInput) searchInput.blur();
+        if (searchInput) searchInput.blur(); // 让搜索框失去焦点
     }
 
     function toggleCategoryFilter(category) {
@@ -1990,7 +1995,7 @@
             icon.classList.add('fa-expand');
             btn.title = "全屏";
         }
-        setTimeout(setGraphDimensions, 100); // Re-calculate dimensions after fullscreen change
+        setTimeout(setGraphDimensions, 100);
     }
 
     function debounce(func, wait) {
